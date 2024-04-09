@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class BaseEnemyController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    BaseEnemyModel _model;
+
+    private void Awake()
     {
-        
+        _model = GetComponent<BaseEnemyModel>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (_model.CheckDistance())
+            _model.Attack();
+        else
+        {
+            _model.GoToBuilding();
+            Debug.Log("Raid");
+        }
     }
 }
