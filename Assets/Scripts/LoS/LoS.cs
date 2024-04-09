@@ -13,6 +13,7 @@ public class LoS : MonoBehaviour, ILoS
     public bool CheckRange(Transform target)
     {
         float distance = Vector3.Distance(target.position, Origin());
+        Debug.Log(distance);
         return distance <= range;
     }
     /*public bool CheckAngle(Transform target)

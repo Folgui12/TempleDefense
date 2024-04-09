@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BaseEnemyModel : MonoBehaviour
 {
-    private GameObject _mainBuilding;
+    public GameObject _mainBuilding;
 
-    private GameObject _newBuilding;
-    private GameObject _currentBuilding;
+    public GameObject _currentBuilding;
 
     public float speed;
+    public float attackRange;
 
     Rigidbody _rb;
 
@@ -41,26 +41,27 @@ public class BaseEnemyModel : MonoBehaviour
 
     public bool CheckDistance()
     {
-        if (Vector3.Distance(transform.position, _currentBuilding.transform.position) < 3)
+        if (Vector3.Distance(transform.position, _currentBuilding.transform.position) < attackRange)
             return true;
         else
             return false;
     }
 
-    public bool checkYPosition()
+    public bool CheckYPosition()
     {
         return transform.position.y <1.5? true: false;
     }
 
-    public void checkClosest()
+    public void CheckClosest()
     {
         Collider[] colliderList = Physics.OverlapSphere(transform.position, lineOfSight.range);
 
-        foreach (Collider item in colliderList)
+        for(int i = 0; i < colliderList.Length; i++)
         {
-            if(lineOfSight.CheckRange(item.transform))
+            if (colliderList[i].tag == "Mine" && lineOfSight.CheckRange(colliderList[i].transform))
             {
-
+                Debug.Log(colliderList[i].gameObject);
+                _currentBuilding = colliderList[i].gameObject;
             }
         }
         

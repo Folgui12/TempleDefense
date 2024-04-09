@@ -17,7 +17,8 @@ public class BaseEnemyController : MonoBehaviour
             _model.Attack();
         else
         {
-            if(_model.checkYPosition())
+            _model.CheckClosest();
+            if (_model.CheckYPosition())
                 _model.GoToMainBuilding();
             Debug.Log("Raid");
         }

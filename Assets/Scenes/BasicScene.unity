@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18306622, g: 0.2287434, b: 0.30669293, a: 1}
+  m_IndirectSpecularColor: {r: 0.18306574, g: 0.22874251, b: 0.30669183, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,44 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &132900258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7768796009490323730, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
+  m_PrefabInstance: {fileID: 1645962915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &132900262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132900258}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.025501214, y: 0.032966834, z: 0.022759298}
+  m_Center: {x: -0.000000016580586, y: -0.0060557406, z: 0.011338952}
+--- !u!114 &132900263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132900258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2dbd7c02c998046bcca2b3f2372900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &176734282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1734,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aaa20745629af4643bbff9b14d2f676a, type: 2}
+  - {fileID: 2100000, guid: c3474c208278e814cb8d1c29aa806e81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2459,6 +2497,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mina
       objectReference: {fileID: 0}
+    - target: {fileID: -7768796009490323730, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -7768796009490323730, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
+      propertyPath: m_TagString
+      value: Mine
+      objectReference: {fileID: 0}
     - target: {fileID: -88593771298940558, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.1
@@ -2479,6 +2525,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -7768796009490323730, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 132900262}
+    - targetCorrespondingSourceObject: {fileID: -7768796009490323730, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 132900263}
     - targetCorrespondingSourceObject: {fileID: -2607050024914767674, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1862671303}
@@ -2841,7 +2893,7 @@ GameObject:
   - component: {fileID: 2013620452}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3135,7 +3187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5af99b7dcb3e874a87ca9b8e22aef5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainBuilding: {fileID: 0}
+  _currentBuilding: {fileID: 0}
   speed: 1
+  attackRange: 0.5
 --- !u!114 &2013620451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3160,7 +3215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9637517dd3194454484a5155eb5ba36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2
+  range: 2.5
   maskObs:
     serializedVersion: 2
     m_Bits: 0
