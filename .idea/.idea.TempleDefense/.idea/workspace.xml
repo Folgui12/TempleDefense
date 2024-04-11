@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3cf86ba-e5c5-459e-9f80-4c73a29042f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Defenses/ScriptableObjects/DefenseStats.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Defenses/ScriptableObjects/DefenseStats.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/ScriptableEnemies/EnemyStats.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/ScriptableEnemies/EnemyStats.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TempleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TempleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Base Enemy/BaseEnemyModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Base Enemy/BaseEnemyModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRintea.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRintea.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="b3cf86ba-e5c5-459e-9f80-4c73a29042f6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +95,7 @@
       <workItem from="1712430104212" duration="10000" />
       <workItem from="1712619671578" duration="211000" />
       <workItem from="1712619904487" duration="4161000" />
-      <workItem from="1712788206461" duration="3424000" />
+      <workItem from="1712788206461" duration="4020000" />
     </task>
     <servers />
   </component>
