@@ -8,12 +8,15 @@ public class BaseEnemyModel : MonoBehaviour
 
     public GameObject _currentBuilding;
 
-    public float speed;
-    public float attackRange;
+    //public float speed;
+    //public float attackRange;
+
+    [SerializeField] private EnemyStats _stats;
 
     Rigidbody _rb;
 
     LoS lineOfSight;
+    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -24,7 +27,7 @@ public class BaseEnemyModel : MonoBehaviour
 
     public void Move(Vector3 dir)
     {
-        dir *= speed;
+        dir *= _stats.travelSpeed;
         dir.y = _rb.velocity.y;
         _rb.velocity = dir;
     }
@@ -41,7 +44,7 @@ public class BaseEnemyModel : MonoBehaviour
 
     public bool CheckDistance()
     {
-        if (Vector3.Distance(transform.position, _currentBuilding.transform.position) < attackRange)
+        if (Vector3.Distance(transform.position, _currentBuilding.transform.position) < _stats.attackRange)
             return true;
         else
             return false;
