@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackState<T> : State<T>
+public class EnemyAirState<T> : State<T>
 {
     BaseEnemyModel _model;
-    public EnemyAttackState(BaseEnemyModel model)
+
+    public EnemyAirState(BaseEnemyModel model)
     {
         _model = model;
     }
@@ -13,6 +14,6 @@ public class EnemyAttackState<T> : State<T>
     public override void Execute()
     {
         base.Execute();
-        _model.Attack();
+        _model.CheckYPosition();
     }
 }

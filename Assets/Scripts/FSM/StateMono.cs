@@ -4,34 +4,30 @@ using UnityEngine;
 
 public class StateMono<T> : MonoBehaviour, IState<T>
 {
-    private Dictionary<T, IState<T>> _transitions;
-    
+    protected FSM<T> _fsm;
+    Dictionary<T, IState<T>> _transitions = new Dictionary<T, IState<T>>();
     public virtual void Enter()
     {
-        
     }
-
     public virtual void Execute()
     {
-        
     }
-
+    public virtual void LateExecute()
+    {
+    }
     public virtual void Sleep()
     {
-        
     }
-
-    public void AddTransitions(T input, IState<T> state)
+    public void AddTransition(T input, IState<T> state)
     {
         _transitions[input] = state;
     }
 
     public void RemoveTransition(T input)
     {
-        if(_transitions.ContainsKey(input))
+        if (_transitions.ContainsKey(input))
             _transitions.Remove(input);
     }
-    
     public void RemoveTransition(IState<T> state)
     {
         foreach (var item in _transitions)
@@ -45,13 +41,13 @@ public class StateMono<T> : MonoBehaviour, IState<T>
             }
         }
     }
-
     public IState<T> GetTransition(T input)
     {
         if (_transitions.ContainsKey(input))
+        {
             return _transitions[input];
-        else
-            return null;
-
+        }
+        return null;
     }
+    public FSM<T> SetFSM { set { _fsm = value; } }
 }
