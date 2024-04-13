@@ -33,10 +33,11 @@ public class BaseEnemyController : MonoBehaviour
 
     private void Start()
     {
+        InitializeSteerings();
         InitializeFSM();
         InitializedTree();
-        InitializeSteerings();
     }
+
 
     //private void Update()
     //{
