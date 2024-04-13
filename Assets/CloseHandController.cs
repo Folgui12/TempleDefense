@@ -12,7 +12,7 @@ public class CloseHandController : MonoBehaviour
 
 	void Start()
 	{
-
+		handAnimator = GetComponent<Animator>();
 	}
 
 	void Update()
