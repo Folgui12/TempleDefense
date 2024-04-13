@@ -10,10 +10,8 @@ public class EnemyAirState<T> : State<T>
     {
         _model = model;
     }
-
     public override void Execute()
     {
         base.Execute();
-        _model.CheckYPosition();
     }
 }

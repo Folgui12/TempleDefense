@@ -30,9 +30,12 @@ public class BaseEnemyModel : MonoBehaviour
 
     public void Move(Vector3 dir)
     {
-        dir *= _stats.travelSpeed;
-        dir.y = _rb.velocity.y;
-        _rb.velocity = dir;
+        if (IsGround())
+        {
+            dir *= _stats.travelSpeed;
+            dir.y = _rb.velocity.y;
+            _rb.velocity = dir;
+        }
     }
 
     public void LookDir(Vector3 dir)
@@ -41,27 +44,14 @@ public class BaseEnemyModel : MonoBehaviour
         transform.forward = dir;
     }
 
-    //public void GoToMainBuilding()
-    //{
-    //    Move((_currentBuilding.transform.position - transform.position).normalized);
-    //}
-
     public void Attack()
     {
         Debug.Log("Atancando");
     }
 
-    //public bool CheckDistance()
-    //{
-    //    if (Vector3.Distance(transform.position, _currentBuilding.transform.position) < _stats.attackRange)
-    //        return true;
-    //    else
-    //        return false;
-    //}
-
-    public bool CheckYPosition()
+    public bool IsGround()
     {
-        return transform.position.y <1.5? true: false;
+        return transform.position.y < 1.5? true : false;
     }
 
     public GameObject CheckClosest()
