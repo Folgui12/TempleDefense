@@ -15,7 +15,6 @@ public class Seek : ISteering
 
     public Vector3 GetDir()
     {
-        Vector3 dir = (_target.position - _entity.position).normalized;
-        return dir;
+        return (_target.position - _entity.position).normalized;
     }
 }

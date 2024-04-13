@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemySteeringState<T> : State<T>
 {
@@ -16,7 +15,7 @@ public class EnemySteeringState<T> : State<T>
     }
     public override void Execute()
     {
-        var dir = _obs.GetDir(_steering.GetDir());
+        var dir = _obs.GetDir(_steering.GetDir(), true);
         _model.Move(dir);
         _model.LookDir(dir);
     }

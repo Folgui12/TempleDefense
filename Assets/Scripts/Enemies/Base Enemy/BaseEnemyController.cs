@@ -33,9 +33,9 @@ public class BaseEnemyController : MonoBehaviour
 
     private void Start()
     {
+        InitializeSteerings();
         InitializeFSM();
         InitializedTree();
-        InitializeSteerings();
     }
 
     //private void Update()
@@ -65,6 +65,7 @@ public class BaseEnemyController : MonoBehaviour
         idle.AddTransition(StatesEnum.Attack, attack);
         idle.AddTransition(StatesEnum.Raid, raid);
         idle.AddTransition(StatesEnum.InAir, air);
+        idle.AddTransition(StatesEnum.Steer, steering);
 
         dead.AddTransition(StatesEnum.Idle, idle);
         dead.AddTransition(StatesEnum.Attack, attack);
@@ -86,7 +87,7 @@ public class BaseEnemyController : MonoBehaviour
         air.AddTransition(StatesEnum.Attack, attack);
         air.AddTransition(StatesEnum.Raid, raid);
 
-        steering.AddTransition(StatesEnum.Raid, raid);
+        steering.AddTransition(StatesEnum.Idle, idle);
 
         _fsm = new FSM<StatesEnum>(steering);
     }
