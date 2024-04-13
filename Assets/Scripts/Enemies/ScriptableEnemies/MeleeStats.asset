@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349697d5cd5f478c975c6d7c7cb6fb42, type: 3}
   m_Name: MeleeStats
   m_EditorClassIdentifier: 
-  <life>k__BackingField: 0
-  <travelSpeed>k__BackingField: 0
+  <life>k__BackingField: 5
+  <travelSpeed>k__BackingField: 3
   <currentObjective>k__BackingField: {fileID: 0}
-  <attackSpeed>k__BackingField: 0
-  <attackRange>k__BackingField: 0
+  <attackSpeed>k__BackingField: 1
+  <attackRange>k__BackingField: 0.3

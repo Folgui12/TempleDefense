@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BaseEnemyModel : MonoBehaviour
@@ -7,6 +8,8 @@ public class BaseEnemyModel : MonoBehaviour
     public GameObject _mainBuilding;
 
     public GameObject _currentBuilding;
+
+    [SerializeField] public float _life;
 
     //public float speed;
     //public float attackRange;
@@ -27,14 +30,18 @@ public class BaseEnemyModel : MonoBehaviour
 
     public void Move(Vector3 dir)
     {
-        dir *= _stats.travelSpeed;
-        dir.y = _rb.velocity.y;
-        _rb.velocity = dir;
+        if (IsGround())
+        {
+            dir *= _stats.travelSpeed;
+            dir.y = _rb.velocity.y;
+            _rb.velocity = dir;
+        }
     }
 
-    public void GoToMainBuilding()
+    public void LookDir(Vector3 dir)
     {
-        Move((_currentBuilding.transform.position - transform.position).normalized);
+        if (dir.x == 0 && dir.z == 0) return;
+        transform.forward = dir;
     }
 
     public void Attack()
@@ -42,20 +49,12 @@ public class BaseEnemyModel : MonoBehaviour
         Debug.Log("Atancando");
     }
 
-    public bool CheckDistance()
+    public bool IsGround()
     {
-        if (Vector3.Distance(transform.position, _currentBuilding.transform.position) < _stats.attackRange)
-            return true;
-        else
-            return false;
+        return transform.position.y < 1.5? true : false;
     }
 
-    public bool CheckYPosition()
-    {
-        return transform.position.y <1.5? true: false;
-    }
-
-    public void CheckClosest()
+    public GameObject CheckClosest()
     {
         Collider[] colliderList = Physics.OverlapSphere(transform.position, lineOfSight.range);
 
@@ -66,8 +65,19 @@ public class BaseEnemyModel : MonoBehaviour
                 Debug.Log(colliderList[i].gameObject);
                 _currentBuilding = colliderList[i].gameObject;
             }
+            else if (Vector3.Distance(_currentBuilding.transform.position , transform.position) > lineOfSight.range)
+            {
+                _currentBuilding = _mainBuilding;
+            }
         }
-        
+        return _currentBuilding;
     }
+
+    public void Dead()
+    {
+        Destroy(gameObject);
+    }
+
+    public float Life => _life;
 
 }

@@ -7,6 +7,7 @@ TagManager:
   - Building
   - Mine
   - Enemy
+  - Obstacule
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Mina
-  - 
+  - Obstacue
   - 
   - 
   - 
