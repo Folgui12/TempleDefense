@@ -34,8 +34,8 @@ public class BaseEnemyController : MonoBehaviour
     private void Start()
     {
         InitializeSteerings();
-        InitializeFSM();
         InitializedTree();
+        InitializeFSM();
     }
 
 
@@ -57,9 +57,8 @@ public class BaseEnemyController : MonoBehaviour
         var idle = new EnemyIdleState<StatesEnum>();
         var dead = new EnemyDeathState<StatesEnum>(_model);
         var attack = new EnemyAttackState<StatesEnum>(_model);
-        var raid = new EnemyRaidState<StatesEnum>(_model, _currentBiulding.transform);
+        var raid = new EnemyRaidState<StatesEnum>(_model, _currentBiulding.transform, _obstacleAvoidance, _steering);
         var air = new EnemyAirState<StatesEnum>(_model);
-        var steering = new EnemySteeringState<StatesEnum>(_model, _steering, _obstacleAvoidance);
 
 
         idle.AddTransition(StatesEnum.Dead, dead);
@@ -80,16 +79,13 @@ public class BaseEnemyController : MonoBehaviour
         raid.AddTransition(StatesEnum.Dead, dead);
         raid.AddTransition(StatesEnum.Attack, attack);
         raid.AddTransition(StatesEnum.InAir, air);
-        raid.AddTransition(StatesEnum.Steer, steering);
 
         air.AddTransition(StatesEnum.Idle, idle);
         air.AddTransition(StatesEnum.Dead, dead);
         air.AddTransition(StatesEnum.Attack, attack);
         air.AddTransition(StatesEnum.Raid, raid);
 
-        steering.AddTransition(StatesEnum.Raid, raid);
-
-        _fsm = new FSM<StatesEnum>(steering);
+        _fsm = new FSM<StatesEnum>(idle);
     }
     void InitializeSteerings()
     {

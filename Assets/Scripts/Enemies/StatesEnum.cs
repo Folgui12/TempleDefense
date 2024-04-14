@@ -9,6 +9,5 @@ public enum StatesEnum
     Attack,
     Grabbed,
     InAir,
-    Steer,
     Dead
 }
