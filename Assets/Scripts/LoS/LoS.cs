@@ -27,8 +27,8 @@ public class LoS : MonoBehaviour, ILoS
         float distance = dirToTarget.magnitude;
         return !Physics.Raycast(Origin, dirToTarget, distance, maskObs);
     }
-    Vector3 Origin => transform.position;
-    Vector3 Forward => transform.forward;
+    public Vector3 Origin => transform.position;
+    public Vector3 Forward => transform.forward;
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;

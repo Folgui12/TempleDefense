@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MeleeStats
   m_EditorClassIdentifier: 
   <life>k__BackingField: 5
-  <travelSpeed>k__BackingField: 3
-  <currentObjective>k__BackingField: {fileID: 0}
+  <travelSpeed>k__BackingField: 5
+  <currentObjective>k__BackingField: {fileID: 8531084230230199607, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
   <attackSpeed>k__BackingField: 1
   <attackRange>k__BackingField: 0.3

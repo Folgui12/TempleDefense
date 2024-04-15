@@ -41,6 +41,7 @@ public class BaseEnemyModel : MonoBehaviour
     public void LookDir(Vector3 dir)
     {
         if (dir.x == 0 && dir.z == 0) return;
+
         transform.forward = dir;
     }
 
@@ -62,7 +63,6 @@ public class BaseEnemyModel : MonoBehaviour
         {
             if (colliderList[i].tag == "Mine" && lineOfSight.CheckRange(colliderList[i].transform))
             {
-                Debug.Log(colliderList[i].gameObject);
                 _currentBuilding = colliderList[i].gameObject;
             }
             else if (Vector3.Distance(_currentBuilding.transform.position , transform.position) > lineOfSight.range)

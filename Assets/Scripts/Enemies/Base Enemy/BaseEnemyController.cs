@@ -19,7 +19,7 @@ public class BaseEnemyController : MonoBehaviour
     #endregion
 
     #region INTERFACE
-    LoS _los;
+    [SerializeField] LoS _los;
     FSM<StatesEnum> _fsm;
     ITreeNode _root;
     ISteering _steering;
@@ -125,6 +125,12 @@ public class BaseEnemyController : MonoBehaviour
     {
         _fsm.OnUpdate();
         _root.Execute();
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(_los.Origin, radius);
     }
 
 }
