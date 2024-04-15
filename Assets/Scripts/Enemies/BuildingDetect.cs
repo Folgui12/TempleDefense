@@ -6,15 +6,7 @@ public class BuildingDetect : MonoBehaviour
 {
     public GameObject building;
 
-    public Rigidbody _rb;
-
     public float speed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _rb = GetComponent<Rigidbody>();
-    }
 
     // Update is called once per frame
     void Update()

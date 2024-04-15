@@ -7,14 +7,7 @@
     <list default="true" id="b3cf86ba-e5c5-459e-9f80-4c73a29042f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TempleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TempleDefense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BasicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BasicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemyRelated.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EnemyRelated.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Base Enemy/BaseEnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Base Enemy/BaseEnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Base Enemy/BaseEnemyModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Base Enemy/BaseEnemyModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/ScriptableEnemies/MeleeStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/ScriptableEnemies/MeleeStats.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoS/LoS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoS/LoS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/BuildingDetect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/BuildingDetect.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +101,7 @@
       <workItem from="1712619904487" duration="4161000" />
       <workItem from="1712788206461" duration="4020000" />
       <workItem from="1713041061541" duration="633000" />
-      <workItem from="1713214906416" duration="6603000" />
+      <workItem from="1713214906416" duration="7887000" />
     </task>
     <servers />
   </component>
