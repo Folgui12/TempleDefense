@@ -89,7 +89,7 @@ public class BaseEnemyController : MonoBehaviour
     }
     void InitializeSteerings()
     {
-        var seek = new Seek(_model.transform, _currentBiulding.transform);
+        var seek = new Seek(_model,_model.transform, _currentBiulding.transform);
         var flee = new Flee(_model.transform, _currentBiulding.transform);
         var pursuit = new Pursuit(_model.transform, _currentBiulding.GetComponent<Rigidbody>(), timePrediction);
         var evade = new Evade(_model.transform, _currentBiulding.GetComponent<Rigidbody>(), timePrediction);

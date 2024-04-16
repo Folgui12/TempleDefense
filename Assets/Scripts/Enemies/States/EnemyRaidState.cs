@@ -24,7 +24,7 @@ public class EnemyRaidState<T> : State<T>
 
         //(b-a).n
         GameObject currnetBiulding = _model.CheckClosest();
-        var dir = _obs.GetDir(_steering.GetDir());
+        var dir = _obs.GetDir(_steering.GetDir(), false);
         _model.Move(dir.normalized);
         _model.LookDir(dir.normalized);
     }

@@ -6,15 +6,17 @@ public class Seek : ISteering
 {
     Transform _entity;
     Transform _target;
-
-    public Seek(Transform entity, Transform target)
+    BaseEnemyModel _model;
+    public Seek(BaseEnemyModel model,Transform entity, Transform target)
     {
         _entity = entity;
         _target = target;
+        _model = model;
     }
 
     public Vector3 GetDir()
     {
+        _target = _model._currentBuilding.transform;
         return (_target.position - _entity.position).normalized;
     }
 }

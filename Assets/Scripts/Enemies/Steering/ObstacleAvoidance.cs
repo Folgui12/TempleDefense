@@ -8,6 +8,7 @@ public class ObstacleAvoidance
     float _radius;
     Transform _entity;
     LayerMask _maskObs;
+    BaseEnemyModel _model;
 
     public ObstacleAvoidance(Transform entity, float angle, float radius, LayerMask maskObs)
     {
