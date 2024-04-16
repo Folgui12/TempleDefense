@@ -9,6 +9,8 @@ public class BaseEnemyModel : MonoBehaviour
 
     public GameObject _currentBuilding;
 
+    public bool isGround;
+
     [SerializeField] public float _life;
 
     //public float speed;
@@ -26,16 +28,14 @@ public class BaseEnemyModel : MonoBehaviour
         _mainBuilding = GameObject.Find("MainBuilding");
         lineOfSight = GetComponent<LoS>();
         _currentBuilding = _mainBuilding;
+        isGround = false;
     }
 
     public void Move(Vector3 dir)
     {
-        if (IsGround())
-        {
-            dir *= _stats.travelSpeed;
-            dir.y = _rb.velocity.y;
-            _rb.velocity = dir;
-        }
+        dir *= _stats.travelSpeed;
+        dir.y = _rb.velocity.y;
+        _rb.velocity = dir;
     }
 
     public void LookDir(Vector3 dir)
@@ -50,10 +50,10 @@ public class BaseEnemyModel : MonoBehaviour
         Debug.Log("Atancando");
     }
 
-    public bool IsGround()
+    /*public bool IsGround()
     {
         return transform.position.y < 1.5? true : false;
-    }
+    }*/
 
     public GameObject CheckClosest()
     {
@@ -79,5 +79,24 @@ public class BaseEnemyModel : MonoBehaviour
     }
 
     public float Life => _life;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == 8)
+        {
+            Debug.Log("Touching ground");
+            isGround = true;
+        }
+
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            Debug.Log("Above Ground");
+            isGround = false;
+        }
+    }
 
 }
