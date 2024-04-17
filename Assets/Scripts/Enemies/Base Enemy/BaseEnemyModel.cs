@@ -13,9 +13,6 @@ public class BaseEnemyModel : MonoBehaviour
 
     [SerializeField] public float _life;
 
-    //public float speed;
-    //public float attackRange;
-
     [SerializeField] private EnemyStats _stats;
 
     Rigidbody _rb;
@@ -50,11 +47,6 @@ public class BaseEnemyModel : MonoBehaviour
         Debug.Log("Atancando");
     }
 
-    /*public bool IsGround()
-    {
-        return transform.position.y < 1.5? true : false;
-    }*/
-
     public GameObject CheckClosest()
     {
         Collider[] colliderList = Physics.OverlapSphere(transform.position, lineOfSight.range);
@@ -84,7 +76,6 @@ public class BaseEnemyModel : MonoBehaviour
     {
         if(collision.gameObject.layer == 8)
         {
-            Debug.Log("Touching ground");
             isGround = true;
         }
 
@@ -94,7 +85,6 @@ public class BaseEnemyModel : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-            Debug.Log("Above Ground");
             isGround = false;
         }
     }
