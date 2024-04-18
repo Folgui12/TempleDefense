@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18306622, g: 0.2287434, b: 0.30669293, a: 1}
+  m_IndirectSpecularColor: {r: 0.18306595, g: 0.2287429, b: 0.3066922, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -918,6 +918,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 922015783406441696, guid: 6d496b76dc139264c98cc4ae2491681d, type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 922015783406441696, guid: 6d496b76dc139264c98cc4ae2491681d, type: 3}
       propertyPath: _mainBuilding
       value: 
       objectReference: {fileID: 1780177071}
@@ -931,7 +935,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7633978056940439050, guid: 6d496b76dc139264c98cc4ae2491681d, type: 3}
       propertyPath: radius
-      value: 8
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633978056940439050, guid: 6d496b76dc139264c98cc4ae2491681d, type: 3}
+      propertyPath: attackRange
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7633978056940439050, guid: 6d496b76dc139264c98cc4ae2491681d, type: 3}
       propertyPath: _currentBiulding
@@ -939,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 1780177071}
     - target: {fileID: 8432964078578425410, guid: 6d496b76dc139264c98cc4ae2491681d, type: 3}
       propertyPath: range
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8432964078578425410, guid: 6d496b76dc139264c98cc4ae2491681d, type: 3}
       propertyPath: maskObs.m_Bits

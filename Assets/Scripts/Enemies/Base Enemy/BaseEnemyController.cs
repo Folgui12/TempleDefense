@@ -7,7 +7,6 @@ public class BaseEnemyController : MonoBehaviour
 {
     BaseEnemyModel _model;
     public GameObject _currentBiulding;
-    public float attackRange;
 
     #region STEERING
     public Rigidbody target;
@@ -106,7 +105,7 @@ public class BaseEnemyController : MonoBehaviour
         var air = new ActionNode(() => _fsm.Transition(StatesEnum.InAir));
 
         //Question
-        var qAttackRange = new QuestionNode(QuestionAttackRange, attack, idle);
+        var qAttackRange = new QuestionNode(QuestionAttackRange, attack, raid);
         var qLoS = new QuestionNode(QuestionLoS, qAttackRange, raid);
         var qInAir = new QuestionNode(() => _model.isGround, qLoS, air);
         var qHasLife = new QuestionNode(() => _model.Life > 0, qInAir, dead);
@@ -115,16 +114,21 @@ public class BaseEnemyController : MonoBehaviour
     }
     bool QuestionAttackRange()
     {
-        return _los.CheckRange(_currentBiulding.transform, attackRange);
+        Debug.Log("Te ataco");
+        Debug.Log(_model._stats.attackRange);
+        return _los.CheckRange(_currentBiulding.transform, _model._stats.attackRange);
     }
     bool QuestionLoS()
     {
-        return _los.CheckRange(_currentBiulding.transform);
+        Debug.Log(_currentBiulding);
+        Debug.Log(_los.CheckRange(_currentBiulding.transform, _model._stats.viewRange));
+        return _los.CheckRange(_currentBiulding.transform, _model._stats.viewRange);
     }
     private void Update()
     {
         _fsm.OnUpdate();
         _root.Execute();
+        _currentBiulding = _model.CheckClosest();
     }
     
     private void OnDrawGizmosSelected()

@@ -13,7 +13,7 @@ public class BaseEnemyModel : MonoBehaviour
 
     [SerializeField] public float _life;
 
-    [SerializeField] private EnemyStats _stats;
+    [SerializeField] public EnemyStats _stats;
 
     Rigidbody _rb;
 
@@ -49,15 +49,15 @@ public class BaseEnemyModel : MonoBehaviour
 
     public GameObject CheckClosest()
     {
-        Collider[] colliderList = Physics.OverlapSphere(transform.position, lineOfSight.range);
+        Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.viewRange);
 
         for(int i = 0; i < colliderList.Length; i++)
         {
-            if (colliderList[i].tag == "Mine" && lineOfSight.CheckRange(colliderList[i].transform))
+            if (colliderList[i].tag == "Mine" && lineOfSight.CheckRange(colliderList[i].transform, _stats.viewRange))
             {
                 _currentBuilding = colliderList[i].gameObject;
             }
-            else if (Vector3.Distance(_currentBuilding.transform.position , transform.position) > lineOfSight.range)
+            else if (Vector3.Distance(_currentBuilding.transform.position , transform.position) > _stats.viewRange)
             {
                 _currentBuilding = _mainBuilding;
             }
@@ -89,4 +89,12 @@ public class BaseEnemyModel : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;      
+        Gizmos.DrawWireSphere(transform.position, _stats.viewRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _stats.attackRange);
+
+    }
 }

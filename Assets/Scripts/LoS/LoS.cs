@@ -5,13 +5,8 @@ using static UnityEngine.UI.Image;
 
 public class LoS : MonoBehaviour, ILoS
 {
-    public float range;
     public LayerMask maskObs;
 
-    public bool CheckRange(Transform target)
-    {
-        return CheckRange(target, range);
-    }
     public bool CheckRange(Transform target, float range)
     {
         float distance = Vector3.Distance(target.position, Origin);
@@ -29,9 +24,4 @@ public class LoS : MonoBehaviour, ILoS
     }
     public Vector3 Origin => transform.position;
     public Vector3 Forward => transform.forward;
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(Origin, range);
-    }
 }

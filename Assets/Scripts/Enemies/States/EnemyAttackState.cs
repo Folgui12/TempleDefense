@@ -13,6 +13,7 @@ public class EnemyAttackState<T> : State<T>
     public override void Execute()
     {
         base.Execute();
+        _model.Move(Vector3.zero);
         _model.Attack();
     }
 }
