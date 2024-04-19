@@ -7,6 +7,7 @@ using UnityEngine;
 public class ArcherModel : MonoBehaviour
 {
     [SerializeField] private GameObject _arrow;
+    [SerializeField] private Transform _arrowSpawnPoint;
     private TowerModel _tModel;
     private Animator anim;
     
@@ -28,7 +29,7 @@ public class ArcherModel : MonoBehaviour
 
     private void Shoot()
     {
-        BulletMovement arrow = Instantiate(_arrow, transform.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
+        BulletMovement arrow = Instantiate(_arrow, _arrowSpawnPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
 
         arrow.enemyTarget = _tModel._currentEnemy;
     }

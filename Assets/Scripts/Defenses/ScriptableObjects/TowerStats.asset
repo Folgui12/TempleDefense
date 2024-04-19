@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TowerStats
   m_EditorClassIdentifier: 
   <_life>k__BackingField: 10
-  <_attackRange>k__BackingField: 15
+  <_attackRange>k__BackingField: 25

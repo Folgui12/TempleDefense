@@ -22,13 +22,36 @@ public class TowerModel : MonoBehaviour
 
         Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats._attackRange);
 
-        for(int i = 0; i < colliderList.Length; i++)
+        float shootDistance = Mathf.Infinity;
+
+        GameObject nearestEnemy = null;
+
+
+        foreach(Collider enemy in colliderList)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if(distanceToEnemy < shootDistance)
+            {
+                shootDistance = distanceToEnemy;
+                nearestEnemy = enemy.gameObject;
+            }
+
+            
+        }
+
+        if(_currentEnemy != null &&  shootDistance <= _stats._attackRange)
+        {
+            _currentEnemy = nearestEnemy;
+        }
+
+        /*for(int i = 0; i < colliderList.Length; i++)
         {
             if (colliderList[i].tag == "Enemy" && _los.CheckRange(colliderList[i].transform, _stats._attackRange))
             {
                 _currentEnemy = colliderList[i].gameObject;
             }
-        }
+        }*/
         return _currentEnemy;
     }
     
