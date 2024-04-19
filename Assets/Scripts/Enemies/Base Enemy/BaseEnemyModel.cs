@@ -53,7 +53,7 @@ public class BaseEnemyModel : MonoBehaviour
 
         for(int i = 0; i < colliderList.Length; i++)
         {
-            if (colliderList[i].tag == "Temple" || colliderList[i].tag == "Building" && lineOfSight.CheckRange(colliderList[i].transform, _stats.viewRange))
+            if ((colliderList[i].gameObject.layer == 10 || colliderList[i].gameObject.layer == 9) && lineOfSight.CheckRange(colliderList[i].transform, _stats.viewRange))
             {
                 _currentBuilding = colliderList[i].gameObject;
             }

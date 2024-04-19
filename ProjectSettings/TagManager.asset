@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Obstacule
   - Temple
+  - Anchor
+  - Mine
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - Mina
   - Obstacue
   - Floor
-  - 
-  - 
+  - Biulding
+  - Temple
   - 
   - 
   - 
