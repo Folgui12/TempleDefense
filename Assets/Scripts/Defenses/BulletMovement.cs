@@ -7,12 +7,12 @@ public class BulletMovement : MonoBehaviour
 {
     public GameObject enemyTarget;
 
-    public float maxDistance;
+    public float arrowSpeed;
     
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, enemyTarget.transform.position, maxDistance * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, enemyTarget.transform.position, arrowSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
