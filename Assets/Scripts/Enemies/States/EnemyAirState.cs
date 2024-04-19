@@ -13,7 +13,6 @@ public class EnemyAirState<T> : State<T>
     public override void Execute()
     {
         base.Execute();
-        Debug.Log("InAir");
         _model.Move(Vector3.zero);
     }
 }

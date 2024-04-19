@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class BaseEnemyController : MonoBehaviour
 {
     BaseEnemyModel _model;
-    public GameObject _currentBiulding;
+    //public GameObject _currentBiulding;
 
     #region STEERING
     public Rigidbody target;
@@ -37,26 +37,12 @@ public class BaseEnemyController : MonoBehaviour
         InitializeFSM();
     }
 
-
-    //private void Update()
-    //{
-    //    if (_model.CheckDistance())
-    //        _model.Attack();
-    //    else
-    //    {
-    //        _model.CheckClosest();
-    //        if (_model.CheckYPosition())
-    //            _model.GoToMainBuilding();
-    //        Debug.Log("Raid");
-    //    }
-    //}
-
     void InitializeFSM()
     {
         var idle = new EnemyIdleState<StatesEnum>();
         var dead = new EnemyDeathState<StatesEnum>(_model);
         var attack = new EnemyAttackState<StatesEnum>(_model);
-        var raid = new EnemyRaidState<StatesEnum>(_model, _currentBiulding.transform, _obstacleAvoidance, _steering);
+        var raid = new EnemyRaidState<StatesEnum>(_model, _model._currentBuilding.transform, _obstacleAvoidance, _steering);
         var air = new EnemyAirState<StatesEnum>(_model);
 
 
@@ -88,10 +74,10 @@ public class BaseEnemyController : MonoBehaviour
     }
     void InitializeSteerings()
     {
-        var seek = new Seek(_model,_model.transform, _currentBiulding.transform);
-        var flee = new Flee(_model.transform, _currentBiulding.transform);
-        var pursuit = new Pursuit(_model.transform, _currentBiulding.GetComponent<Rigidbody>(), timePrediction);
-        var evade = new Evade(_model.transform, _currentBiulding.GetComponent<Rigidbody>(), timePrediction);
+        var seek = new Seek(_model,_model.transform, _model._currentBuilding.transform);
+        var flee = new Flee(_model.transform, _model._currentBuilding.transform);
+        var pursuit = new Pursuit(_model.transform, _model._currentBuilding.GetComponent<Rigidbody>(), timePrediction);
+        var evade = new Evade(_model.transform, _model._currentBuilding.GetComponent<Rigidbody>(), timePrediction);
         _steering = seek;
         _obstacleAvoidance = new ObstacleAvoidance(_model.transform, angle, radius, maskObs);
     }
@@ -114,21 +100,17 @@ public class BaseEnemyController : MonoBehaviour
     }
     bool QuestionAttackRange()
     {
-        Debug.Log("Te ataco");
-        Debug.Log(_model._stats.attackRange);
-        return _los.CheckRange(_currentBiulding.transform, _model._stats.attackRange);
+        return _los.CheckRange(_model._currentBuilding.transform, _model._stats.attackRange);
     }
     bool QuestionLoS()
     {
-        Debug.Log(_currentBiulding);
-        Debug.Log(_los.CheckRange(_currentBiulding.transform, _model._stats.viewRange));
-        return _los.CheckRange(_currentBiulding.transform, _model._stats.viewRange);
+        return _los.CheckRange(_model._currentBuilding.transform, _model._stats.viewRange);
     }
     private void Update()
     {
         _fsm.OnUpdate();
         _root.Execute();
-        _currentBiulding = _model.CheckClosest();
+        _model._currentBuilding = _model.CheckClosest();
     }
     
     private void OnDrawGizmosSelected()

@@ -53,7 +53,7 @@ public class BaseEnemyModel : MonoBehaviour
 
         for(int i = 0; i < colliderList.Length; i++)
         {
-            if (colliderList[i].tag == "Mine" && lineOfSight.CheckRange(colliderList[i].transform, _stats.viewRange))
+            if (colliderList[i].tag == "Temple" || colliderList[i].tag == "Building" && lineOfSight.CheckRange(colliderList[i].transform, _stats.viewRange))
             {
                 _currentBuilding = colliderList[i].gameObject;
             }
@@ -95,6 +95,5 @@ public class BaseEnemyModel : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _stats.viewRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _stats.attackRange);
-
     }
 }
