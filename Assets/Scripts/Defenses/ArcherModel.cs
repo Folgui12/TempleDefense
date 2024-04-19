@@ -21,13 +21,14 @@ public class ArcherModel : MonoBehaviour
 
     private void StartShootAnimation()
     {
+        Debug.Log("Disparando");
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
             anim.SetTrigger("Shoot");
     }
 
     private void Shoot()
     {
-        BulletMovement arrow = Instantiate(_arrow, transform.position, transform.rotation).GetComponent<BulletMovement>();
+        BulletMovement arrow = Instantiate(_arrow, transform.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
 
         arrow.enemyTarget = _tModel._currentEnemy;
     }

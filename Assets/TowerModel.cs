@@ -18,6 +18,8 @@ public class TowerModel : MonoBehaviour
     
     public GameObject CheckClosestEnemy()
     {
+        _currentEnemy = null;
+
         Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats._attackRange);
 
         for(int i = 0; i < colliderList.Length; i++)
