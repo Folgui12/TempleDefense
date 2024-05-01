@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba8db804a50d49c4b02f37a4d5146f51, type: 3}
-  m_Name: TowerStats
+  m_Script: {fileID: 11500000, guid: 27d80bb8cfb1df84b9ed7186ea747761, type: 3}
+  m_Name: Wall
   m_EditorClassIdentifier: 
-  <Life>k__BackingField: 5
-  <AttackRange>k__BackingField: 0
-  <Type>k__BackingField: {fileID: 11400000, guid: 55d0ab3f45cd1ef45801513fe8df98c3, type: 2}

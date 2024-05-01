@@ -20,7 +20,7 @@ public class TowerModel : MonoBehaviour
     {
         _currentEnemy = null;
 
-        Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats._attackRange);
+        Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.AttackRange);
 
         float shootDistance = Mathf.Infinity;
 
@@ -47,7 +47,7 @@ public class TowerModel : MonoBehaviour
 
         for(int i = 0; i < colliderList.Length; i++)
         {
-            if (colliderList[i].tag == "Enemy" && _los.CheckRange(colliderList[i].transform, _stats._attackRange))
+            if (colliderList[i].tag == "Enemy" && _los.CheckRange(colliderList[i].transform, _stats.AttackRange))
             {
                 _currentEnemy = colliderList[i].gameObject;
             }
@@ -59,6 +59,6 @@ public class TowerModel : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;      
-        Gizmos.DrawWireSphere(transform.position, _stats._attackRange);
+        Gizmos.DrawWireSphere(transform.position, _stats.AttackRange);
     }
 }

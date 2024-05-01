@@ -47,7 +47,7 @@ public class TowerController : MonoBehaviour
 
         //Question
         var qEnemyInRange = new QuestionNode(() => _model.CheckClosestEnemy()!=null, attack, idle);
-        var qHasLife = new QuestionNode(() => _model._stats._life > 0, qEnemyInRange, dead);
+        var qHasLife = new QuestionNode(() => _model._stats.Life > 0, qEnemyInRange, dead);
 
         _root = qHasLife;
     }

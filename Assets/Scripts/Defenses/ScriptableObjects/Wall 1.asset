@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba8db804a50d49c4b02f37a4d5146f51, type: 3}
-  m_Name: TowerStats
+  m_Name: Wall 1
   m_EditorClassIdentifier: 
-  <Life>k__BackingField: 5
+  <Life>k__BackingField: 10
   <AttackRange>k__BackingField: 0
-  <Type>k__BackingField: {fileID: 11400000, guid: 55d0ab3f45cd1ef45801513fe8df98c3, type: 2}
+  <Type>k__BackingField: {fileID: 11400000, guid: a8373c1200cb5214b8a07c6442730417, type: 2}

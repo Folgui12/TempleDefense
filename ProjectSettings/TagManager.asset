@@ -10,6 +10,7 @@ TagManager:
   - Temple
   - Anchor
   - Mine
+  - Coin
   layers:
   - Default
   - TransparentFX
