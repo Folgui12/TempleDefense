@@ -7,7 +7,7 @@ public class WaveSpawner : MonoBehaviour
    
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
-    private int waveValue;
+    public int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
  
     public Transform[] spawnLocation;
