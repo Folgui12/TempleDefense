@@ -9,7 +9,7 @@ public class BaseEnemyModel : MonoBehaviour
 
     public GameObject _currentBuilding;
 
-    public bool isGround;
+    public bool isGround = true;
 
     [SerializeField] public EnemyStats _stats;
 
