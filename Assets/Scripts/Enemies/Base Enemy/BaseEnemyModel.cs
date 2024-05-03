@@ -9,9 +9,7 @@ public class BaseEnemyModel : MonoBehaviour
 
     public GameObject _currentBuilding;
 
-    public bool isGround;
-
-    [SerializeField] public float _life;
+    public bool isGround = true;
 
     [SerializeField] public EnemyStats _stats;
 
@@ -70,7 +68,7 @@ public class BaseEnemyModel : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public float Life => _life;
+    public float Life => _stats.life;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -80,7 +78,6 @@ public class BaseEnemyModel : MonoBehaviour
         }
 
     }
-
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.layer == 8)
@@ -88,7 +85,6 @@ public class BaseEnemyModel : MonoBehaviour
             isGround = false;
         }
     }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;      
