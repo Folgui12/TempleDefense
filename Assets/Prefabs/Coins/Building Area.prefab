@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Defenses:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4250001249316422433, guid: 6152d7947813b8b469462f68160db054, type: 3}
+  - {fileID: 9031937257686972542, guid: 0237e18dd3469534584cb515b9c6f784, type: 3}
 --- !u!33 &2891910231830144176
 MeshFilter:
   m_ObjectHideFlags: 0
