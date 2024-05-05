@@ -6,6 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class BaseEnemyController : MonoBehaviour
 {
     BaseEnemyModel _model;
+    BaseEnemyView _view;
     //public GameObject _currentBiulding;
 
     #region STEERING
@@ -27,6 +28,7 @@ public class BaseEnemyController : MonoBehaviour
     private void Awake()
     {
         _model = GetComponent<BaseEnemyModel>();
+        _view = GetComponent<BaseEnemyView>();
         _los = GetComponent<LoS>();
     }
 
@@ -41,7 +43,7 @@ public class BaseEnemyController : MonoBehaviour
     {
         var idle = new EnemyIdleState<StatesEnum>();
         var dead = new EnemyDeathState<StatesEnum>(_model);
-        var attack = new EnemyAttackState<StatesEnum>(_model);
+        var attack = new EnemyAttackState<StatesEnum>(_model, _view);
         var raid = new EnemyRaidState<StatesEnum>(_model, _model._currentBuilding.transform, _obstacleAvoidance, _steering);
         var air = new EnemyAirState<StatesEnum>(_model);
 
@@ -75,9 +77,7 @@ public class BaseEnemyController : MonoBehaviour
     void InitializeSteerings()
     {
         var seek = new Seek(_model,_model.transform, _model._currentBuilding.transform);
-        var flee = new Flee(_model.transform, _model._currentBuilding.transform);
-        var pursuit = new Pursuit(_model.transform, _model._currentBuilding.GetComponent<Rigidbody>(), timePrediction);
-        var evade = new Evade(_model.transform, _model._currentBuilding.GetComponent<Rigidbody>(), timePrediction);
+
         _steering = seek;
         _obstacleAvoidance = new ObstacleAvoidance(_model.transform, angle, radius, maskObs);
     }

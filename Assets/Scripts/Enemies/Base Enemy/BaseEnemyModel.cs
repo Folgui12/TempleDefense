@@ -40,11 +40,6 @@ public class BaseEnemyModel : MonoBehaviour
         transform.forward = dir;
     }
 
-    public void Attack()
-    {
-        Debug.Log("Atancando");
-    }
-
     public GameObject CheckClosest()
     {
         Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.viewRange);
