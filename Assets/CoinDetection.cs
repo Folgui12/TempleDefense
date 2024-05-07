@@ -11,17 +11,27 @@ public class CoinDetection : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin") && spawner.canSpawnDefense)
+        if (other.gameObject.CompareTag("Coin") && spawner.CurrentDefense == null)
         {
-            BuildingArea.GetComponent<MeshRenderer>().material = solidMaterial;
+            setSolidMaterial();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin") && spawner.canSpawnDefense)
+        if (other.gameObject.CompareTag("Coin") && spawner.CurrentDefense == null)
         {
-            BuildingArea.GetComponent<MeshRenderer>().material = transparentMaterial;
+            setTransparentMaterial();
         }
+    }
+
+    public void setSolidMaterial()
+    {
+        BuildingArea.GetComponent<MeshRenderer>().material = solidMaterial;
+    }
+
+    public void setTransparentMaterial()
+    {
+        BuildingArea.GetComponent<MeshRenderer>().material = transparentMaterial;
     }
 }

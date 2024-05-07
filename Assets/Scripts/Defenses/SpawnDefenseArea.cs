@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class SpawnDefenseArea : MonoBehaviour
 {
+    [SerializeField] private CoinDetection coinDetection;
     public List<GameObject> Defenses;
     Dictionary<DefenseType, GameObject> typeOfDefenses; 
-    public bool canSpawnDefense;
+    //public bool canSpawnDefense;
     public bool canSellDefense;
+    public DefenseStats CurrentDefense => currentDefense;
+
+    private DefenseStats currentDefense;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        canSpawnDefense = true;
+        //canSpawnDefense = true;
         canSellDefense = false;
 
         typeOfDefenses = new Dictionary<DefenseType, GameObject>();
@@ -26,26 +30,24 @@ public class SpawnDefenseArea : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Coin") && canSpawnDefense)
+        if(other.gameObject.CompareTag("Coin") && currentDefense == null)
         {
            DefenseType newDefense = other.gameObject.GetComponent<TypeOfDefenseCoin>().defenseType;
 
            if(typeOfDefenses.ContainsKey(newDefense))
            {
-                Instantiate(typeOfDefenses[newDefense], transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+                var defense = Instantiate(typeOfDefenses[newDefense], transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+
+                currentDefense = defense.GetComponent<TowerModel>()._stats;
            }
 
-           canSpawnDefense = false;
+           //canSpawnDefense = false;
 
            canSellDefense = true;
+
+           coinDetection.setTransparentMaterial();
 
            Destroy(other.gameObject);
         }

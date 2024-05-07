@@ -1456,14 +1456,18 @@ PrefabInstance:
     - target: {fileID: 6314633871927771976, guid: ceacb34dbc27cd340b566d8f2055be54, type: 3}
       propertyPath: solidMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: bff76195c92a7ba42b636cec38238132, type: 2}
+      objectReference: {fileID: 2100000, guid: fb5b97902494007438c13cf928e4af59, type: 2}
     - target: {fileID: 6314633871927771976, guid: ceacb34dbc27cd340b566d8f2055be54, type: 3}
       propertyPath: transparentMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 433d2275bf078144eb7b6d8858e8f6a9, type: 2}
+      objectReference: {fileID: 2100000, guid: 709ed28b69fc89a4e96dfa9c680e65de, type: 2}
     - target: {fileID: 8435305236451762986, guid: ceacb34dbc27cd340b566d8f2055be54, type: 3}
       propertyPath: m_Name
       value: Building Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 8435305236451762986, guid: ceacb34dbc27cd340b566d8f2055be54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2855,15 +2859,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1026060122229258747, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.195107
+      value: -32.08
       objectReference: {fileID: 0}
     - target: {fileID: 1026060122229258747, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 52.27
+      value: 55.13
       objectReference: {fileID: 0}
     - target: {fileID: 1026060122229258747, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.080135
+      value: 18.33
       objectReference: {fileID: 0}
     - target: {fileID: 1026060122229258747, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
       propertyPath: m_LocalRotation.w

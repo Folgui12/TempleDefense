@@ -69,6 +69,7 @@ MonoBehaviour:
   solidMaterial: {fileID: 2100000, guid: fb5b97902494007438c13cf928e4af59, type: 2}
   transparentMaterial: {fileID: 2100000, guid: 709ed28b69fc89a4e96dfa9c680e65de, type: 2}
   BuildingArea: {fileID: 8324724372772920220}
+  spawner: {fileID: 4426057741251600392}
 --- !u!1 &8324724372772920220
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,9 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea57abeacce7bbd49b5f630ef4191392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinDetection: {fileID: 6314633871927771976}
   Defenses:
   - {fileID: 4250001249316422433, guid: 6152d7947813b8b469462f68160db054, type: 3}
   - {fileID: 9031937257686972542, guid: 0237e18dd3469534584cb515b9c6f784, type: 3}
+  canSellDefense: 0
 --- !u!33 &2891910231830144176
 MeshFilter:
   m_ObjectHideFlags: 0
