@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TowerStats
   m_EditorClassIdentifier: 
   <Life>k__BackingField: 5
-  <AttackRange>k__BackingField: 0
+  <AttackRange>k__BackingField: 15
   <Type>k__BackingField: {fileID: 11400000, guid: 55d0ab3f45cd1ef45801513fe8df98c3, type: 2}
