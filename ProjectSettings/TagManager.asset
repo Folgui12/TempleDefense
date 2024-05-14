@@ -11,6 +11,7 @@ TagManager:
   - Anchor
   - Mine
   - Coin
+  - Arrow
   layers:
   - Default
   - TransparentFX

@@ -16,10 +16,10 @@ public class TemporalLife : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            BaseEnemyModel _enemyModel = collision.gameObject.GetComponent<BaseEnemyModel>();
-            _enemyModel._currentBuilding = _enemyModel._mainBuilding;
-            Debug.Log(_enemyModel._currentBuilding);
-            Destroy(gameObject);
+            //BaseEnemyModel _enemyModel = collision.gameObject.GetComponent<BaseEnemyModel>();
+            //_enemyModel._currentBuilding = _enemyModel._mainBuilding;
+            //Debug.Log(_enemyModel._currentBuilding);
+            //Destroy(gameObject);
         }
     }
 }

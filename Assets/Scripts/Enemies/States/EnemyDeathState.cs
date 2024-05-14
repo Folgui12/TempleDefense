@@ -12,9 +12,10 @@ public class EnemyDeathState<T> : State<T>
         _model = model;
     }
 
-    public override void Enter()
+    public override void Execute()
     {
-        base.Enter();
+        base.Execute();
+        Debug.Log("muerte");
         _model.Dead();
         // Llamar al Dead dentro de la variable del modelo base.
     }

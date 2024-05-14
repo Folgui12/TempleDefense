@@ -47,11 +47,27 @@ public class TowerController : MonoBehaviour
 
         //Question
         var qEnemyInRange = new QuestionNode(() => _model.CheckClosestEnemy()!=null, attack, idle);
-        var qHasLife = new QuestionNode(() => _model._stats.Life > 0, qEnemyInRange, dead);
+        var qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qEnemyInRange, dead);
 
         _root = qHasLife;
     }
-    
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.gameObject.tag == "Enemy")
+    //    {
+    //        _model.CurrentLife -= 1;
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            _model.CurrentLife -= 1;
+        }
+    }
+
     private void Update()
     {
         _fsm.OnUpdate();

@@ -9,7 +9,7 @@ public class ArcherModel : MonoBehaviour
     [SerializeField] private GameObject _arrow;
     [SerializeField] private Transform _arrowSpawnPoint;
     private TowerModel _tModel;
-    private Animator anim;
+    public Animator anim;
     
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class ArcherModel : MonoBehaviour
     private void StartShootAnimation()
     {
         Debug.Log("Disparando");
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
+        if (anim != null && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
             anim.SetTrigger("Shoot");
     }
 
@@ -33,5 +33,5 @@ public class ArcherModel : MonoBehaviour
 
         arrow.enemyTarget = _tModel._currentEnemy;
     }
-    
+
 }
