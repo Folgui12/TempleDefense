@@ -7,12 +7,14 @@ public class TowerModel : MonoBehaviour
     public DefenseStats _stats;
 
     public GameObject _currentEnemy;
-    
+
+    public float CurrentLife;
     LoS _los;
     
     // Start is called before the first frame update
     void Start()
     {
+        CurrentLife = _stats.Life;
         _los = GetComponent<LoS>();
     }
     
@@ -21,29 +23,6 @@ public class TowerModel : MonoBehaviour
         _currentEnemy = null;
 
         Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.AttackRange);
-
-        float shootDistance = Mathf.Infinity;
-
-        GameObject nearestEnemy = null;
-
-
-        /*foreach(Collider enemy in colliderList)
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-
-            if(distanceToEnemy < shootDistance)
-            {
-                shootDistance = distanceToEnemy;
-                nearestEnemy = enemy.gameObject;
-            }
-
-            
-        }
-
-        if(_currentEnemy != null &&  shootDistance <= _stats._attackRange)
-        {
-            _currentEnemy = nearestEnemy;
-        }*/
 
         for(int i = 0; i < colliderList.Length; i++)
         {
@@ -54,6 +33,10 @@ public class TowerModel : MonoBehaviour
         }
 
         return _currentEnemy;
+    }
+    public void Dead()
+    {
+        Destroy(gameObject);
     }
     
     private void OnDrawGizmosSelected()

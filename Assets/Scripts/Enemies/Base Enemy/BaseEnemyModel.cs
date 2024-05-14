@@ -11,6 +11,8 @@ public class BaseEnemyModel : MonoBehaviour
 
     public bool isGround = true;
 
+    public float CurrentLife;
+
     [SerializeField] public EnemyStats _stats;
 
     Rigidbody _rb;
@@ -24,6 +26,8 @@ public class BaseEnemyModel : MonoBehaviour
         lineOfSight = GetComponent<LoS>();
         _currentBuilding = _mainBuilding;
         isGround = false;
+
+        CurrentLife = _stats.life;
     }
 
     public void Move(Vector3 dir)
@@ -43,8 +47,11 @@ public class BaseEnemyModel : MonoBehaviour
     public GameObject CheckClosest()
     {
         Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.viewRange);
-
-        for(int i = 0; i < colliderList.Length; i++)
+        if(_currentBuilding == null)
+        {
+            _currentBuilding = _mainBuilding;
+        }
+        for (int i = 0; i < colliderList.Length; i++)
         {
             if ((colliderList[i].gameObject.layer == 10 || colliderList[i].gameObject.layer == 9) && lineOfSight.CheckRange(colliderList[i].transform, _stats.viewRange))
             {
@@ -57,14 +64,15 @@ public class BaseEnemyModel : MonoBehaviour
         }
         return _currentBuilding;
     }
-
+    public void TakeDamage()
+    {
+        CurrentLife -= 1;
+    }
     public void Dead()
     {
         CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
         Destroy(gameObject);
     }
-
-    public float Life => _stats.life;
 
     private void OnCollisionEnter(Collision collision)
     {

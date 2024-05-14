@@ -16,5 +16,6 @@ public class DefenseDeadState<T> : State<T>
     {
         base.Execute();
         Debug.Log("Defense Die");
+        _model.Dead();
     }
 }

@@ -12,7 +12,15 @@ public class BulletMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, enemyTarget.transform.position, arrowSpeed * Time.deltaTime);
+        if (enemyTarget != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, enemyTarget.transform.position, arrowSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)

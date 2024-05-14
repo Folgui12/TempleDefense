@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinalArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
+      propertyPath: m_TagString
+      value: Arrow
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -75,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8616292717842366411}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5074021279702393230}
   m_SourcePrefab: {fileID: 100100000, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
 --- !u!1 &6121616000952029451 stripped
 GameObject:
@@ -95,3 +102,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTarget: {fileID: 0}
   arrowSpeed: 10
+--- !u!136 &5074021279702393230
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121616000952029451}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0005340348
+  m_Height: 0.001752198
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.0008088429, z: 0.000002431214}

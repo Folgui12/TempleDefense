@@ -14,9 +14,10 @@ public class EnemyDeathState<T> : State<T>
         _view = view; 
     }
 
-    public override void Enter()
+    public override void Execute()
     {
-        base.Enter();
+        base.Execute();
+        Debug.Log("muerte");
         _model.Dead();
         _view.StartDeathAnimation();
         // Llamar al Dead dentro de la variable del modelo base.

@@ -94,7 +94,7 @@ public class BaseEnemyController : MonoBehaviour
         var qAttackRange = new QuestionNode(QuestionAttackRange, attack, raid);
         var qLoS = new QuestionNode(QuestionLoS, qAttackRange, raid);
         var qInAir = new QuestionNode(() => _model.isGround, qLoS, air);
-        var qHasLife = new QuestionNode(() => _model.Life > 0, qInAir, dead);
+        var qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qInAir, dead);
 
         _root = qHasLife;
     }
@@ -108,15 +108,23 @@ public class BaseEnemyController : MonoBehaviour
     }
     private void Update()
     {
+        _model._currentBuilding = _model.CheckClosest();
         _fsm.OnUpdate();
         _root.Execute();
-        _model._currentBuilding = _model.CheckClosest();
     }
     
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(_los.Origin, radius);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Arrow")
+        {
+            _model.TakeDamage();
+            Debug.Log(_model.CurrentLife);
+        }
     }
 
 }

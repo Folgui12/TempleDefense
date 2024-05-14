@@ -245,6 +245,7 @@ MonoBehaviour:
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
   isGround: 0
+  CurrentLife: 0
   _stats: {fileID: 11400000, guid: a1707af457784064692380237e437916, type: 2}
 --- !u!114 &5300907080007379330
 MonoBehaviour:
@@ -258,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4325902b0973b43aaba0bd8bf77e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
 --- !u!114 &7527116811664000560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1342,6 +1344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1667706883243910373}
+  - component: {fileID: 4009344340396975277}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -1365,6 +1368,29 @@ Transform:
   - {fileID: 4698899369291989467}
   m_Father: {fileID: 3769178076223783106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &4009344340396975277
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8757811707399891555}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Height: 0.49397764
+  m_Direction: 1
+  m_Center: {x: -0.0000008872625, y: 0.21158132, z: -0.00000021183413}
 --- !u!1 &9038249003060269404
 GameObject:
   m_ObjectHideFlags: 0
