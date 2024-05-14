@@ -60,6 +60,7 @@ public class BaseEnemyModel : MonoBehaviour
 
     public void Dead()
     {
+        CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
         Destroy(gameObject);
     }
 

@@ -16,4 +16,9 @@ public class BaseEnemyView : MonoBehaviour
     {
         anim.SetTrigger("Attack");
     }
+
+    public void StartDeathAnimation()
+    {
+        //Empezar animación de muerte
+    }
 }

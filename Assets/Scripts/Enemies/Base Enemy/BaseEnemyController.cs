@@ -42,7 +42,7 @@ public class BaseEnemyController : MonoBehaviour
     void InitializeFSM()
     {
         var idle = new EnemyIdleState<StatesEnum>();
-        var dead = new EnemyDeathState<StatesEnum>(_model);
+        var dead = new EnemyDeathState<StatesEnum>(_model, _view    );
         var attack = new EnemyAttackState<StatesEnum>(_model, _view);
         var raid = new EnemyRaidState<StatesEnum>(_model, _model._currentBuilding.transform, _obstacleAvoidance, _steering);
         var air = new EnemyAirState<StatesEnum>(_model);

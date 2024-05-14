@@ -18,3 +18,4 @@ MonoBehaviour:
   <attackSpeed>k__BackingField: 0.3
   <attackRange>k__BackingField: 5.5
   <viewRange>k__BackingField: 7
+  <moneyQuantity>k__BackingField: 30
