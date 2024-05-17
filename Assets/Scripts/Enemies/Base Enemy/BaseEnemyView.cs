@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BaseEnemyView : MonoBehaviour
 {
-    Animator anim; 
+    [SerializeField] private Collider collider;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        UnshowPunchCollider();
     }
 
     public void StartAttackAnimation()
@@ -17,8 +19,15 @@ public class BaseEnemyView : MonoBehaviour
         anim.SetTrigger("Attack");
     }
 
-    public void StartDeathAnimation()
+    public void ShowPunchCollider()
     {
-        //Empezar animación de muerte
+        if(collider != null)
+            collider.enabled = true;
+    }
+
+    public void UnshowPunchCollider()
+    {
+        if (collider != null)
+            collider.enabled = false;
     }
 }

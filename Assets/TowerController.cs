@@ -52,14 +52,6 @@ public class TowerController : MonoBehaviour
         _root = qHasLife;
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.gameObject.tag == "Enemy")
-    //    {
-    //        _model.CurrentLife -= 1;
-    //    }
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")

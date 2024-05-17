@@ -1296,6 +1296,7 @@ MonoBehaviour:
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
   isGround: 0
+  CurrentLife: 0
   _stats: {fileID: 11400000, guid: 16d86e9a6ebfda6458a8b94eab5d63f4, type: 2}
 --- !u!114 &8594202079022685583
 MonoBehaviour:
@@ -1309,6 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4325902b0973b43aaba0bd8bf77e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
 --- !u!114 &5919046488685479393
 MonoBehaviour:
   m_ObjectHideFlags: 0

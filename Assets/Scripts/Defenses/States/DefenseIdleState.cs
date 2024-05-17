@@ -15,6 +15,6 @@ public class DefenseIdleState<T> : State<T>
     public override void Execute()
     {
         base.Execute();
-        Debug.Log("Idling");
+        //Debug.Log("Idling");
     }
 }

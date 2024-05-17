@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 937244164316528349}
   m_Layer: 0
   m_Name: GolemPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,6 +497,7 @@ MonoBehaviour:
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
   isGround: 0
+  CurrentLife: 0
   _stats: {fileID: 11400000, guid: 6371e44d64973af48afdd666736c06ab, type: 2}
 --- !u!114 &7732514673894805658
 MonoBehaviour:
@@ -510,6 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4325902b0973b43aaba0bd8bf77e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 2401167119095568051}
 --- !u!114 &937244164316528349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,7 +762,7 @@ GameObject:
   - component: {fileID: 2401167119095568051}
   m_Layer: 0
   m_Name: mixamorig:RightForeArm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

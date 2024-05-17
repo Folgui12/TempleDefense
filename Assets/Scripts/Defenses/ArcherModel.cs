@@ -22,7 +22,7 @@ public class ArcherModel : MonoBehaviour
 
     private void StartShootAnimation()
     {
-        Debug.Log("Disparando");
+        //Debug.Log("Disparando");
         if (anim != null && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
             anim.SetTrigger("Shoot");
     }

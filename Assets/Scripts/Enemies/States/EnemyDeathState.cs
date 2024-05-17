@@ -19,7 +19,7 @@ public class EnemyDeathState<T> : State<T>
         base.Execute();
         Debug.Log("muerte");
         _model.Dead();
-        _view.StartDeathAnimation();
+        _view.StartAttackAnimation();
         // Llamar al Dead dentro de la variable del modelo base.
     }
 }

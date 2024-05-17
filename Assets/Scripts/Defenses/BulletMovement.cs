@@ -14,7 +14,8 @@ public class BulletMovement : MonoBehaviour
     {
         if (enemyTarget != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, enemyTarget.transform.position, arrowSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, enemyTarget.transform.position + new Vector3(0, 1, 0), arrowSpeed * Time.deltaTime);
+            transform.LookAt(enemyTarget.transform.position + new Vector3(0, 1, 0), Vector3.up);
         }
         else
         {
