@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d80bb8cfb1df84b9ed7186ea747761, type: 3}
   m_Name: ArcherTower
   m_EditorClassIdentifier: 
+  price: 60

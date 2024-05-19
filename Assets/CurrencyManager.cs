@@ -6,10 +6,16 @@ using UnityEngine.UI;
 public class CurrencyManager: MonoBehaviour
 {
     public static CurrencyManager Instance;
-    public int moneyCount;
+
+    public int MoneyCount => moneyCount;
+    public int PrayersCount => prayersCount;
+
+    private int moneyCount;
     public int prayersCount;
+
     public Text money;
     public Text prayers;
+
     public int miniTemplesCount;
 
     private void Awake()
@@ -25,12 +31,6 @@ public class CurrencyManager: MonoBehaviour
         RefreshValues();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void RefreshValues()
     {
         money.text = moneyCount.ToString();
@@ -39,13 +39,29 @@ public class CurrencyManager: MonoBehaviour
 
     public void AddMoney(int value)
     {
-        moneyCount = value;
+        moneyCount += value;
+        RefreshValues();
+    }
+
+    public void RemoveMoney(int value)
+    {
+        if(moneyCount > value)
+            moneyCount -= value;
+
         RefreshValues();
     }
 
     public void AddPrayers(int value)
     {
-        prayersCount = value;
+        prayersCount += value;
+        RefreshValues();
+    }
+
+    public void RemovePrayers(int value)
+    {
+        if(prayersCount > value)
+            prayersCount -= value;
+
         RefreshValues();
     }
 }

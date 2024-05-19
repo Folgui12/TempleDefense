@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18306595, g: 0.2287429, b: 0.3066922, a: 1}
+  m_IndirectSpecularColor: {r: 0.18306622, g: 0.2287434, b: 0.30669293, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,7 +199,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 699409294672120945, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
       propertyPath: m_Name
-      value: CoinArquero (1)
+      value: CoinVendingMachine
       objectReference: {fileID: 0}
     - target: {fileID: 1026060122229258747, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
       propertyPath: m_LocalScale.x
@@ -215,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1026060122229258747, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.532
+      value: -37.524
       objectReference: {fileID: 0}
     - target: {fileID: 1026060122229258747, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
       propertyPath: m_LocalPosition.y
@@ -257,7 +257,9 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5148591228225143911, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
+    - {fileID: 2713372609943957014, guid: f449e045a0b8aaa41ac5e62640091890, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1966,7 +1968,7 @@ GameObject:
   - component: {fileID: 1003247285}
   - component: {fileID: 1003247284}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4053,7 +4055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1882965775}
   m_Layer: 0
-  m_Name: Espendedore
+  m_Name: Vending Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

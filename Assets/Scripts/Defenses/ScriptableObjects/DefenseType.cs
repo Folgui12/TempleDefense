@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class DefenseType : ScriptableObject
 {
-    
+    public int price;
 }
