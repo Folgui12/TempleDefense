@@ -7,18 +7,20 @@ public class SpawnCoins : MonoBehaviour
     [SerializeField] private GameObject TypeOfCoin;
     [SerializeField] private Transform SpawnPoint;
 
-    private TypeOfDefenseCoin coinToSpawn;
+    private DefenseType coinToSpawn;
 
     void Start()
     {
-        coinToSpawn = TypeOfCoin.GetComponent<TypeOfDefenseCoin>();
+        coinToSpawn = TypeOfCoin.GetComponent<TypeOfDefenseCoin>().defenseType;
     }
 
     public void Spawn()
     {
-        if(CurrencyManager.Instance.MoneyCount > coinToSpawn.defenseType.price)
+        Debug.Log(coinToSpawn.price);
+
+        if(CurrencyManager.Instance.MoneyCount > coinToSpawn.price)
         {
-            CurrencyManager.Instance.RemoveMoney(coinToSpawn.defenseType.price);
+            CurrencyManager.Instance.RemoveMoney(coinToSpawn.price);
             Instantiate(TypeOfCoin, SpawnPoint.position, SpawnPoint.rotation);
         }
 
