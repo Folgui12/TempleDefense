@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defenseType: {fileID: 11400000, guid: 934bf55d1d92ff447969cf47e2fc34d8, type: 2}
+  OnHand: 0
 --- !u!54 &616958759512264473
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177,10 +178,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9140866048963105637}
+        m_TargetAssemblyTypeName: TypeOfDefenseCoin, Assembly-CSharp
+        m_MethodName: CoinOnHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9140866048963105637}
+        m_TargetAssemblyTypeName: TypeOfDefenseCoin, Assembly-CSharp
+        m_MethodName: CoinOffHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []

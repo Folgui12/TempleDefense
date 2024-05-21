@@ -123,7 +123,7 @@ public class BaseEnemyController : MonoBehaviour
         if(other.tag == "Arrow")
         {
             _model.TakeDamage();
-            Debug.Log(_model.CurrentLife);
+            //Debug.Log(_model.CurrentLife);
         }
     }
 

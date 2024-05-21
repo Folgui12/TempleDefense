@@ -16,9 +16,7 @@ public class SpawnCoins : MonoBehaviour
 
     public void Spawn()
     {
-        Debug.Log(coinToSpawn.price);
-
-        if(CurrencyManager.Instance.MoneyCount > coinToSpawn.price)
+        if (CurrencyManager.Instance.MoneyCount > coinToSpawn.price)
         {
             CurrencyManager.Instance.RemoveMoney(coinToSpawn.price);
             Instantiate(TypeOfCoin, SpawnPoint.position, SpawnPoint.rotation);

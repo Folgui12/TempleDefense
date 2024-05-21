@@ -5,17 +5,28 @@ using UnityEngine;
 public class DefenseAttackState<T> : State<T>
 {
     private TowerModel _tModel;
-    
+    private ArcherModel[] Archers;
     // Start is called before the first frame update
     public DefenseAttackState(TowerModel model)
     {
         _tModel = model;
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+        Archers = _tModel.GetComponentsInChildren<ArcherModel>();
+    }
+
     public override void Execute()
     {
         base.Execute();
         _tModel.CheckClosestEnemy();
-        ArcherEventManager.Execute();
+    
+        foreach(ArcherModel archer in Archers)
+        {
+            archer.StartShootAnimation();
+        }
+        
     }
 }

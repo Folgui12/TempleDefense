@@ -20,6 +20,8 @@ public class CurrencyManager: MonoBehaviour
 
     private void Awake()
     {
+        moneyCount = 1000;
+
         if (Instance == null)
             Instance = this;
         else Destroy(this);

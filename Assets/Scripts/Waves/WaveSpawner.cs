@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-   
+    public static WaveSpawner Instance;
+
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
     public int waveValue;
@@ -19,6 +20,14 @@ public class WaveSpawner : MonoBehaviour
     private float spawnTimer;
  
     public List<GameObject> spawnedEnemies = new List<GameObject>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else Destroy(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,13 +67,25 @@ public class WaveSpawner : MonoBehaviour
             waveTimer -= Time.fixedDeltaTime;
         }
  
-        if(waveTimer<=0 && spawnedEnemies.Count <=0)
-        {
-            currWave++;
-            GenerateWave();
-        }
+        //if(waveTimer<=0 && spawnedEnemies.Count <=0)
+        //{
+        //    currWave++;
+        //    GenerateWave();
+        //}
     }
  
+    public void NextWave()
+    {
+        currWave++;
+        GenerateWave();
+    }
+
+    public void RemoveEnemy(GameObject enemy)
+    {
+        if (spawnedEnemies.Contains(enemy))
+            spawnedEnemies.Remove(enemy);
+    }
+
     public void GenerateWave()
     {
         waveValue = currWave * 10;

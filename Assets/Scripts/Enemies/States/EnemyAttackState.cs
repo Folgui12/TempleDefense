@@ -11,17 +11,11 @@ public class EnemyAttackState<T> : State<T>
         _model = model;
         _view = view;
     }
-
-    public override void Enter()
-    {
-        base.Enter();
-        _view.StartAttackAnimation();
-    }
-
     public override void Execute()
     {
         base.Execute();
         _model.Move(Vector3.zero);
-        
+        _view.StartAttackAnimation();
+        //EnemyEventManager.Execute();
     }
 }

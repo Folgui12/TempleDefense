@@ -17,12 +17,11 @@ public class ArcherModel : MonoBehaviour
         _tModel = GetComponentInParent<TowerModel>();
         anim = GetComponent<Animator>();
 
-        ArcherEventManager.ShootEvent += StartShootAnimation;
+        //ArcherEventManager.ShootEvent += StartShootAnimation;
     }
 
-    private void StartShootAnimation()
+    public void StartShootAnimation()
     {
-        //Debug.Log("Disparando");
         if (anim != null && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
             anim.SetTrigger("Shoot");
     }
@@ -31,7 +30,7 @@ public class ArcherModel : MonoBehaviour
     {
         BulletMovement arrow = Instantiate(_arrow, _arrowSpawnPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
 
-        arrow.enemyTarget = _tModel._currentEnemy;
+        arrow.Target = _tModel._currentEnemy;
     }
 
 }
