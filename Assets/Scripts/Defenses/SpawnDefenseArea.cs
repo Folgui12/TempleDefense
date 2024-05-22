@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class SpawnDefenseArea : MonoBehaviour
 {
-    [SerializeField] private CoinDetection coinDetection;
     public List<GameObject> Defenses;
     Dictionary<DefenseType, GameObject> typeOfDefenses; 
-    //public bool canSpawnDefense;
+
     public bool canSellDefense;
     public DefenseStats CurrentDefense => currentDefense;
 
+    [SerializeField] private Material solidMaterial;
+    [SerializeField] private Material transparentMaterial;
+
     private DefenseStats currentDefense;
+
+    private TypeOfDefenseCoin coin;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //canSpawnDefense = true;
         canSellDefense = false;
 
         typeOfDefenses = new Dictionary<DefenseType, GameObject>();
@@ -30,26 +33,51 @@ public class SpawnDefenseArea : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if(other.gameObject.CompareTag("Coin") && currentDefense == null)
         {
-           DefenseType newDefense = other.gameObject.GetComponent<TypeOfDefenseCoin>().defenseType;
+            coin = other.gameObject.GetComponent<TypeOfDefenseCoin>();
 
-           if(typeOfDefenses.ContainsKey(newDefense))
-           {
-                var defense = Instantiate(typeOfDefenses[newDefense], transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+            if(coin.OnHand)
+            {
+                setSolidMaterial();
+            }
 
-                currentDefense = defense.GetComponent<TowerModel>()._stats;
-           }
+            else
+            {
+                DefenseType newDefense = coin.defenseType;
 
-           //canSpawnDefense = false;
+                if(typeOfDefenses.ContainsKey(newDefense))
+                {
+                        var defense = Instantiate(typeOfDefenses[newDefense], transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
 
-           canSellDefense = true;
+                        currentDefense = defense.GetComponent<TowerModel>()._stats;
+                }
 
-           coinDetection.setTransparentMaterial();
+                canSellDefense = true;
 
-           Destroy(other.gameObject);
+                Destroy(other.gameObject);
+            }
+            
         }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.CompareTag("Coin"))
+        {
+            setTransparentMaterial();
+        }
+    }
+
+    public void setSolidMaterial()
+    {
+        this.GetComponent<MeshRenderer>().material = solidMaterial;
+    }
+
+    public void setTransparentMaterial()
+    {
+        this.GetComponent<MeshRenderer>().material = transparentMaterial;
     }
 }
