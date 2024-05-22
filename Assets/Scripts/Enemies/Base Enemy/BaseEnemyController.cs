@@ -93,7 +93,7 @@ public class BaseEnemyController : MonoBehaviour
         //Question
         var qAttackRange = new QuestionNode(QuestionAttackRange, attack, raid);
         var qLoS = new QuestionNode(QuestionLoS, qAttackRange, raid);
-        var qInAir = new QuestionNode(() => _model.isGround, qLoS, air);
+        var qInAir = new QuestionNode(() => _view.OnHand, qLoS, air);
         var qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qInAir, dead);
 
         _root = qHasLife;

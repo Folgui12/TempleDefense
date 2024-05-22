@@ -9,23 +9,23 @@ public class BaseEnemyModel : MonoBehaviour
 
     public GameObject _currentBuilding;
 
-    public bool isGround = true;
-
     public float CurrentLife;
 
     [SerializeField] public EnemyStats _stats;
 
-    Rigidbody _rb;
+    private Rigidbody _rb;
 
-    LoS lineOfSight;
-    
+    private LoS lineOfSight;
+
+    private BaseEnemyView _view;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _mainBuilding = GameObject.Find("MainBuilding");
         lineOfSight = GetComponent<LoS>();
+        _view = GetComponent<BaseEnemyView>();
         _currentBuilding = _mainBuilding;
-        isGround = false;
 
         CurrentLife = _stats.life;
     }
@@ -74,21 +74,6 @@ public class BaseEnemyModel : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.layer == 8)
-        {
-            isGround = true;
-        }
-
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            isGround = false;
-        }
-    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;      
