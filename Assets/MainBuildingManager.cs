@@ -7,6 +7,7 @@ public class MainBuildingManager : MonoBehaviour
     [SerializeField] private float life;
     [SerializeField] private GameObject LoseMessage;
     [SerializeField] private GameObject LifeBarCanvas;
+    [SerializeField] private Transform Player;
     
     private LifeBarManager lifeBar;
 
@@ -15,6 +16,11 @@ public class MainBuildingManager : MonoBehaviour
     {
         lifeBar = GetComponentInChildren<LifeBarManager>();
         lifeBar.SetHealth(life);
+    }
+
+    void Update()
+    {
+        LifeBarCanvas.transform.LookAt(Player);
     }
 
     void OnTriggerEnter(Collider other)
