@@ -245,6 +245,8 @@ MonoBehaviour:
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
   CurrentLife: 0
+  OnHand: 0
+  OnGround: 0
   _stats: {fileID: 11400000, guid: a1707af457784064692380237e437916, type: 2}
 --- !u!114 &5300907080007379330
 MonoBehaviour:
@@ -258,7 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4325902b0973b43aaba0bd8bf77e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHand: 0
   collider: {fileID: 4009344340396975277}
   _model: {fileID: 0}
   _projectile: {fileID: 0}
@@ -314,8 +315,8 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5300907080007379330}
-        m_TargetAssemblyTypeName: BaseEnemyView, Assembly-CSharp
+      - m_Target: {fileID: 8907568257067332176}
+        m_TargetAssemblyTypeName: BaseEnemyModel, Assembly-CSharp
         m_MethodName: EnemyOnHand
         m_Mode: 1
         m_Arguments:
@@ -329,8 +330,8 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5300907080007379330}
-        m_TargetAssemblyTypeName: BaseEnemyView, Assembly-CSharp
+      - m_Target: {fileID: 8907568257067332176}
+        m_TargetAssemblyTypeName: BaseEnemyModel, Assembly-CSharp
         m_MethodName: EnemyOffHand
         m_Mode: 1
         m_Arguments:

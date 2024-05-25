@@ -5,7 +5,6 @@ using UnityEngine.Assertions.Must;
 
 public class BaseEnemyView : MonoBehaviour
 {
-    public bool OnHand;
 
     [SerializeField] private Collider collider;
     [SerializeField] private BaseEnemyModel _model;
@@ -20,10 +19,6 @@ public class BaseEnemyView : MonoBehaviour
         _model = GetComponent<BaseEnemyModel>();
 
         UnshowPunchCollider();
-        
-        OnHand = false;
-
-        //EnemyEventManager.ShootEvent += StartAttackAnimation;
     }
 
     public void StartAttackAnimation()
@@ -49,15 +44,5 @@ public class BaseEnemyView : MonoBehaviour
     {
         if (collider != null)
             collider.enabled = false;
-    }
-
-    public void EnemyOnHand()
-    {
-        OnHand = true;
-    }
-
-    public void EnemyOffHand()
-    {
-        OnHand = false;
     }
 }

@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Defenses:
-  - {fileID: 4250001249316422433, guid: 6152d7947813b8b469462f68160db054, type: 3}
-  - {fileID: 9031937257686972542, guid: 0237e18dd3469534584cb515b9c6f784, type: 3}
+  - {fileID: 3026054146025631727, guid: 6152d7947813b8b469462f68160db054, type: 3}
+  - {fileID: 3931348110657942784, guid: 3134ecaa5b6e5254d8d05fa62fc61f4c, type: 3}
   canSellDefense: 0
   solidMaterial: {fileID: 2100000, guid: fb5b97902494007438c13cf928e4af59, type: 2}
   transparentMaterial: {fileID: 2100000, guid: 709ed28b69fc89a4e96dfa9c680e65de, type: 2}

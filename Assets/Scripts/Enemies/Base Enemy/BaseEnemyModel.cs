@@ -11,6 +11,10 @@ public class BaseEnemyModel : MonoBehaviour
 
     public float CurrentLife;
 
+    public bool OnHand;
+
+    public bool OnGround;
+
     [SerializeField] public EnemyStats _stats;
 
     private Rigidbody _rb;
@@ -72,6 +76,32 @@ public class BaseEnemyModel : MonoBehaviour
     {
         CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
         Destroy(gameObject);
+    }
+
+    public void EnemyOnHand()
+    {
+        OnHand = true;
+    }
+
+    public void EnemyOffHand()
+    {
+        OnHand = false;
+    }
+
+    public void OnCollisionEnter(Collision collisionInfo)
+    {
+        if(collisionInfo.gameObject.CompareTag("Floor"))
+        {
+            OnGround = true;
+        }
+    }
+
+    public void OnCollisionExit(Collision collisionInfo)
+    {
+        if(collisionInfo.gameObject.CompareTag("Floor"))
+        {
+            OnGround = false;
+        }
     }
 
     private void OnDrawGizmosSelected()

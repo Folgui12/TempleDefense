@@ -12,6 +12,7 @@ TagManager:
   - Mine
   - Coin
   - Arrow
+  - Floor
   layers:
   - Default
   - TransparentFX
