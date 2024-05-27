@@ -31,6 +31,7 @@ public class ArcherModel : MonoBehaviour
         BulletMovement arrow = Instantiate(_arrow, _arrowSpawnPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
 
         arrow.Target = _tModel._currentEnemy;
+        arrow.Damage = _tModel._stats.Damage;
     }
 
 }

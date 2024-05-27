@@ -8,6 +8,8 @@ public class BulletMovement : MonoBehaviour
     public GameObject Target;
 
     public float arrowSpeed;
+
+    public int Damage;
     
     // Update is called once per frame
     void Update()
@@ -21,12 +23,11 @@ public class BulletMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Building")
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Building"))
         {
             Destroy(gameObject);
         }

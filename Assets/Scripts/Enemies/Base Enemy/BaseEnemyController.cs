@@ -7,7 +7,6 @@ public class BaseEnemyController : MonoBehaviour
 {
     BaseEnemyModel _model;
     BaseEnemyView _view;
-    //public GameObject _currentBiulding;
 
     #region STEERING
     public Rigidbody target;
@@ -120,10 +119,11 @@ public class BaseEnemyController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Arrow")
+        if(other.gameObject.CompareTag("Arrow"))
         {
-            _model.TakeDamage();
-            //Debug.Log(_model.CurrentLife);
+            BulletMovement arrowHit = other.gameObject.GetComponent<BulletMovement>();
+
+            _model.TakeDamage(arrowHit.Damage);
         }
     }
 

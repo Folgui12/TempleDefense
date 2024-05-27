@@ -263,7 +263,7 @@ MonoBehaviour:
   collider: {fileID: 4009344340396975277}
   _model: {fileID: 0}
   _projectile: {fileID: 0}
-  _shootPoint: {fileID: 0}
+  Attacking: 0
 --- !u!114 &7527116811664000560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1373,6 +1373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1667706883243910373}
   - component: {fileID: 4009344340396975277}
+  - component: {fileID: 2057288518182228094}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Enemy
@@ -1419,6 +1420,19 @@ CapsuleCollider:
   m_Height: 0.49397764
   m_Direction: 1
   m_Center: {x: -0.0000008872625, y: 0.21158132, z: -0.00000021183413}
+--- !u!114 &2057288518182228094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8757811707399891555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2590d722cc434540810379d14f0a06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyModel: {fileID: 8907568257067332176}
 --- !u!1 &9038249003060269404
 GameObject:
   m_ObjectHideFlags: 0

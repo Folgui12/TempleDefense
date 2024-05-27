@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerModel : MonoBehaviour
+public class TowerModel : MonoBehaviour, IDamageable
 {
     public DefenseStats _stats;
 
@@ -37,6 +37,28 @@ public class TowerModel : MonoBehaviour
     public void Dead()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Arrow"))
+        {
+            BulletMovement arrowHit = other.gameObject.GetComponent<BulletMovement>();
+
+            TakeDamage(arrowHit.Damage);
+        }
+
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            BaseEnemyModel enemyRef = other.gameObject.GetComponent<MeleeDamageRef>().EnemyModel;
+
+            TakeDamage(enemyRef._stats.Damage);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        CurrentLife -= damage;
     }
     
     private void OnDrawGizmosSelected()

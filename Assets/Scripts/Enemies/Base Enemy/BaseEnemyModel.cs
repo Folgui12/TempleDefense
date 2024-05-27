@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BaseEnemyModel : MonoBehaviour
+public class BaseEnemyModel : MonoBehaviour, IDamageable
 {
     public GameObject _mainBuilding;
 
@@ -11,9 +11,9 @@ public class BaseEnemyModel : MonoBehaviour
 
     public float CurrentLife;
 
-    public bool OnHand;
+    public bool OnHand = false;
 
-    public bool OnGround;
+    public bool OnGround = true;
 
     [SerializeField] public EnemyStats _stats;
 
@@ -68,10 +68,12 @@ public class BaseEnemyModel : MonoBehaviour
         }
         return _currentBuilding;
     }
-    public void TakeDamage()
+
+    public void TakeDamage(int damage)
     {
-        CurrentLife -= 1;
+        CurrentLife -= damage;
     }
+    
     public void Dead()
     {
         CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);

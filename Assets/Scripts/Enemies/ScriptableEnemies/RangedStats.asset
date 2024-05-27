@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349697d5cd5f478c975c6d7c7cb6fb42, type: 3}
   m_Name: RangedStats
   m_EditorClassIdentifier: 
-  <life>k__BackingField: 4
+  <life>k__BackingField: 12
   <travelSpeed>k__BackingField: 5
   <currentObjective>k__BackingField: {fileID: 0}
   <attackSpeed>k__BackingField: 1
   <attackRange>k__BackingField: 15
   <viewRange>k__BackingField: 20
   <moneyQuantity>k__BackingField: 20
+  <Damage>k__BackingField: 4

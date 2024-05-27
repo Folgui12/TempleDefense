@@ -13,6 +13,7 @@ TagManager:
   - Coin
   - Arrow
   - Floor
+  - EnemyArrow
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - Floor
   - Building
   - Temple
-  - 
-  - 
+  - Arrow
+  - EnemyArrow
   - 
   - 
   - 

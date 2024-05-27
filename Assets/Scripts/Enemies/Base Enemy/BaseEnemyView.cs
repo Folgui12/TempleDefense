@@ -9,7 +9,9 @@ public class BaseEnemyView : MonoBehaviour
     [SerializeField] private Collider collider;
     [SerializeField] private BaseEnemyModel _model;
     [SerializeField] private GameObject _projectile;
-    [SerializeField] private Transform _shootPoint;
+
+    public bool Attacking;
+
     Animator anim;
 
     // Start is called before the first frame update
@@ -27,11 +29,14 @@ public class BaseEnemyView : MonoBehaviour
             anim.SetTrigger("Attack");
     }
 
-    private void Shoot()
+    public void CanIdle()
     {
-        BulletMovement arrow = Instantiate(_projectile, _shootPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
+        anim.SetBool("InRange", true);
+    }
 
-        arrow.Target = _model._currentBuilding;
+    public void StopIdle()
+    {
+        anim.SetBool("InRange", false);
     }
 
     public void ShowPunchCollider()
@@ -45,4 +50,6 @@ public class BaseEnemyView : MonoBehaviour
         if (collider != null)
             collider.enabled = false;
     }
+
+    
 }

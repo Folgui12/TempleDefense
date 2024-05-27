@@ -29,5 +29,6 @@ public class EnemyAttack : MonoBehaviour
         BulletMovement arrow = Instantiate(_projectile, _shootPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
 
         arrow.Target = _enemyModel._currentBuilding;
+        arrow.Damage = _enemyModel._stats.Damage;
     }
 }

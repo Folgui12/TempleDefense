@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 65817069203187815}
   - component: {fileID: 5076225531740571120}
   - component: {fileID: 3256091772247536549}
+  - component: {fileID: 3022009368555694265}
   m_Layer: 0
   m_Name: ArrowConteiner
   m_TagString: Arrow
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1798234612557673709}
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df988743514b2bf4cbfeae544c272c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTarget: {fileID: 0}
+  Target: {fileID: 0}
   arrowSpeed: 5
 --- !u!136 &3256091772247536549
 CapsuleCollider:
@@ -71,6 +72,33 @@ CapsuleCollider:
   m_Height: 0.2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.08}
+--- !u!54 &3022009368555694265
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457076268703639767}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1001 &2269292662352941830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79,6 +107,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 65817069203187815}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -121,6 +157,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
       propertyPath: m_Name
+      value: Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
+      propertyPath: m_TagString
       value: Arrow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
