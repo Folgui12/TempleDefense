@@ -90,7 +90,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable
         OnHand = false;
     }
 
-    public void OnCollisionEnter(Collision collisionInfo)
+    public void OnCollisionStay(Collision collisionInfo)
     {
         if(collisionInfo.gameObject.CompareTag("Floor"))
         {

@@ -6,6 +6,7 @@ public class DefenseAttackState<T> : State<T>
 {
     private TowerModel _tModel;
     private ArcherModel[] Archers;
+    
     // Start is called before the first frame update
     public DefenseAttackState(TowerModel model)
     {

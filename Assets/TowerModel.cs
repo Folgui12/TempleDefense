@@ -22,16 +22,39 @@ public class TowerModel : MonoBehaviour, IDamageable
     {
         _currentEnemy = null;
 
-        Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.AttackRange);
+        float shortestDistance = Mathf.Infinity;
 
-        for(int i = 0; i < colliderList.Length; i++)
+        GameObject nearestEnemy = null;
+
+        List<GameObject> currentEnemies = WaveSpawner.Instance.spawnedEnemies;
+
+        //Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.AttackRange);
+
+        /*for(int i = 0; i < colliderList.Length; i++)
         {
             if (colliderList[i].tag == "Enemy" && _los.CheckRange(colliderList[i].transform, _stats.AttackRange))
             {
                 _currentEnemy = colliderList[i].gameObject;
             }
+        }*/
+
+
+
+        foreach(GameObject enemy in currentEnemies)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if(distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy;
+            }
         }
 
+        if(nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
+        {
+            _currentEnemy = nearestEnemy;
+        }
+        
         return _currentEnemy;
     }
     public void Dead()

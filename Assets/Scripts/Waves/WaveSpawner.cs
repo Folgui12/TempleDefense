@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
     public static WaveSpawner Instance;
+
+    public Text WaveCounter; 
 
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
@@ -32,6 +35,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         GenerateWave();
+        UpdateWavevCounter();
     }
  
     // Update is called once per frame
@@ -77,6 +81,7 @@ public class WaveSpawner : MonoBehaviour
     public void NextWave()
     {
         currWave++;
+        UpdateWavevCounter();
         GenerateWave();
     }
 
@@ -125,6 +130,11 @@ public class WaveSpawner : MonoBehaviour
         }
         enemiesToSpawn.Clear();
         enemiesToSpawn = generatedEnemies;
+    }
+
+    private void UpdateWavevCounter()
+    {
+        WaveCounter.text = currWave.ToString();
     }
   
 }
