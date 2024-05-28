@@ -45,9 +45,20 @@ public class TowerController : MonoBehaviour
         var dead = new ActionNode(() => _fsm.Transition(StatesEnum.Dead));
         var attack = new ActionNode(() => _fsm.Transition(StatesEnum.Attack));
 
+        QuestionNode qEnemyInRange;
+        QuestionNode qHasLife;
+
         //Question
-        var qEnemyInRange = new QuestionNode(() => _model.CheckClosestEnemy()!=null, attack, idle);
-        var qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qEnemyInRange, dead);
+        if (gameObject.name != "Muro")
+        {
+            qEnemyInRange = new QuestionNode(() => _model.CheckClosestEnemy() != null, attack, idle);
+            qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qEnemyInRange, dead);
+        }
+        else
+        {
+            qHasLife = new QuestionNode(() => _model.CurrentLife > 0, idle, dead);  
+        }
+        
 
         _root = qHasLife;
     }

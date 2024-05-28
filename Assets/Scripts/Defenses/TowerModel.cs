@@ -39,8 +39,18 @@ public class TowerModel : MonoBehaviour, IDamageable
         }*/
 
 
+        for(int i = 0; i < currentEnemies.Count; i++)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, currentEnemies[i].transform.position);
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = currentEnemies[i];
+            }
+        }
 
-        foreach(GameObject enemy in currentEnemies)
+
+        /*foreach(GameObject enemy in currentEnemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if(distanceToEnemy < shortestDistance)
@@ -48,7 +58,7 @@ public class TowerModel : MonoBehaviour, IDamageable
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
-        }
+        }*/
 
         if(nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
         {
