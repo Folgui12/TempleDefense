@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7297995077980322719}
   - component: {fileID: 1521960756424072061}
   - component: {fileID: 9060813922186392793}
-  m_Layer: 0
+  - component: {fileID: 2538802642271843631}
+  m_Layer: 9
   m_Name: Muro
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,3 +100,24 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 25270a499344c9d449c341d2cce2b6c6, type: 2}
   _currentEnemy: {fileID: 0}
   CurrentLife: 0
+--- !u!65 &2538802642271843631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709829872821117285}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.17126822, y: 0.013485684, z: 0.0073372503}
+  m_Center: {x: -0.00000013411045, y: -0.000000011175871, z: 0.0036777027}
