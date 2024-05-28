@@ -224,8 +224,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   timePrediction: 2
-  angle: 210
-  radius: 5
+  angle: 300
+  radius: 7
   maskObs:
     serializedVersion: 2
     m_Bits: 128
@@ -1417,9 +1417,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.05
-  m_Height: 0.49397764
+  m_Height: 1.3489594
   m_Direction: 1
-  m_Center: {x: -0.0000008872625, y: 0.21158132, z: -0.00000021183413}
+  m_Center: {x: -0.0000052056544, y: 0.6390602, z: -0.0000014524007}
 --- !u!114 &2057288518182228094
 MonoBehaviour:
   m_ObjectHideFlags: 0

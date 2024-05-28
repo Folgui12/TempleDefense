@@ -25,7 +25,7 @@ public class MainBuildingManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Arrow"))
         {
             life -= 10;
 

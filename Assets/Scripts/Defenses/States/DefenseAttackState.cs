@@ -22,7 +22,9 @@ public class DefenseAttackState<T> : State<T>
     public override void Execute()
     {
         base.Execute();
-        _tModel.CheckClosestEnemy();
+
+        if (_tModel._currentEnemy == null)
+            _tModel.CheckClosestEnemy(); 
     
         foreach(ArcherModel archer in Archers)
         {

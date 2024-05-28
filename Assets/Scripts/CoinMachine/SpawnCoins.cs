@@ -6,25 +6,51 @@ public class SpawnCoins : MonoBehaviour
 {
     [SerializeField] private GameObject TypeOfCoin;
     [SerializeField] private Transform SpawnPoint;
+    [SerializeField] private float TimeBetweenPurchase;
 
     private DefenseType coinToSpawn;
+
+    private float timer;
+    private bool CanStartTimer = false;
+    private bool CanBuyCoin = true;
 
     void Start()
     {
         coinToSpawn = TypeOfCoin.GetComponent<TypeOfDefenseCoin>().defenseType;
     }
 
-    public void Spawn()
+    private void Update()
     {
-        if (CurrencyManager.Instance.MoneyCount > coinToSpawn.price)
+        if(CanStartTimer)
         {
-            CurrencyManager.Instance.RemoveMoney(coinToSpawn.price);
-            Instantiate(TypeOfCoin, SpawnPoint.position, SpawnPoint.rotation);
+            timer += Time.deltaTime;
         }
 
-        else
-        {   
-            Debug.Log("Not Enought Money");
+        if(timer >= TimeBetweenPurchase)
+        {
+            CanBuyCoin = true;
+            CanStartTimer = false;
+            timer = 0;
         }
+    }
+
+    public void Spawn()
+    {
+        if(CanBuyCoin)
+        {
+            if (CurrencyManager.Instance.MoneyCount > coinToSpawn.price)
+            {
+                CurrencyManager.Instance.RemoveMoney(coinToSpawn.price);
+                Instantiate(TypeOfCoin, SpawnPoint.position, SpawnPoint.rotation);
+                CanBuyCoin = false;
+                CanStartTimer = true;
+            }
+
+            else
+            {
+                Debug.Log("Not Enought Money");
+            }
+        }
+        
     }
 }

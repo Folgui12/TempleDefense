@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5076225531740571120}
   - component: {fileID: 3256091772247536549}
   - component: {fileID: 3022009368555694265}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArrowConteiner
   m_TagString: Arrow
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   arrowSpeed: 5
+  Damage: 0
 --- !u!136 &3256091772247536549
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -158,6 +159,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
       propertyPath: m_Name
       value: Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: da4221851fa21d348aedc4cc1b905b7d, type: 3}
       propertyPath: m_TagString
