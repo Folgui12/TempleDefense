@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/BasicScene.unity
     guid: 4e9fef26e6adb88479ad1b9834a32d94
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 36c3f817f7675d840891d5ea06ebe7b0, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2db08f1a9fbe7f74fa3ef493b0bfc5b0, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 9bec1ce6a03ccba4b9a8215241b32e63, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: a49cadc1a815591479693b955ccf08c1, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: c3831eb71c9b2be44a7653d825d925ee, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: aba50c7d25934b044b07f9a54ac4bc93, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 84a9f92e415f3f848bbd7f637094d202, type: 2}

@@ -10,7 +10,7 @@ public class CurrencyManager: MonoBehaviour
     public int MoneyCount => moneyCount;
     public int PrayersCount => prayersCount;
 
-    private int moneyCount;
+    [SerializeField] private int moneyCount;
     public int prayersCount;
 
     public Text money;
@@ -20,8 +20,6 @@ public class CurrencyManager: MonoBehaviour
 
     private void Awake()
     {
-        moneyCount = 1000;
-
         if (Instance == null)
             Instance = this;
         else Destroy(this);

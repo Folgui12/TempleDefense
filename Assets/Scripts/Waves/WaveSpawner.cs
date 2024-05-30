@@ -80,9 +80,13 @@ public class WaveSpawner : MonoBehaviour
  
     public void NextWave()
     {
-        currWave++;
-        UpdateWavevCounter();
-        GenerateWave();
+        if(enemiesToSpawn.Count <= 0 && spawnedEnemies.Count <= 0)
+        {
+            currWave++;
+            UpdateWavevCounter();
+            GenerateWave();
+        }
+        
     }
 
     public void RemoveEnemy(GameObject enemy)
