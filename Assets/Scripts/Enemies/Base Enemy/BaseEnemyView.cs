@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 public class BaseEnemyView : MonoBehaviour
 {
 
-    [SerializeField] private Collider collider;
+    [SerializeField] private new Collider collider;
     [SerializeField] private BaseEnemyModel _model;
     [SerializeField] private GameObject _projectile;
 
