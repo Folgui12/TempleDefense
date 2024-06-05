@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -184,7 +184,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 608d6b21405632d4589a334b60febbeb, type: 2}
+  - {fileID: 2100000, guid: a20f490bb4a9bfd4f8e1b0051f7f820d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,8 +373,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainBuilding: {fileID: 1829084333}
   _currentBuilding: {fileID: 1829084333}
-  isGround: 1
-  _life: 5
+  CurrentLife: 0
+  OnHand: 0
+  OnGround: 1
   _stats: {fileID: 11400000, guid: 16d86e9a6ebfda6458a8b94eab5d63f4, type: 2}
 --- !u!65 &404148481
 BoxCollider:
@@ -474,6 +475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4325902b0973b43aaba0bd8bf77e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
+  _model: {fileID: 0}
+  _projectile: {fileID: 0}
+  Attacking: 0
 --- !u!114 &404148486
 MonoBehaviour:
   m_ObjectHideFlags: 0

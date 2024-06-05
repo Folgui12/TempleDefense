@@ -73,7 +73,6 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable
     {
         CurrentLife -= damage;
     }
-    
     public void Dead()
     {
         CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);

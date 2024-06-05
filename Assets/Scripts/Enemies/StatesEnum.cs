@@ -9,5 +9,6 @@ public enum StatesEnum
     Attack,
     Grabbed,
     InAir,
+    Waypoints,
     Dead
 }

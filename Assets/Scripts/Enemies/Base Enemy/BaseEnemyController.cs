@@ -24,6 +24,7 @@ public class BaseEnemyController : MonoBehaviour
     ISteering _steering;
     #endregion
 
+    EnemyFollowPointsState<StatesEnum> _stateFollowPoints;
     private void Awake()
     {
         _model = GetComponent<BaseEnemyModel>();
@@ -41,37 +42,46 @@ public class BaseEnemyController : MonoBehaviour
     void InitializeFSM()
     {
         var idle = new EnemyIdleState<StatesEnum>();
-        var dead = new EnemyDeathState<StatesEnum>(_model, _view    );
+        var dead = new EnemyDeathState<StatesEnum>(_model, _view);
         var attack = new EnemyAttackState<StatesEnum>(_model, _view);
         var raid = new EnemyRaidState<StatesEnum>(_model, _model._currentBuilding.transform, _obstacleAvoidance, _steering);
         var air = new EnemyAirState<StatesEnum>(_model);
+        _stateFollowPoints = new EnemyFollowPointsState<StatesEnum>(_model);
 
 
         idle.AddTransition(StatesEnum.Dead, dead);
         idle.AddTransition(StatesEnum.Attack, attack);
-        idle.AddTransition(StatesEnum.Raid, raid);
+        //idle.AddTransition(StatesEnum.Raid, raid);
         idle.AddTransition(StatesEnum.InAir, air);
+        idle.AddTransition(StatesEnum.Waypoints, _stateFollowPoints);
 
         dead.AddTransition(StatesEnum.Idle, idle);
         dead.AddTransition(StatesEnum.Attack, attack);
-        dead.AddTransition(StatesEnum.Raid, raid);
+        //dead.AddTransition(StatesEnum.Raid, raid);
 
         attack.AddTransition(StatesEnum.Idle, idle);
         attack.AddTransition(StatesEnum.Dead, dead);
-        attack.AddTransition(StatesEnum.Raid, raid);
+        //attack.AddTransition(StatesEnum.Raid, raid);
         attack.AddTransition(StatesEnum.InAir, air);
+        attack.AddTransition(StatesEnum.Waypoints, _stateFollowPoints);
 
-        raid.AddTransition(StatesEnum.Idle, idle);
-        raid.AddTransition(StatesEnum.Dead, dead);
-        raid.AddTransition(StatesEnum.Attack, attack);
-        raid.AddTransition(StatesEnum.InAir, air);
+
+        //raid.AddTransition(StatesEnum.Idle, idle);
+        //raid.AddTransition(StatesEnum.Dead, dead);
+        //raid.AddTransition(StatesEnum.Attack, attack);
+        //raid.AddTransition(StatesEnum.InAir, air);
+
+        _stateFollowPoints.AddTransition(StatesEnum.Idle, idle);
+        _stateFollowPoints.AddTransition(StatesEnum.Attack, attack);
+        _stateFollowPoints.AddTransition(StatesEnum.InAir, air);
+        _stateFollowPoints.AddTransition(StatesEnum.Dead, dead);
 
         air.AddTransition(StatesEnum.Idle, idle);
         air.AddTransition(StatesEnum.Dead, dead);
         air.AddTransition(StatesEnum.Attack, attack);
-        air.AddTransition(StatesEnum.Raid, raid);
+        /*air.AddTransition(StatesEnum.Raid, raid)*/;
 
-        _fsm = new FSM<StatesEnum>(idle);
+        _fsm = new FSM<StatesEnum>(_stateFollowPoints);
     }
     void InitializeSteerings()
     {
@@ -87,15 +97,17 @@ public class BaseEnemyController : MonoBehaviour
         var dead = new ActionNode(() => _fsm.Transition(StatesEnum.Dead));
         var attack = new ActionNode(() => _fsm.Transition(StatesEnum.Attack));
         var raid = new ActionNode(() => _fsm.Transition(StatesEnum.Raid));
+        var follow = new ActionNode(() => _fsm.Transition(StatesEnum.Waypoints));
         var air = new ActionNode(() => _fsm.Transition(StatesEnum.InAir));
 
         //Question
-        var qAttackRange = new QuestionNode(QuestionAttackRange, attack, raid);
-        var qLoS = new QuestionNode(QuestionLoS, qAttackRange, raid);
+        var qAttackRange = new QuestionNode(QuestionAttackRange, attack, follow);
+        var qFollowPoints = new QuestionNode(() => _stateFollowPoints.IsFinishPath, qAttackRange, follow);
+        var qLoS = new QuestionNode(QuestionLoS, qAttackRange, qFollowPoints);
         var qInAir = new QuestionNode(() => !_model.OnHand && _model.OnGround, qLoS, air);
         var qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qInAir, dead);
 
-        _root = qHasLife;
+        _root = qFollowPoints;
     }
     bool QuestionAttackRange()
     {
@@ -111,7 +123,9 @@ public class BaseEnemyController : MonoBehaviour
         _fsm.OnUpdate();
         _root.Execute();
     }
-    
+
+    public IPoints GetStateWaypoints => _stateFollowPoints;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
