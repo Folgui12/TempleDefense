@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   timePrediction: 2
-  angle: 300
+  angle: 210
   radius: 7
   maskObs:
     serializedVersion: 2
