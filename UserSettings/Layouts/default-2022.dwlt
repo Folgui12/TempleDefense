@@ -120,7 +120,11 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 101
+=======
+  controlID: 126
+>>>>>>> parent of f8ef8f6 (Commit)
 =======
   controlID: 126
 >>>>>>> parent of f8ef8f6 (Commit)
@@ -174,6 +178,9 @@ MonoBehaviour:
 =======
     width: 1219.3334
     height: 680.6667
+<<<<<<< HEAD
+>>>>>>> parent of f8ef8f6 (Commit)
+=======
 >>>>>>> parent of f8ef8f6 (Commit)
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
@@ -202,6 +209,9 @@ MonoBehaviour:
 =======
     width: 360.66666
     height: 680.6667
+<<<<<<< HEAD
+>>>>>>> parent of f8ef8f6 (Commit)
+=======
 >>>>>>> parent of f8ef8f6 (Commit)
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
@@ -263,9 +273,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 500.66666
     width: 1236.6666
     height: 326.66666
+=======
+    y: 680.6667
+    width: 1219.3334
+    height: 146.66663
+>>>>>>> parent of f8ef8f6 (Commit)
 =======
     y: 680.6667
     width: 1219.3334
@@ -334,6 +350,9 @@ MonoBehaviour:
 =======
     width: 856.66675
     height: 659.6667
+<<<<<<< HEAD
+>>>>>>> parent of f8ef8f6 (Commit)
+=======
 >>>>>>> parent of f8ef8f6 (Commit)
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -655,9 +674,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -39.059677, y: 26.654411, z: 3.7150116}
     speed: 2
     m_Value: {x: -39.059677, y: 26.654411, z: 3.7150116}
+=======
+    m_Target: {x: -96.410774, y: 85.90674, z: 15.55769}
+    speed: 2
+    m_Value: {x: -96.410774, y: 85.90674, z: 15.55769}
+>>>>>>> parent of f8ef8f6 (Commit)
 =======
     m_Target: {x: -96.410774, y: 85.90674, z: 15.55769}
     speed: 2
@@ -709,6 +734,7 @@ MonoBehaviour:
     m_gridOpacity: 0.5
   m_Rotation:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.14022028, y: 0.83650744, z: -0.2272018, w: 0.48445362}
     speed: 2
     m_Value: {x: 0.14004727, y: 0.83364075, z: -0.22641459, w: 0.48390725}
@@ -716,6 +742,15 @@ MonoBehaviour:
     m_Target: 122.92166
     speed: 2
     m_Value: 117.62839
+=======
+    m_Target: {x: 0.14658518, y: 0.8067225, z: -0.2112394, w: 0.5362058}
+    speed: 2
+    m_Value: {x: 0.14668305, y: 0.8038711, z: -0.21048042, w: 0.5366317}
+  m_Size:
+    m_Target: 4.8810925
+    speed: 2
+    m_Value: 4.8810925
+>>>>>>> parent of f8ef8f6 (Commit)
 =======
     m_Target: {x: 0.14658518, y: 0.8067225, z: -0.2112394, w: 0.5362058}
     speed: 2
@@ -777,6 +812,9 @@ MonoBehaviour:
 =======
     width: 359.66666
     height: 659.6667
+<<<<<<< HEAD
+>>>>>>> parent of f8ef8f6 (Commit)
+=======
 >>>>>>> parent of f8ef8f6 (Commit)
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -791,15 +829,21 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
 <<<<<<< HEAD
+<<<<<<< HEAD
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: f42c0100
       m_LastClickedID: 77044
       m_ExpandedIDs: cce3fdffbae9fdffcee9fdffe4e9fdffc8f0fdffb8f3fdff
 =======
+=======
+>>>>>>> parent of f8ef8f6 (Commit)
       scrollPos: {x: 0, y: 1.333313}
       m_SelectedIDs: 94830000
       m_LastClickedID: 33684
       m_ExpandedIDs: 28fbffff70770000a67800009e790000347b0000
+<<<<<<< HEAD
+>>>>>>> parent of f8ef8f6 (Commit)
+=======
 >>>>>>> parent of f8ef8f6 (Commit)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1135,9 +1179,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 573.3334
     width: 1235.6666
     height: 305.66666
+=======
+    y: 753.3334
+    width: 1218.3334
+    height: 125.666626
+>>>>>>> parent of f8ef8f6 (Commit)
 =======
     y: 753.3334
     width: 1218.3334
@@ -1165,7 +1215,11 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Materials
+=======
+    - Assets/Materials/Shaders
+>>>>>>> parent of f8ef8f6 (Commit)
 =======
     - Assets/Materials/Shaders
 >>>>>>> parent of f8ef8f6 (Commit)
@@ -1177,7 +1231,11 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Assets/Materials
+=======
+  - Assets/Materials/Shaders
+>>>>>>> parent of f8ef8f6 (Commit)
 =======
   - Assets/Materials/Shaders
 >>>>>>> parent of f8ef8f6 (Commit)
@@ -1187,15 +1245,21 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 17.666687}
     m_SelectedIDs: 82060000
     m_LastClickedID: 1666
     m_ExpandedIDs: 000000001a0600008206000000ca9a3bffffff7f
 =======
+=======
+>>>>>>> parent of f8ef8f6 (Commit)
     scrollPos: {x: 0, y: 87.66669}
     m_SelectedIDs: c6a40000
     m_LastClickedID: 42182
     m_ExpandedIDs: 00000000bca20000aca40000b8a4000000ca9a3b
+<<<<<<< HEAD
+>>>>>>> parent of f8ef8f6 (Commit)
+=======
 >>>>>>> parent of f8ef8f6 (Commit)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1302,9 +1366,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 540.6667
     width: 1235.6666
     height: 338.3333
+=======
+    y: 606.6667
+    width: 1218.3334
+    height: 272.3333
+>>>>>>> parent of f8ef8f6 (Commit)
 =======
     y: 606.6667
     width: 1218.3334
