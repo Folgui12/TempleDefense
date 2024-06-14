@@ -10,8 +10,6 @@ public class MainBuildingManager : MonoBehaviour
     [SerializeField] private Transform Player;
     
     private LifeBarManager lifeBar;
-
-
     void Start()
     {
         lifeBar = GetComponentInChildren<LifeBarManager>();
