@@ -89,7 +89,7 @@ public class TowerModel : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         CurrentLife -= damage;
     }

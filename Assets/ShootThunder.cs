@@ -20,12 +20,11 @@ public class ShootThunder : MonoBehaviour
     // Update is called once per frame
     void Update()
     { // PROBAR
-        if(TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.gripButton, out bool gripButton) && gripButton)
+        if(TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.gripButton, out bool gripButton) && gripButton &&
+            TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool ThumbButton) && ThumbButton && canShoot)
         {
-            if(TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool ThumbButton) && ThumbButton && canShoot)
-            {
-                Shoot();
-            }
+            canShoot = false;
+            Shoot();
         }
     }
 
@@ -33,7 +32,6 @@ public class ShootThunder : MonoBehaviour
     {
         Debug.Log("Dispare");
         Instantiate(ThunderToSpawn, ShootPoint.position, ShootPoint.rotation);
-        canShoot = false;
     }
 
     public void CanShootSwitch()
