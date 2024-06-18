@@ -25,12 +25,12 @@ public class ShootThunder : MonoBehaviour
         {
             canShoot = false;
             Shoot();
+
         }
     }
 
     private void Shoot()
     {
-        Debug.Log("Dispare");
         Instantiate(ThunderToSpawn, ShootPoint.position, ShootPoint.rotation);
     }
 
