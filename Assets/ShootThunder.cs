@@ -7,6 +7,7 @@ public class ShootThunder : MonoBehaviour
 {
     [SerializeField] private GameObject ThunderToSpawn;
     [SerializeField] private Transform ShootPoint;
+    [SerializeField] private Material HandChargedMaterial;
 
     public bool canShoot = false;
 
@@ -18,10 +19,10 @@ public class ShootThunder : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool button))
+    { // PROBAR
+        if(TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.gripButton, out bool gripButton) && gripButton)
         {
-            if(button && canShoot)
+            if(TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool ThumbButton) && ThumbButton && canShoot)
             {
                 Shoot();
             }

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  arrowSpeed: 5
+  arrowSpeed: 8
   Damage: 0
 --- !u!136 &3256091772247536549
 CapsuleCollider:

@@ -17,4 +17,9 @@ public class TypeOfDefenseCoin : MonoBehaviour
     {
         OnHand = false;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }
