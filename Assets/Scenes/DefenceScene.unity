@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -202,7 +202,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1340466369696035175, guid: ce95f5ee10ad21545917b5b60e3bda7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.66
+      value: -6.14
       objectReference: {fileID: 0}
     - target: {fileID: 1340466369696035175, guid: ce95f5ee10ad21545917b5b60e3bda7a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -210,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340466369696035175, guid: ce95f5ee10ad21545917b5b60e3bda7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.10607
+      value: 14.79
       objectReference: {fileID: 0}
     - target: {fileID: 1340466369696035175, guid: ce95f5ee10ad21545917b5b60e3bda7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -559,8 +559,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2225068240080443109, guid: 6152d7947813b8b469462f68160db054, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225068240080443109, guid: 6152d7947813b8b469462f68160db054, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.9500008
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225068240080443109, guid: 6152d7947813b8b469462f68160db054, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -26.1
       objectReference: {fileID: 0}
     - target: {fileID: 3580600516604369307, guid: 6152d7947813b8b469462f68160db054, type: 3}
       propertyPath: m_LocalPosition.x
@@ -741,5 +749,5 @@ SceneRoots:
   - {fileID: 1648429728}
   - {fileID: 260552428}
   - {fileID: 1620627275721368544}
-  - {fileID: 811180206}
   - {fileID: 1735969043}
+  - {fileID: 811180206}
