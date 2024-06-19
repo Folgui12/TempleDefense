@@ -15,8 +15,8 @@ public class AgentController : MonoBehaviour
         Vector3 start = myGrid.GetPosInGrid(_enemy.transform.position);
         List<Vector3> path = AStar.Run(start, GetConnections, IsSatiesfies, GetCost, Heuristic, 5000);
         //path = AStar.CleanPath(path, InView);
-        _enemy.GetStateWaypoints.SetWayPoints(path);
-        temple.SetWayPoints(path);
+        //_enemy.GetStateWaypoints.SetWayPoints(path);
+        //temple.SetWayPoints(path);
     }
     float Heuristic(Vector3 current)
     {
