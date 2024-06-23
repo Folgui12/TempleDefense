@@ -15,4 +15,4 @@ EditorBuildSettings:
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: a49cadc1a815591479693b955ccf08c1, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: c3831eb71c9b2be44a7653d825d925ee, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 8be7d876349e0ae4a8153861869660ae, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 67a9098d88f15f649b7508e4bb1c67e2, type: 2}
