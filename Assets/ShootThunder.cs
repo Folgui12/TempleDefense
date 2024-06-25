@@ -28,8 +28,8 @@ public class ShootThunder : MonoBehaviour
             else
                 HandLaser.SetActive(false);
 
-            if (TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool ThumbButton) && 
-                ThumbButton && canShoot)
+            if (TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerButton) &&
+                triggerButton && canShoot)
             {
                 canShoot = false;
                 Shoot();

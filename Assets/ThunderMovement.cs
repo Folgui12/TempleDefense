@@ -38,13 +38,13 @@ public class ThunderMovement : MonoBehaviour
                 var getEnemyModel = enemy.GetComponent<BaseEnemyModel>();
 
                 if (getRB == null) continue;
+                getRB.AddExplosionForce(explosionForce, transform.position - new Vector3(0, 1.5f, 0), explosionRadius);
 
-                if(getEnemyModel != null)
+                if (getEnemyModel != null)
                 {
                     getEnemyModel.TakeDamage(explosionDamage);
                 }
-
-                getRB.AddExplosionForce(explosionForce, transform.position - new Vector3(0, 1.5f, 0), explosionRadius);
+                
             }
 
             Destroy(gameObject);
