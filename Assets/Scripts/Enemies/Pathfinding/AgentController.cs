@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AgentController : MonoBehaviour
 {
     public BaseEnemyController _enemy;
     public float radius = 3;
-    public LayerMask maskNodes;
     public LayerMask maskObs;
     public MainBuildingManager temple;
     public MyGrid myGrid;
@@ -14,9 +14,8 @@ public class AgentController : MonoBehaviour
     {
         Vector3 start = myGrid.GetPosInGrid(_enemy.transform.position);
         List<Vector3> path = AStar.Run(start, GetConnections, IsSatiesfies, GetCost, Heuristic, 5000);
-        //path = AStar.CleanPath(path, InView);
-        //_enemy.GetStateWaypoints.SetWayPoints(path);
-        //temple.SetWayPoints(path);
+        path = AStar.CleanPath(path, InView);
+        _enemy.GetStateWaypoints.SetWayPoints(path);
     }
     float Heuristic(Vector3 current)
     {

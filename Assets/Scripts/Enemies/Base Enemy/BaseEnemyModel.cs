@@ -89,7 +89,10 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable
     {
         OnHand = false;
     }
-
+    public void SetPosition(Vector3 pos)
+    {
+        transform.position = pos;
+    }
     public void OnCollisionStay(Collision collisionInfo)
     {
         if(collisionInfo.gameObject.CompareTag("Floor"))

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class GridCollider : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
-        FindObjectOfType<MyGrid>().AddCollider(GetComponent<Collider>());
+        MyGrid.instance.AddCollider(GetComponent<Collider>());
+    }
+
+    private void OnDisable()
+    {
+        MyGrid.instance.RemoveCollider(GetComponent<Collider>());
     }
 }
