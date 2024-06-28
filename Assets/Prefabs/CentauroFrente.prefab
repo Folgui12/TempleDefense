@@ -222,6 +222,56 @@ Transform:
   - {fileID: 8553705946513852871}
   m_Father: {fileID: 481378598588391716}
   m_LocalEulerAnglesHint: {x: -23.502026, y: -1.9058156, z: 5.4134727}
+--- !u!1 &867767901532683905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6506305908424958064}
+  - component: {fileID: 3887683108447544553}
+  m_Layer: 3
+  m_Name: Agent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6506305908424958064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867767901532683905}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1144462402554265637}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3887683108447544553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867767901532683905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b83ac9bc5355b4285309a7cdb62fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 8743124204082973334}
+  radius: 5
+  maskObs:
+    serializedVersion: 2
+    m_Bits: 128
+  temple: {fileID: 7745881455605654286, guid: b89c7f972d42cc34d9e678e4c60bb8fb, type: 3}
 --- !u!1 &967224227957998052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1342,7 @@ Transform:
   - {fileID: 5613119496642105071}
   - {fileID: 7966019813764550850}
   - {fileID: 5801025348841272951}
+  - {fileID: 6506305908424958064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5567173548691420996
@@ -1401,6 +1452,7 @@ MonoBehaviour:
   OnHand: 0
   OnGround: 0
   _stats: {fileID: 11400000, guid: 16d86e9a6ebfda6458a8b94eab5d63f4, type: 2}
+  _agentController: {fileID: 3887683108447544553}
 --- !u!114 &5311570811327854296
 MonoBehaviour:
   m_ObjectHideFlags: 0

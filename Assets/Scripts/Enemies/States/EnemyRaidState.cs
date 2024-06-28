@@ -38,6 +38,11 @@ public class EnemyRaidState<T> : State<T>, IPoints
     {
         _model = model;
     }
+    public override void Enter()
+    {
+        //_model._agentController.RunAStarPlusVector();
+        base.Enter();
+    }
     public override void Execute()
     {
         base.Execute();

@@ -23,6 +23,8 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable
 
     private BaseEnemyView _view;
 
+    public AgentController _agentController;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();

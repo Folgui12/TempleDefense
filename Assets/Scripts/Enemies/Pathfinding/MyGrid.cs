@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class MyGrid : MonoBehaviour
@@ -38,7 +37,6 @@ public class MyGrid : MonoBehaviour
     public void RemoveCollider(Collider collider)
     {
         var points = GetPointsInCollider(collider, skipY);
-        Debug.Log(points.Count);
         for (int i = 0; i < points.Count; i++)
         {
             Debug.Log("Principio");
@@ -66,7 +64,6 @@ public class MyGrid : MonoBehaviour
     {
         List<Vector3> points = new List<Vector3>();
         Bounds bounds = collider.bounds;
-        Debug.Log(bounds);
         int minX = Mathf.FloorToInt(bounds.min.x);
         int maxX = Mathf.CeilToInt(bounds.max.x);
         int minY = skipY ? 0 : Mathf.FloorToInt(bounds.min.y);
@@ -85,6 +82,7 @@ public class MyGrid : MonoBehaviour
                     Debug.Log("l");
                     Vector3 point = new Vector3(x, y, z);
                     Debug.Log(point);
+                    Debug.Log(bounds);
                     if (bounds.Contains(point))
                     {
                         points.Add(point);
@@ -96,7 +94,7 @@ public class MyGrid : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        //Gizmos.color = Color.Red;
+        Gizmos.color = Color.red;
         foreach (var item in _dic)
         {
             Gizmos.DrawWireSphere(item.Key, 0.25f);

@@ -25,9 +25,6 @@ public class BaseEnemyController : MonoBehaviour
     #endregion
 
     EnemyRaidState<StatesEnum> _stateFollowPoints;
-    [SerializeField] AgentController _agentController;
-
-    bool _once = true;
 
     private void Awake()
     {
@@ -41,6 +38,7 @@ public class BaseEnemyController : MonoBehaviour
         InitializeSteerings();
         InitializedTree();
         InitializeFSM();
+        //_model._agentController.RunAStarPlusVector();
     }
 
     void InitializeFSM()
@@ -115,11 +113,6 @@ public class BaseEnemyController : MonoBehaviour
         _model._currentBuilding = _model.CheckClosest();
         _fsm.OnUpdate();
         _root.Execute();
-        if (_once)
-        {
-            _agentController.RunAStarPlusVector();
-            _once = false;
-        }
     }
     
     private void OnDrawGizmosSelected()
