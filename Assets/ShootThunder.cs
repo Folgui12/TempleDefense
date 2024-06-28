@@ -40,7 +40,8 @@ public class ShootThunder : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(ThunderToSpawn, ShootPoint.position, ShootPoint.rotation);
+        Instantiate(ThunderToSpawn, ShootPoint.position, 
+            Quaternion.Euler(ShootPoint.transform.rotation.x - 90f, ShootPoint.transform.rotation.y, ShootPoint.transform.rotation.z));
     }
 
     public void CanShootSwitch()
