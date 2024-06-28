@@ -27,6 +27,8 @@ public class BaseEnemyController : MonoBehaviour
     EnemyRaidState<StatesEnum> _stateFollowPoints;
     [SerializeField] AgentController _agentController;
 
+    bool _once = true;
+
     private void Awake()
     {
         _model = GetComponent<BaseEnemyModel>();
@@ -39,7 +41,6 @@ public class BaseEnemyController : MonoBehaviour
         InitializeSteerings();
         InitializedTree();
         InitializeFSM();
-        _agentController.RunAStarPlusVector();
     }
 
     void InitializeFSM()
@@ -114,6 +115,11 @@ public class BaseEnemyController : MonoBehaviour
         _model._currentBuilding = _model.CheckClosest();
         _fsm.OnUpdate();
         _root.Execute();
+        if (_once)
+        {
+            _agentController.RunAStarPlusVector();
+            _once = false;
+        }
     }
     
     private void OnDrawGizmosSelected()

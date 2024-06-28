@@ -9,10 +9,9 @@ public class AgentController : MonoBehaviour
     public float radius = 3;
     public LayerMask maskObs;
     public MainBuildingManager temple;
-    public MyGrid myGrid;
     public void RunAStarPlusVector()
     {
-        Vector3 start = myGrid.GetPosInGrid(_enemy.transform.position);
+        Vector3 start = MyGrid.instance.GetPosInGrid(_enemy.transform.position);
         List<Vector3> path = AStar.Run(start, GetConnections, IsSatiesfies, GetCost, Heuristic, 5000);
         path = AStar.CleanPath(path, InView);
         _enemy.GetStateWaypoints.SetWayPoints(path);
@@ -40,9 +39,9 @@ public class AgentController : MonoBehaviour
             for (int z = -1; z <= 1; z++)
             {
                 if (z == 0 && x == 0) continue;
-                Vector3 point = myGrid.GetPosInGrid(new Vector3(current.x + x, current.y, current.z + z));
-                Debug.Log(point + "  " + myGrid.IsRightPos(point));
-                if (myGrid.IsRightPos(point))
+                Vector3 point = MyGrid.instance.GetPosInGrid(new Vector3(current.x + x, current.y, current.z + z));
+                Debug.Log(point + "  " + MyGrid.instance.IsRightPos(point));
+                if (MyGrid.instance.IsRightPos(point))
                 {
                     connections.Add(point);
                 }
