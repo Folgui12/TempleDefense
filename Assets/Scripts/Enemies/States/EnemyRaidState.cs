@@ -40,7 +40,7 @@ public class EnemyRaidState<T> : State<T>, IPoints
     }
     public override void Enter()
     {
-        //_model._agentController.RunAStarPlusVector();
+        _model._agentController.RunAStarPlusVector();
         base.Enter();
     }
     public override void Execute()
@@ -65,7 +65,6 @@ public class EnemyRaidState<T> : State<T>, IPoints
     {
         _nextPoint = 0;
         if (newPoints.Count == 0) return;
-        //_anim.Play("CIA_Idle");
         _waypoints = newPoints;
         var pos = _waypoints[_nextPoint];
         pos.y = _model.transform.position.y;
@@ -84,7 +83,7 @@ public class EnemyRaidState<T> : State<T>, IPoints
             if (_nextPoint + 1 < _waypoints.Count)
             {
                 _nextPoint++;
-                if (MyGrid.instance.IsRightPos(_waypoints[_nextPoint]))
+                if (MyGrid.singleton.IsRightPos(_waypoints[_nextPoint]))
                 {
 
                 }

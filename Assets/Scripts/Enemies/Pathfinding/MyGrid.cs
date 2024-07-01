@@ -6,17 +6,17 @@ public class MyGrid : MonoBehaviour
 {
     public bool skipY;
     Dictionary<Vector3, int> _dic = new Dictionary<Vector3, int>();
-    public static MyGrid instance;
+    public static MyGrid singleton;
 
     private void Awake()
     {
-        if (instance != null)
+        if (singleton != null)
         {
             Destroy(this);
         }
         else
         {
-            instance = this;
+            singleton = this;
         }
     }
     public void AddCollider(Collider collider)
@@ -39,14 +39,11 @@ public class MyGrid : MonoBehaviour
         var points = GetPointsInCollider(collider, skipY);
         for (int i = 0; i < points.Count; i++)
         {
-            Debug.Log("Principio");
             if (_dic.ContainsKey(points[i]))
             {
-                Debug.Log("Mitad");
                 _dic[points[i]] -= 1;
                 if (_dic[points[i]] <= 0)
                 {
-                    Debug.Log("final");
                     _dic.Remove(points[i]);
                 }
             }
@@ -73,16 +70,11 @@ public class MyGrid : MonoBehaviour
 
         for (int x = minX; x <= maxX; x++)
         {
-            Debug.Log("l");
             for (int y = minY; y <= maxY; y++)
             {
-                Debug.Log("o");
                 for (int z = minZ; z <= maxZ; z++)
                 {
-                    Debug.Log("l");
                     Vector3 point = new Vector3(x, y, z);
-                    Debug.Log(point);
-                    Debug.Log(bounds);
                     if (bounds.Contains(point))
                     {
                         points.Add(point);

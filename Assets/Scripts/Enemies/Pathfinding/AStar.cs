@@ -16,7 +16,6 @@ public class AStar
         cost[start] = 0;
         while (!pending.IsEmpty)
         {
-            Debug.Log("AStar");
             watchdog--;
             if (watchdog <= 0) break;
             T current = pending.Dequeue();
@@ -29,6 +28,7 @@ public class AStar
                     path.Add(parents[path[path.Count - 1]]);
                 }
                 path.Reverse();
+                Debug.Log("AStar 1");
                 return path;
             }
             visited.Add(current);
@@ -44,6 +44,7 @@ public class AStar
                 parents[child] = current;
             }
         }
+        Debug.Log("AStar 2");
         return new List<T>();
     }
     public static List<T> CleanPath<T>(List<T> path, Func<T, T, bool> inView)
@@ -59,8 +60,10 @@ public class AStar
             {
                 newPath.Add(path[i - 1]);
             }
+            Debug.Log("AStar 3");
         }
         newPath.Add(path[path.Count - 1]);
+        Debug.Log("AStar 4");
         return newPath;
     }
 }

@@ -11,7 +11,7 @@ public class AgentController : MonoBehaviour
     public MainBuildingManager temple;
     public void RunAStarPlusVector()
     {
-        Vector3 start = MyGrid.instance.GetPosInGrid(_enemy.transform.position);
+        Vector3 start = MyGrid.singleton.GetPosInGrid(_enemy.transform.position);
         List<Vector3> path = AStar.Run(start, GetConnections, IsSatiesfies, GetCost, Heuristic, 5000);
         path = AStar.CleanPath(path, InView);
         _enemy.GetStateWaypoints.SetWayPoints(path);
@@ -38,21 +38,22 @@ public class AgentController : MonoBehaviour
         {
             for (int z = -1; z <= 1; z++)
             {
-                if (z == 0 && x == 0) continue;
-                Vector3 point = MyGrid.instance.GetPosInGrid(new Vector3(current.x + x, current.y, current.z + z));
-                Debug.Log(point + "  " + MyGrid.instance.IsRightPos(point));
-                if (MyGrid.instance.IsRightPos(point))
+                Vector3 point = MyGrid.singleton.GetPosInGrid(new Vector3(current.x + x, current.y, current.z + z));
+                //Debug.Log(point + "  " + MyGrid.instance.IsRightPos(point));
+                if (MyGrid.singleton.IsRightPos(point))
                 {
                     connections.Add(point);
                 }
             }
         }
+        Debug.Log("GetConnections");
         return connections;
     }
     bool InView(Vector3 a, Vector3 b)
     {
         //a->b  b-a
         Vector3 dir = b - a;
+        Debug.Log("InView");
         return !Physics.Raycast(a, dir.normalized, dir.magnitude, maskObs);
     }
     bool IsSatiesfies(Vector3 current)
