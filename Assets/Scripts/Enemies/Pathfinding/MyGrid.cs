@@ -57,7 +57,7 @@ public class MyGrid : MonoBehaviour
     {
         return !_dic.ContainsKey(pos);
     }
-    List<Vector3> GetPointsInCollider(Collider collider, bool skipY = false)
+    List<Vector3> GetPointsInCollider(Collider collider, bool skipY)
     {
         List<Vector3> points = new List<Vector3>();
         Bounds bounds = collider.bounds;

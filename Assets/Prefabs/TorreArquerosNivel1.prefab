@@ -109,8 +109,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.76974833, y: 0.7318101, z: 4.3090973}
-  m_Center: {x: 0.009405612, y: 0.0188829, z: 2.1470199}
+  m_Size: {x: 0.76974833, y: 0.7318101, z: 4.851473}
+  m_Center: {x: 0.009405612, y: 0.0188829, z: 1.8758321}
 --- !u!114 &436317168159586316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: b71112b176b614b44ac97cc0311031b7, type: 2}
   _currentEnemy: {fileID: 0}
   CurrentLife: 0
+  _grid: {fileID: 5913838281139028111}
 --- !u!114 &8022288749061783267
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -66,7 +66,7 @@ public class ObstacleAvoidance
     Transform _entity;
     LayerMask _maskObs;
 
-    public ObstacleAvoidance(Transform entity, float angle, float radius, LayerMask maskObs, float personalArea = 1)
+    public ObstacleAvoidance(Transform entity, float angle, float radius, float personalArea ,LayerMask maskObs)
     {
         _angle = angle;
         _radius = radius;
