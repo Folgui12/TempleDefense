@@ -14,6 +14,7 @@ TagManager:
   - Arrow
   - Floor
   - EnemyArrow
+  - golem
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - EnemyArrow
   - VRFloor
   - Kill
-  - Thunder
+  - Wall
   - 
   - 
   - 

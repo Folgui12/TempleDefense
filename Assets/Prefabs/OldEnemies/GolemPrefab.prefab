@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 937244164316528349}
   m_Layer: 3
   m_Name: GolemPrefab
-  m_TagString: Enemy
+  m_TagString: golem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,6 +482,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _los: {fileID: 937244164316528349}
+  _agentController: {fileID: 0}
 --- !u!114 &6150131312385590331
 MonoBehaviour:
   m_ObjectHideFlags: 0

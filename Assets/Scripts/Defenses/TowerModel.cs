@@ -10,7 +10,9 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     public float CurrentLife;
     LoS _los;
-    
+
+    [SerializeField] GridCollider _grid;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +30,18 @@ public class TowerModel : MonoBehaviour, IDamageable
 
         List<GameObject> currentEnemies = WaveSpawner.Instance.spawnedEnemies;
 
-        //Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.AttackRange);
+        Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.AttackRange);
 
-        /*for(int i = 0; i < colliderList.Length; i++)
+        for(int i = 0; i < colliderList.Length; i++)
         {
             if (colliderList[i].tag == "Enemy" && _los.CheckRange(colliderList[i].transform, _stats.AttackRange))
             {
                 _currentEnemy = colliderList[i].gameObject;
             }
-        }*/
+        }
 
 
-        for(int i = 0; i < currentEnemies.Count; i++)
+        for (int i = 0; i < currentEnemies.Count; i++)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, currentEnemies[i].transform.position);
             if (distanceToEnemy < shortestDistance)
@@ -69,7 +71,7 @@ public class TowerModel : MonoBehaviour, IDamageable
     }
     public void Dead()
     {
-        Destroy(gameObject);
+        _grid.KillCollider();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -81,7 +83,7 @@ public class TowerModel : MonoBehaviour, IDamageable
             TakeDamage(arrowHit.Damage);
         }
 
-        if(other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("golem"))
         {
             BaseEnemyModel enemyRef = other.gameObject.GetComponent<MeleeDamageRef>().EnemyModel;
 

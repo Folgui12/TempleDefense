@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BaseEnemyModel : MonoBehaviour, IDamageable
+public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 {
     public GameObject _mainBuilding;
 
@@ -23,17 +23,24 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable
 
     private BaseEnemyView _view;
 
+    public AgentController _agentController;
+
+    public LeaderBehaviour _leaderBehaviour;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _mainBuilding = GameObject.Find("MainBuilding");
+        _mainBuilding = GameObject.Find("Templo");
         lineOfSight = GetComponent<LoS>();
         _view = GetComponent<BaseEnemyView>();
         _currentBuilding = _mainBuilding;
 
         CurrentLife = _stats.life;
     }
-
+    private void Start()
+    {
+        _agentController.temple = _mainBuilding;
+    }
     public void Move(Vector3 dir)
     {
         dir *= _stats.travelSpeed;
@@ -77,6 +84,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable
     public void Dead()
     {
         CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
+        Destroy(_agentController);
         Destroy(gameObject);
     }
 
@@ -89,7 +97,10 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable
     {
         OnHand = false;
     }
-
+    public void SetPosition(Vector3 pos)
+    {
+        transform.position = pos;
+    }
     public void OnCollisionStay(Collision collisionInfo)
     {
         if(collisionInfo.gameObject.CompareTag("Floor"))
@@ -105,6 +116,9 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable
             OnGround = false;
         }
     }
+
+    public Vector3 Position => transform.position;
+    public Vector3 Front => transform.forward;
 
     private void OnDrawGizmosSelected()
     {
