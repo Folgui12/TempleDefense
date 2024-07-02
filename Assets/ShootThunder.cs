@@ -7,15 +7,10 @@ public class ShootThunder : MonoBehaviour
 {
     [SerializeField] private GameObject ThunderToSpawn;
     [SerializeField] private Transform ShootPoint;
-    [SerializeField] private Material HandChargedMaterial;
+    //[SerializeField] private Material HandChargedMaterial;
     [SerializeField] private GameObject HandLaser;
     
     public bool canShoot = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
