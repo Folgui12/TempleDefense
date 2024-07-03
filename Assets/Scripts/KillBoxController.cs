@@ -8,6 +8,7 @@ public class KillBoxController : MonoBehaviour
     {
         Debug.Log("chau´pete");
         WaveSpawner.Instance.RemoveEnemy(other.gameObject);
-        Destroy(other.gameObject);
+        other.gameObject.GetComponent<BaseEnemyModel>().TakeDamage(9999);
+        //Destroy(other.gameObject);
     }
 }

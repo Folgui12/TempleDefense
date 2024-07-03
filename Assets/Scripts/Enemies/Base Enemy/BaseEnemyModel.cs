@@ -84,8 +84,8 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public void Dead()
     {
         CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
-        Destroy(_agentController);
         Destroy(gameObject);
+        Destroy(_agentController);
     }
 
     public void EnemyOnHand()

@@ -17,26 +17,28 @@ public class ShootThunder : MonoBehaviour
     { // PROBAR
         if(TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.gripButton, out bool gripButton))
         {
-            if(gripButton)            
+            if(gripButton)
+            {
                 HandLaser.SetActive(true);
-            
+                if (TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerButton) &&
+                    triggerButton && canShoot)
+                {
+                    canShoot = false;
+                    Shoot();
+                }
+            }
+               
             else
                 HandLaser.SetActive(false);
-
-            if (TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerButton) &&
-                triggerButton && canShoot)
-            {
-                canShoot = false;
-                Shoot();
-            }
+            
         }
             
     }
 
     private void Shoot()
     {
-        Instantiate(ThunderToSpawn, ShootPoint.position, 
-            Quaternion.Euler(ShootPoint.transform.rotation.x - 90f, ShootPoint.transform.rotation.y, ShootPoint.transform.rotation.z));
+        Instantiate(ThunderToSpawn, ShootPoint.position, ShootPoint.rotation);
+            //Quaternion.Euler(ShootPoint.transform.rotation.x - 90f, ShootPoint.transform.rotation.y, ShootPoint.transform.rotation.z));
     }
 
     public void CanShootSwitch()

@@ -11,13 +11,14 @@ public class ThunderMovement : MonoBehaviour
     [SerializeField] private float explosionRadius;
     [SerializeField] private float explosionForce;
     [SerializeField] private int explosionDamage;
-
+    [SerializeField] private GameObject Fresnel;
+     
     private float lifeCounter = 0;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.up * speed * Time.deltaTime;
+        transform.position += transform.forward * speed * Time.deltaTime;
 
         lifeCounter += Time.deltaTime;
 
@@ -30,6 +31,9 @@ public class ThunderMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Floor"))
         {
+            Debug.Log("HITGOUND");
+            Instantiate(Fresnel, transform.position, transform.rotation);
+
             var surroundedEnemies = Physics.OverlapSphere(transform.position, explosionRadius);
 
             foreach(var enemy in surroundedEnemies)

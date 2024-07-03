@@ -24,6 +24,8 @@ public class WaveSpawner : MonoBehaviour
  
     public List<GameObject> spawnedEnemies = new List<GameObject>();
 
+    [SerializeField] private GameObject VFX;
+
     private void Awake()
     {
         if (Instance == null)
@@ -34,7 +36,6 @@ public class WaveSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateWave();
         //UpdateWavevCounter();
     }
  
@@ -46,6 +47,7 @@ public class WaveSpawner : MonoBehaviour
             //spawn an enemy
             if(enemiesToSpawn.Count > 0)
             {
+                Instantiate(VFX, spawnLocation[spawnIndex].transform.position, spawnLocation[spawnIndex].transform.rotation);
                 GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position,Quaternion.identity); // spawn first enemy in our list
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
@@ -80,12 +82,9 @@ public class WaveSpawner : MonoBehaviour
  
     public void NextWave()
     {
-        if(enemiesToSpawn.Count <= 0 && spawnedEnemies.Count <= 0)
-        {
-            currWave++;
-            UpdateWavevCounter();
-            GenerateWave();
-        }
+        currWave++;
+        UpdateWavevCounter();
+        GenerateWave();
         
     }
 

@@ -2164,7 +2164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThunderToSpawn: {fileID: 8586272070494488152, guid: b7d0d381835983b4387106e92fb1f694, type: 3}
   ShootPoint: {fileID: 2330862890582335304}
-  HandChargedMaterial: {fileID: 0}
   HandLaser: {fileID: 2160073154377857676}
   canShoot: 0
 --- !u!1 &4206118460533959501

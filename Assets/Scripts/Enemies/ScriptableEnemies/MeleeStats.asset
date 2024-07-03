@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349697d5cd5f478c975c6d7c7cb6fb42, type: 3}
   m_Name: MeleeStats
   m_EditorClassIdentifier: 
-  <life>k__BackingField: 12
-  <travelSpeed>k__BackingField: 3
+  <life>k__BackingField: 10
+  <travelSpeed>k__BackingField: 3.5
   <currentObjective>k__BackingField: {fileID: 8531084230230199607, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
   <attackSpeed>k__BackingField: 1
-  <attackRange>k__BackingField: 3.3
-  <viewRange>k__BackingField: 10
+  <attackRange>k__BackingField: 4
+  <viewRange>k__BackingField: 13
   <moneyQuantity>k__BackingField: 10
   <Damage>k__BackingField: 2

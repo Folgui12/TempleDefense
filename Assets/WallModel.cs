@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WallModel : TowerModel, IDamageable
 {
-
     public void RotateStructure()
     {
         transform.Rotate(transform.rotation.x, transform.rotation.y, transform.rotation.z + 90f);

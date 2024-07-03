@@ -115,7 +115,7 @@ Shader "AimingLightning"
 }
 /*ASEBEGIN
 Version=18900
-0;660;1481;339;982.7896;85.80768;1;True;False
+0;554.6667;1283;324.3333;883.7896;226.141;1;True;True
 Node;AmplifyShaderEditor.TextureCoordinatesNode;9;-1411.455,-2.904915;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.Vector2Node;10;-1419.455,147.0951;Inherit;False;Constant;_Vector0;Vector 0;1;0;Create;True;0;0;0;False;0;False;0.5,0.5;0,0;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
 Node;AmplifyShaderEditor.RotatorNode;7;-1136.455,22.09509;Inherit;False;3;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT;1;False;1;FLOAT2;0
@@ -133,4 +133,4 @@ WireConnection;6;1;3;0
 WireConnection;0;2;6;0
 WireConnection;0;9;5;0
 ASEEND*/
-//CHKSM=3E0F83015DF53D650A7E6AB0EA565A3840EFB6FE
+//CHKSM=955D616B26AB8724234ED81353DE0678A2541FEC
