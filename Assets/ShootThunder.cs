@@ -9,6 +9,7 @@ public class ShootThunder : MonoBehaviour
     [SerializeField] private Transform ShootPoint;
     //[SerializeField] private Material HandChargedMaterial;
     [SerializeField] private GameObject HandLaser;
+    [SerializeField] private Animator anim;
     
     public bool canShoot = false;
 
@@ -19,17 +20,29 @@ public class ShootThunder : MonoBehaviour
         {
             if(gripButton)
             {
-                HandLaser.SetActive(true);
-                if (TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerButton) &&
-                    triggerButton && canShoot)
+                if(canShoot)
                 {
-                    canShoot = false;
-                    Shoot();
+                    anim.SetBool("HasPower", true);
+                    HandLaser.SetActive(true);
+                    if (TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerButton) &&
+                        triggerButton)
+                    {
+                        canShoot = false;
+                        anim.SetBool("HasPower", false);
+                        Shoot();
+                    }
                 }
+                else
+                    anim.SetBool("HasPower", false);
+
             }
                
             else
+            {
+                anim.SetBool("HasPower", false);
                 HandLaser.SetActive(false);
+            }
+                
             
         }
             
