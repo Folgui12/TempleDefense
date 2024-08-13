@@ -4,7 +4,7 @@ using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class BaseEnemyController : MonoBehaviour
+public class BaseEnemyController : ManagedUpdateBehavior
 {
     BaseEnemyModel _model;
     BaseEnemyView _view;
@@ -35,8 +35,9 @@ public class BaseEnemyController : MonoBehaviour
         _los = GetComponent<LoS>();
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         InitializeSteerings();
         InitializedTree();
         InitializeFSM();       
@@ -118,8 +119,9 @@ public class BaseEnemyController : MonoBehaviour
     {
         return _los.CheckRange(_model._currentBuilding.transform, _model._stats.viewRange);
     }
-    private void Update()
+    protected override void CustomLightUpdate()
     {
+        base.CustomLightUpdate();
         _model._currentBuilding = _model.CheckClosest();
         _fsm.OnUpdate();
         _root.Execute();
