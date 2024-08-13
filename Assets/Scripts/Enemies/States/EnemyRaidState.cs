@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EnemyRaidState<T> : State<T>, IPoints
@@ -28,8 +27,7 @@ public class EnemyRaidState<T> : State<T>, IPoints
     //    var dir = _obs.GetDir(_steering.GetDir(), false);
     //    _model.Move(dir.normalized);
     //    _model.LookDir(dir.normalized);
-    //}
-
+    //
     BaseEnemyModel _model;
     List<Vector3> _waypoints;
     int _nextPoint = 0;
@@ -51,15 +49,6 @@ public class EnemyRaidState<T> : State<T>, IPoints
     public override void Sleep()
     {
         base.Sleep();
-    }
-    public void SetWayPoints(List<Node> newPoints)
-    {
-        var list = new List<Vector3>();
-        for (int i = 0; i < newPoints.Count; i++)
-        {
-            list.Add(newPoints[i].transform.position);
-        }
-        SetWayPoints(list);
     }
     public void SetWayPoints(List<Vector3> newPoints)
     {
