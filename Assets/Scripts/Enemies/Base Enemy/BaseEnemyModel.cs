@@ -27,6 +27,8 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public LeaderBehaviour _leaderBehaviour;
 
+    public WaveSpawner _waveSpawner;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -34,6 +36,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         lineOfSight = GetComponent<LoS>();
         _view = GetComponent<BaseEnemyView>();
         _currentBuilding = _mainBuilding;
+        _waveSpawner = FindObjectOfType<WaveSpawner>();
 
         CurrentLife = _stats.life;
     }
@@ -84,8 +87,9 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public void Dead()
     {
         CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
-        Destroy(gameObject);
-        Destroy(_agentController);
+        //Destroy(gameObject);
+        //Destroy(_agentController);
+        _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
     }
 
     public void EnemyOnHand()

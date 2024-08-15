@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerController : MonoBehaviour
+public class TowerController : ManagedUpdateBehavior
 {
     private TowerModel _model;
     private LoS _los;
@@ -17,8 +17,9 @@ public class TowerController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         InitializedTree();
         InitializeFSM();
     }
@@ -63,8 +64,9 @@ public class TowerController : MonoBehaviour
         _root = qHasLife;
     }
 
-    private void Update()
+    protected override void CustomLightUpdate()
     {
+        base.CustomLightUpdate();
         _fsm.OnUpdate();
         _root.Execute();
     }

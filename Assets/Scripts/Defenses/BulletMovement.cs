@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletMovement : MonoBehaviour
+public class BulletMovement : ManagedUpdateBehavior
 {
     public GameObject Target;
 
@@ -12,8 +12,9 @@ public class BulletMovement : MonoBehaviour
     public int Damage;
     
     // Update is called once per frame
-    void Update()
+    override protected void CustomLightUpdate()
     {
+        base.CustomLightUpdate();
         if (Target != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position + new Vector3(0, 1, 0), arrowSpeed * Time.deltaTime);

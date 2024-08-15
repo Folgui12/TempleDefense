@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
  
-public class AnimateHandOnInput : MonoBehaviour
+public class AnimateHandOnInput : ManagedUpdateBehavior
 {
 
 	public InputActionProperty pinchAnimationAction;
 	public InputActionProperty gripAnimationAction;
 	public Animator handAnimator;
 
-	void Update()
+	override protected void CustomLightUpdate()
 	{
-
+		base.CustomLightUpdate();
 		float triggerValue = pinchAnimationAction.action.ReadValue<float>();
 
 		handAnimator.SetFloat("Trigger", triggerValue);

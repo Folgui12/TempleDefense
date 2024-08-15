@@ -6,7 +6,8 @@ public class ManagedUpdateBehavior : MonoBehaviour
 {
     protected virtual void Start()
     {
-        UpdateManager.instance.OnLightUpdate += LightUpdate;
+        CustomUpdateManager.instance.OnLightUpdate += LightUpdate;
+        CustomUpdateManager.instance.OnLightFixedUpdate += LightFixedUpdate;
     }
     // Update is called once per frame
     public void LightUpdate()
@@ -18,8 +19,19 @@ public class ManagedUpdateBehavior : MonoBehaviour
     }
     protected virtual void CustomLightUpdate() { }
 
+    public void LightFixedUpdate() 
+    {
+        if (enabled)
+        {
+            CustomLightFixedUpdate();
+        }
+    }
+    protected virtual void CustomLightFixedUpdate() { }
+
+
+
     protected virtual void OnDestroy()
     {
-        UpdateManager.instance.OnLightUpdate -= LightUpdate;
+        CustomUpdateManager.instance.OnLightUpdate -= LightUpdate;
     }
 }

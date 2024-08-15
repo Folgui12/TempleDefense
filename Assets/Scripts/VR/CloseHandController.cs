@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
  
-public class CloseHandController : MonoBehaviour
+public class CloseHandController : ManagedUpdateBehavior
 {
 	public InputActionProperty pinchAnimationAction;
 	public InputActionProperty gripAnimationAction;
 
 	public Animator handAnimator;
 
-	void Start()
+	override protected void Start()
 	{
 		handAnimator = GetComponent<Animator>();
 	}
 
-	void Update()
+	override protected void CustomLightUpdate()
 	{
+		base.CustomLightUpdate();
 		float triggerValue = pinchAnimationAction.action.ReadValue<float>();
 		handAnimator.SetFloat("Trigger", triggerValue);
 

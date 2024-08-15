@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnCoins : MonoBehaviour
+public class SpawnCoins : ManagedUpdateBehavior
 {
     [SerializeField] private GameObject TypeOfCoin;
     [SerializeField] private Transform SpawnPoint;
@@ -14,13 +14,15 @@ public class SpawnCoins : MonoBehaviour
     private bool CanStartTimer = false;
     private bool CanBuyCoin = true;
 
-    void Start()
+    override protected void Start()
     {
+        base.Start();
         coinToSpawn = TypeOfCoin.GetComponent<TypeOfDefenseCoin>().defenseType;
     }
 
-    private void Update()
+    protected override void CustomLightUpdate()
     {
+        base.CustomLightUpdate();
         if(CanStartTimer)
         {
             timer += Time.deltaTime;

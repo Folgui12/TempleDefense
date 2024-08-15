@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingDetect : MonoBehaviour
+public class BuildingDetect : ManagedUpdateBehavior
 {
     public GameObject building;
 
     public float speed;
 
     // Update is called once per frame
-    void Update()
+    protected override void CustomLightUpdate()
     {
+        base.CustomLightUpdate();
         if (CheckDistance())
             Attack();
         else

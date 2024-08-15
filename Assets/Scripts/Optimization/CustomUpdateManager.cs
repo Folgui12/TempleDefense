@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpdateManager : MonoBehaviour
+public class CustomUpdateManager : MonoBehaviour
 {
-    public static UpdateManager instance;
+    public static CustomUpdateManager instance;
     public event Action OnLightUpdate;
-    //public event Action OnLightFixedUpdate;
+    public event Action OnLightFixedUpdate;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -23,4 +23,8 @@ public class UpdateManager : MonoBehaviour
         OnLightUpdate?.Invoke();
     }
 
+    private void FixedUpdate()
+    {
+        OnLightFixedUpdate?.Invoke();
+    }
 }

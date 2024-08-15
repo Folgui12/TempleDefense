@@ -1443,7 +1443,7 @@ MonoBehaviour:
   _currentBuilding: {fileID: 0}
   CurrentLife: 0
   OnHand: 0
-  OnGround: 1
+  OnGround: 0
   _stats: {fileID: 11400000, guid: 6371e44d64973af48afdd666736c06ab, type: 2}
   _agentController: {fileID: 4659146445170694184}
   _leaderBehaviour: {fileID: 3958534222892810424}

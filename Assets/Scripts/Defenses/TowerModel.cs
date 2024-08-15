@@ -51,17 +51,6 @@ public class TowerModel : MonoBehaviour, IDamageable
             }
         }
 
-
-        /*foreach(GameObject enemy in currentEnemies)
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if(distanceToEnemy < shortestDistance)
-            {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
-        }*/
-
         if(nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
         {
             _currentEnemy = nearestEnemy;

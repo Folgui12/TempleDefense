@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WaveSpawner : MonoBehaviour
+public class WaveSpawner : ManagedUpdateBehavior
 {
     public static WaveSpawner Instance;
 
@@ -13,15 +13,21 @@ public class WaveSpawner : MonoBehaviour
     public int currWave;
     public int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
- 
+
+    public GameObject enemy;
+
     public Transform[] spawnLocation;
     public int spawnIndex;
  
     public int waveDuration;
     private float waveTimer;
-    private float spawnInterval;
-    private float spawnTimer;
- 
+    public float spawnInterval;
+    public float spawnTimer;
+
+    public ObjectPoolSatiro poolSatiro;
+    public ObjectPoolCentauro poolCentauro;
+    public ObjectPoolGolem poolGolem;
+
     public List<GameObject> spawnedEnemies = new List<GameObject>();
 
     [SerializeField] private GameObject VFX;
@@ -31,27 +37,47 @@ public class WaveSpawner : MonoBehaviour
         if (Instance == null)
             Instance = this;
         else Destroy(this);
-    }
 
+        poolSatiro.Pool(enemies[0].enemyPrefab, 50);
+        poolCentauro.Pool(enemies[1].enemyPrefab, 50);
+        poolGolem.Pool(enemies[2].enemyPrefab, 50);
+    }
     // Start is called before the first frame update
-    void Start()
+    override protected void Start()
     {
+        base.Start();
+        NextWave();
         //UpdateWavevCounter();
     }
  
     // Update is called once per frame
-    void FixedUpdate()
+    override protected void CustomLightFixedUpdate()
     {
+        base.CustomLightFixedUpdate();
         if(spawnTimer <=0)
         {
             //spawn an enemy
             if(enemiesToSpawn.Count > 0)
             {
                 Instantiate(VFX, spawnLocation[spawnIndex].transform.position, spawnLocation[spawnIndex].transform.rotation);
-                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position,Quaternion.identity); // spawn first enemy in our list
+                enemy = enemiesToSpawn[0];
+
+                if (enemy == enemies[0].enemyPrefab)
+                {
+                    poolSatiro.GetPooled(spawnLocation[spawnIndex], enemy);
+                }
+                if (enemy == enemies[1].enemyPrefab)
+                {
+                    poolCentauro.GetPooled(spawnLocation[spawnIndex], enemy);
+                }
+                if (enemy == enemies[2].enemyPrefab)
+                {
+                    poolGolem.GetPooled(spawnLocation[spawnIndex], enemy);
+                }
+
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
-                spawnTimer = spawnInterval;
+                spawnTimer = spawnInterval;  
  
                 if(spawnIndex + 1 <= spawnLocation.Length-1)
                 {
@@ -92,6 +118,21 @@ public class WaveSpawner : MonoBehaviour
     {
         if (spawnedEnemies.Contains(enemy))
             spawnedEnemies.Remove(enemy);
+        if (enemy.name == "Satiro(Clone)")
+        {
+            Debug.Log("Satiro");
+            poolSatiro.ReturnToPool(enemy);
+        }
+        if (enemy.name == "Centauro(Clone)")
+        {
+            Debug.Log("Centauro");
+            poolCentauro.ReturnToPool(enemy);
+        }
+        if (enemy.name == "Golem(Clone)")
+        {
+            Debug.Log("Golem");
+            poolGolem.ReturnToPool(enemy);
+        }
     }
 
     public void GenerateWave()

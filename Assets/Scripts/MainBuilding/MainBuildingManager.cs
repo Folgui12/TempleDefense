@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainBuildingManager : MonoBehaviour
+public class MainBuildingManager : ManagedUpdateBehavior
 {
     [SerializeField] private float life;
     [SerializeField] private GameObject LoseMessage;
@@ -10,14 +10,15 @@ public class MainBuildingManager : MonoBehaviour
     [SerializeField] private Transform Player;
     
     private LifeBarManager lifeBar;
-    void Start()
+    override protected void Start()
     {
         lifeBar = GetComponentInChildren<LifeBarManager>();
         lifeBar.SetHealth(life);
     }
 
-    void Update()
+    override protected void CustomLightUpdate()
     {
+        base.CustomLightUpdate();
         LifeBarCanvas.transform.LookAt(Player);
     }
 
