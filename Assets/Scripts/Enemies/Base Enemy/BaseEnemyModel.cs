@@ -61,6 +61,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public GameObject CheckClosest()
     {
         Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.viewRange);
+
         if(_currentBuilding == null)
         {
             _currentBuilding = _mainBuilding;

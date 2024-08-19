@@ -15,6 +15,7 @@ TagManager:
   - Floor
   - EnemyArrow
   - golem
+  - GenericEnemy
   layers:
   - Default
   - TransparentFX

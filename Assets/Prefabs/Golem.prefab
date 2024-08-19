@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 4659146445170694184}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: GenericEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1447,6 +1447,7 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 6371e44d64973af48afdd666736c06ab, type: 2}
   _agentController: {fileID: 4659146445170694184}
   _leaderBehaviour: {fileID: 3958534222892810424}
+  _waveSpawner: {fileID: 0}
 --- !u!114 &439678799053709008
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 4733299224834507182}
   m_Layer: 0
   m_Name: Centauro
-  m_TagString: Untagged
+  m_TagString: GenericEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1423,6 +1423,7 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 16d86e9a6ebfda6458a8b94eab5d63f4, type: 2}
   _agentController: {fileID: 4733299224834507182}
   _leaderBehaviour: {fileID: 4706913792767495594}
+  _waveSpawner: {fileID: 0}
 --- !u!114 &7928936517223088336
 MonoBehaviour:
   m_ObjectHideFlags: 0

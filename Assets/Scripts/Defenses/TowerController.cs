@@ -64,7 +64,7 @@ public class TowerController : ManagedUpdateBehavior
         _root = qHasLife;
     }
 
-    protected override void CustomLightUpdate()
+    protected override void CustomLightUpdate() 
     {
         base.CustomLightUpdate();
         _fsm.OnUpdate();

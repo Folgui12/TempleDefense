@@ -7,14 +7,31 @@ public class BulletMovement : ManagedUpdateBehavior
 {
     public GameObject Target;
 
+    public GameObject LockOnTarget;
+
     public float arrowSpeed;
 
     public int Damage;
+
+    public float lifeTime;
+
+    private float lifeCounter;
+
     
     // Update is called once per frame
     override protected void CustomLightUpdate()
     {
         base.CustomLightUpdate();
+
+        if(lifeCounter < lifeTime)
+        {
+            lifeCounter += Time.deltaTime;
+        }   
+        else
+        {
+            Destroy(gameObject);
+        }
+
         if (Target != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position + new Vector3(0, 1, 0), arrowSpeed * Time.deltaTime);
@@ -24,6 +41,7 @@ public class BulletMovement : ManagedUpdateBehavior
         {
             Destroy(gameObject);
         }
+
     }
 
     private void OnTriggerEnter(Collider other)

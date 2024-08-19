@@ -26,6 +26,7 @@ public class ManagedUpdateBehavior : MonoBehaviour
             CustomLightFixedUpdate();
         }
     }
+
     protected virtual void CustomLightFixedUpdate() { }
 
 

@@ -13,6 +13,11 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     [SerializeField] GridCollider _grid;
 
+    public LayerMask _layerMask;
+
+    [SerializeField] private GameObject[] enemyColliderList;
+    //public List<GameObject> enemyQueue = new();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,35 +33,51 @@ public class TowerModel : MonoBehaviour, IDamageable
 
         GameObject nearestEnemy = null;
 
-        List<GameObject> currentEnemies = WaveSpawner.Instance.spawnedEnemies;
+        /*int cantColliders = Physics.OverlapSphereNonAlloc(transform.position, _stats.AttackRange, enemyColliderList, _layerMask);
+        Debug.Log(cantColliders);
 
-        Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.AttackRange);
-
-        for(int i = 0; i < colliderList.Length; i++)
+        if (cantColliders == 1 && collider.gameObject != enemyColliderList[0].gameObject)
         {
-            if (colliderList[i].tag == "Enemy" && _los.CheckRange(colliderList[i].transform, _stats.AttackRange))
+            enemyQueue.Add(enemyColliderList[0].gameObject);
+            collider = enemyColliderList[0];
+            if (_los.CheckRange(enemyColliderList[i].transform, _stats.AttackRange) && (enemyColliderList[i].CompareTag("Enemy") || enemyColliderList[i].CompareTag("golem")))
             {
-                _currentEnemy = colliderList[i].gameObject;
+                _currentEnemy = enemyColliderList[i].gameObject;
             }
-        }
+        }*/
+
+        enemyColliderList = ActiveEnemiesManager.Instance.activeEnemies;
 
 
-        for (int i = 0; i < currentEnemies.Count; i++)
+        for (int i = 0; i < ActiveEnemiesManager.Instance.activeEnemies.Length; i++)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, currentEnemies[i].transform.position);
-            if (distanceToEnemy < shortestDistance)
+            float distanceToEnemy = Vector3.Distance(transform.position, enemyColliderList[i].transform.position);
+            if (distanceToEnemy < shortestDistance && enemyColliderList[i].activeInHierarchy)
             {
                 shortestDistance = distanceToEnemy;
-                nearestEnemy = currentEnemies[i];
+                nearestEnemy = enemyColliderList[i];
             }
         }
 
-        if(nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
+        if (nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
         {
             _currentEnemy = nearestEnemy;
         }
-        
+
+
         return _currentEnemy;
+
+        //GameObject nearestEnemy = null;
+
+        /*if (nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
+        {
+            _currentEnemy = nearestEnemy;
+        }*/
+
+        //List<GameObject> currentEnemies = WaveSpawner.Instance.spawnedEnemies;
+
+        
+
     }
     public void Dead()
     {
