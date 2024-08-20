@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18306574, g: 0.22874251, b: 0.30669183, a: 1}
+  m_IndirectSpecularColor: {r: 0.18306622, g: 0.2287434, b: 0.30669293, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,8 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
-  speed: 1
-  attackRange: 0.5
+  _stats: {fileID: 0}
 --- !u!114 &214978824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,6 +2504,57 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
+--- !u!1 &1601983298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601983300}
+  - component: {fileID: 1601983299}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1601983299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601983298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600da201ddefc914ea0df3568b159bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Thunder_Sound
+    clip: {fileID: 8300000, guid: 3dc100bea55b2504282634d466cc7c29, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+--- !u!4 &1601983300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601983298}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1643597362
 GameObject:
   m_ObjectHideFlags: 0
@@ -3535,8 +3585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
-  speed: 1
-  attackRange: 0.5
+  _stats: {fileID: 0}
 --- !u!114 &2013620451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3634,3 +3683,4 @@ SceneRoots:
   - {fileID: 1081876090}
   - {fileID: 1643597368}
   - {fileID: 371127320}
+  - {fileID: 1601983300}
