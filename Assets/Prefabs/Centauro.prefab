@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 4733299224834507182}
   m_Layer: 0
   m_Name: Centauro
-  m_TagString: GenericEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1290,7 +1290,7 @@ GameObject:
   - component: {fileID: 4706913792767495594}
   m_Layer: 3
   m_Name: CentauroModel
-  m_TagString: Enemy
+  m_TagString: GenericEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

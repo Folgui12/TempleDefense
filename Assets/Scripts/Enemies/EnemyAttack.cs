@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private GameObject _projectile;
     [SerializeField] private Transform _shootPoint;
+    [SerializeField] private ObjectPoolArrows _poolArrows;
     private BaseEnemyModel _enemyModel;
     private Animator anim;
     
@@ -13,6 +14,7 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         _enemyModel = GetComponent<BaseEnemyModel>();
+        _poolArrows = GameObject.FindObjectOfType<ObjectPoolArrows>();
         anim = GetComponent<Animator>();
 
         EnemyEventManager.ShootEvent += StartShootAnimation;
@@ -26,9 +28,14 @@ public class EnemyAttack : MonoBehaviour
 
     private void Shoot()
     {
-        BulletMovement arrow = Instantiate(_projectile, _shootPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
+        //BulletMovement arrow = Instantiate(_projectile, _shootPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
+        GameObject currentArrow = _poolArrows.GetPooled(_shootPoint, _projectile, Quaternion.Euler(new Vector3(0, 0, 90)));
+        //arrow.Target = _enemyModel._currentBuilding;
+        //arrow.Damage = _enemyModel._stats.Damage;
 
-        arrow.Target = _enemyModel._currentBuilding;
-        arrow.Damage = _enemyModel._stats.Damage;
+        BulletMovement arrowRef = currentArrow.GetComponent<BulletMovement>();
+
+        arrowRef.Target = _enemyModel._currentBuilding;
+        arrowRef.Damage = _enemyModel._stats.Damage;
     }
 }

@@ -968,6 +968,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1709829872821117285, guid: 3134ecaa5b6e5254d8d05fa62fc61f4c, type: 3}
   m_PrefabInstance: {fileID: 1476131878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &92931868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92931869}
+  - component: {fileID: 92931870}
+  m_Layer: 0
+  m_Name: ObjectPoolTowerArrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &92931869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92931868}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -148.73613, y: 6.8171616, z: -14.181519}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566561801}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &92931870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92931868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f31fbc7a26b4b43b6cc0f852b79c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 1457076268703639767, guid: 45d4847c4c0e1b143a833f43ae6b5c2d, type: 3}
 --- !u!1 &94533611
 GameObject:
   m_ObjectHideFlags: 0
@@ -6182,6 +6227,7 @@ Transform:
   - {fileID: 829869025}
   - {fileID: 473329560}
   - {fileID: 2030551239}
+  - {fileID: 92931869}
   - {fileID: 318842338}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19939,6 +19985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb243c5a8ca3694f87a90323d8ddd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeEnemies: []
 --- !u!1001 &1912468737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22028,6 +22075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dba9a54107b3754fac253bd4d2a1375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrow: {fileID: 1457076268703639767, guid: 628abb9a016b9614390e72b268e76c2f, type: 3}
 --- !u!4 &2030551239
 Transform:
   m_ObjectHideFlags: 0

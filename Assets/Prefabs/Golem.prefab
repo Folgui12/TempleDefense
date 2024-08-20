@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 4659146445170694184}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: GenericEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 3958534222892810424}
   m_Layer: 3
   m_Name: GolemModel
-  m_TagString: golem
+  m_TagString: GenericEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

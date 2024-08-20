@@ -48,8 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  LockOnTarget: {fileID: 0}
   arrowSpeed: 8
   Damage: 0
+  lifeTime: 10
 --- !u!136 &3256091772247536549
 CapsuleCollider:
   m_ObjectHideFlags: 0

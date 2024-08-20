@@ -16,7 +16,7 @@ MonoBehaviour:
   <travelSpeed>k__BackingField: 3
   <currentObjective>k__BackingField: {fileID: 0}
   <attackSpeed>k__BackingField: 0.3
-  <attackRange>k__BackingField: 8
+  <attackRange>k__BackingField: 6.5
   <viewRange>k__BackingField: 9
   <moneyQuantity>k__BackingField: 50
   <Damage>k__BackingField: 8

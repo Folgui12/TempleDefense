@@ -8,6 +8,7 @@ public class ArcherModel : MonoBehaviour
 {
     [SerializeField] private GameObject _arrow;
     [SerializeField] private Transform _arrowSpawnPoint;
+    [SerializeField] private ObjectPoolTowerArrow _poolArrows;
     private TowerModel _tModel;
     public Animator anim;
     
@@ -15,6 +16,7 @@ public class ArcherModel : MonoBehaviour
     void Start()
     {
         _tModel = GetComponentInParent<TowerModel>();
+        _poolArrows = GameObject.FindObjectOfType<ObjectPoolTowerArrow>();
         anim = GetComponent<Animator>();
 
         //ArcherEventManager.ShootEvent += StartShootAnimation;
@@ -28,10 +30,15 @@ public class ArcherModel : MonoBehaviour
 
     private void Shoot()
     {
-        BulletMovement arrow = Instantiate(_arrow, _arrowSpawnPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
+        //BulletMovement arrow = Instantiate(_arrow, _arrowSpawnPoint.position, Quaternion.Euler(new Vector3(0, 0, 90))).GetComponent<BulletMovement>();
+        //arrow.Target = _tModel._currentEnemy;
+        //arrow.Damage = _tModel._stats.Damage;
+        GameObject currentArrow = _poolArrows.GetPooled(_arrowSpawnPoint, _arrow, Quaternion.Euler(new Vector3(0, 0, 90)));
+        BulletMovement arrowRef = currentArrow.GetComponent<BulletMovement>();
 
-        arrow.Target = _tModel._currentEnemy;
-        arrow.Damage = _tModel._stats.Damage;
+        arrowRef.Target = _tModel._currentEnemy;
+        arrowRef.Damage = _tModel._stats.Damage;
+
     }
 
 }

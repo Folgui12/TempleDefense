@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3022009368555694265}
   m_Layer: 12
   m_Name: EnemyArrowConteiner
-  m_TagString: Arrow
+  m_TagString: EnemyArrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,8 +50,10 @@ MonoBehaviour:
   Target: {fileID: 0}
   LockOnTarget: {fileID: 0}
   arrowSpeed: 8
-  Damage: 0
-  lifeTime: 2
+  Damage: 5
+  lifeTime: 3
+  arrowArrows: {fileID: 0}
+  arrowTower: {fileID: 0}
 --- !u!136 &3256091772247536549
 CapsuleCollider:
   m_ObjectHideFlags: 0

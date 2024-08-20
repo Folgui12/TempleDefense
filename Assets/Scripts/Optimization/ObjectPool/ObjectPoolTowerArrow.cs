@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPoolArrows : MonoBehaviour
+public class ObjectPoolTowerArrow : MonoBehaviour
 {
     public Queue<GameObject> pooledObjects;
     public GameObject arrow;

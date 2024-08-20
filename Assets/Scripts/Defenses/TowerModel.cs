@@ -15,8 +15,6 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     public LayerMask _layerMask;
 
-    [SerializeField] private GameObject[] enemyColliderList;
-    //public List<GameObject> enemyQueue = new();
 
     // Start is called before the first frame update
     void Start()
@@ -27,24 +25,13 @@ public class TowerModel : MonoBehaviour, IDamageable
     
     public GameObject CheckClosestEnemy()
     {
+        GameObject[] enemyColliderList;
+
         _currentEnemy = null;
 
         float shortestDistance = Mathf.Infinity;
 
         GameObject nearestEnemy = null;
-
-        /*int cantColliders = Physics.OverlapSphereNonAlloc(transform.position, _stats.AttackRange, enemyColliderList, _layerMask);
-        Debug.Log(cantColliders);
-
-        if (cantColliders == 1 && collider.gameObject != enemyColliderList[0].gameObject)
-        {
-            enemyQueue.Add(enemyColliderList[0].gameObject);
-            collider = enemyColliderList[0];
-            if (_los.CheckRange(enemyColliderList[i].transform, _stats.AttackRange) && (enemyColliderList[i].CompareTag("Enemy") || enemyColliderList[i].CompareTag("golem")))
-            {
-                _currentEnemy = enemyColliderList[i].gameObject;
-            }
-        }*/
 
         enemyColliderList = ActiveEnemiesManager.Instance.activeEnemies;
 
@@ -52,18 +39,20 @@ public class TowerModel : MonoBehaviour, IDamageable
         for (int i = 0; i < ActiveEnemiesManager.Instance.activeEnemies.Length; i++)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemyColliderList[i].transform.position);
-            if (distanceToEnemy < shortestDistance && enemyColliderList[i].activeInHierarchy)
+            if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemyColliderList[i];
             }
         }
-
+        
         if (nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
         {
             _currentEnemy = nearestEnemy;
         }
 
+
+        
 
         return _currentEnemy;
 

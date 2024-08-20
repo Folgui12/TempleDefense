@@ -17,7 +17,20 @@ public class BulletMovement : ManagedUpdateBehavior
 
     private float lifeCounter;
 
-    
+    public ObjectPoolArrows arrowArrows;
+    public ObjectPoolTowerArrow arrowTower;
+
+    private void Awake()
+    {
+        if(gameObject.tag == "EnemyArrow")
+        {
+            arrowArrows = GameObject.FindObjectOfType<ObjectPoolArrows>();
+        }
+        else
+        {
+            arrowTower = GameObject.FindObjectOfType<ObjectPoolTowerArrow>();
+        }
+    }
     // Update is called once per frame
     override protected void CustomLightUpdate()
     {
@@ -29,26 +42,52 @@ public class BulletMovement : ManagedUpdateBehavior
         }   
         else
         {
-            Destroy(gameObject);
+            if (gameObject.tag == "EnemyArrow")
+            {
+                arrowArrows.ReturnToPool(gameObject);
+            }
+            else
+            {
+                arrowTower.ReturnToPool(gameObject);
+            }
         }
 
-        if (Target != null)
+        if (Target != null && Target.activeInHierarchy)
         {
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position + new Vector3(0, 1, 0), arrowSpeed * Time.deltaTime);
             transform.LookAt(Target.transform.position + new Vector3(0, 1, 0), Vector3.up);
         }
         else
         {
-            Destroy(gameObject);
+            if (gameObject.tag == "EnemyArrow")
+            {
+                arrowArrows.ReturnToPool(gameObject);
+            }
+            else
+            {
+                arrowTower.ReturnToPool(gameObject);
+            }
         }
 
     }
 
+    private void OnEnable()
+    {
+        
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Building"))
+        if (other.gameObject.CompareTag("GenericEnemy") || other.gameObject.CompareTag("Building"))
         {
-            Destroy(gameObject);
+            if (gameObject.tag == "EnemyArrow")
+            {
+                arrowArrows.ReturnToPool(gameObject);
+            }
+            else
+            {
+                arrowTower.ReturnToPool(gameObject);
+            }
         }
     }
 }
