@@ -2535,7 +2535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Thunder_Sound
-    clip: {fileID: 8300000, guid: 3dc100bea55b2504282634d466cc7c29, type: 3}
+    clip: {fileID: 8300000, guid: 456632aef085754428f7387c9f4a4ebf, type: 3}
     loop: 0
     volume: 1
     pitch: 0
