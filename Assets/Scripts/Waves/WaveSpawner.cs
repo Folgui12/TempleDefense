@@ -38,9 +38,9 @@ public class WaveSpawner : ManagedUpdateBehavior
             Instance = this;
         else Destroy(this);
 
-        poolSatiro.Pool(enemies[0].enemyPrefab, 50);
-        poolCentauro.Pool(enemies[1].enemyPrefab, 50);
-        poolGolem.Pool(enemies[2].enemyPrefab, 50);
+        poolSatiro.Pool(enemies[0].enemyPrefab, 1);
+        poolCentauro.Pool(enemies[1].enemyPrefab, 1);
+        poolGolem.Pool(enemies[2].enemyPrefab, 1);
     }
     // Start is called before the first frame update
     override protected void Start()

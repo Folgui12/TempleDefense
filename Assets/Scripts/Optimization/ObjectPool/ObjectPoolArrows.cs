@@ -8,7 +8,7 @@ public class ObjectPoolArrows : MonoBehaviour
     public GameObject arrow;
     private void Start()
     {
-        Pool(arrow, 150);
+        Pool(arrow, 30);
     }
     // Start is called before the first frame update
     public void Pool(GameObject _objects, int poolSize)

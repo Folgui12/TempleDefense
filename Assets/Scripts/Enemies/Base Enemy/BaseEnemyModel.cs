@@ -87,10 +87,13 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     
     public void Dead()
     {
-        CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
-        //Destroy(gameObject);
-        //Destroy(_agentController);
-        _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+        if (this.transform.parent.gameObject.active)
+        {
+            CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
+            //Destroy(gameObject);
+            //Destroy(_agentController);
+            _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+        }
     }
 
     public void EnemyOnHand()

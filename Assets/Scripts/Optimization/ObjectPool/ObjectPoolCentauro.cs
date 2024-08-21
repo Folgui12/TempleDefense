@@ -18,6 +18,12 @@ public class ObjectPoolCentauro : MonoBehaviour
             pooledObjects.Enqueue(objects);
         }
     }
+    private void AddToPool(Transform transform, GameObject _objects)
+    {
+        GameObject objects = Instantiate(_objects);
+        pooledObjects.Enqueue(objects);
+        _objects.transform.position = transform.position;
+    }
     public GameObject GetPooled(Transform transform, GameObject _objects)
     {
         if (pooledObjects.Count > 0)
@@ -26,6 +32,10 @@ public class ObjectPoolCentauro : MonoBehaviour
             _objects.transform.position = transform.position;
             _objects.SetActive(true);
             return _objects;
+        }
+        else
+        {
+            AddToPool(transform, _objects);
         }
         return null;
     }

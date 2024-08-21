@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletMovement : ManagedUpdateBehavior
@@ -15,7 +16,7 @@ public class BulletMovement : ManagedUpdateBehavior
 
     public float lifeTime;
 
-    private float lifeCounter;
+    public float lifeCounter;
 
     public ObjectPoolArrows arrowArrows;
     public ObjectPoolTowerArrow arrowTower;
@@ -30,6 +31,10 @@ public class BulletMovement : ManagedUpdateBehavior
         {
             arrowTower = GameObject.FindObjectOfType<ObjectPoolTowerArrow>();
         }
+    }
+    private void OnEnable()
+    {
+        lifeCounter = 0;
     }
     // Update is called once per frame
     override protected void CustomLightUpdate()
@@ -70,12 +75,6 @@ public class BulletMovement : ManagedUpdateBehavior
         }
 
     }
-
-    private void OnEnable()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("GenericEnemy") || other.gameObject.CompareTag("Building"))
