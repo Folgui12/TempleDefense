@@ -21,7 +21,6 @@ public class ObjectPoolSatiro : MonoBehaviour
     private void AddToPool(Transform transform,GameObject _objects)
     {
         GameObject objects = Instantiate(_objects);
-        pooledObjects.Enqueue(objects);
         _objects.transform.position = transform.position;
     }
     public GameObject GetPooled(Transform transform, GameObject _objects)
