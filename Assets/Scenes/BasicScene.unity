@@ -21611,18 +21611,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 128.84895
       objectReference: {fileID: 0}
-    - target: {fileID: 3917075580230862838, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-      propertyPath: m_Height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917075580230862838, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-      propertyPath: m_Radius
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917075580230862838, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4086929960476947878, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_TeleportInteractor
       value: 
