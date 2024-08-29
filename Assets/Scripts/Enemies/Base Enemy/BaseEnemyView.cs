@@ -4,15 +4,51 @@ using UnityEngine;
 
 public class BaseEnemyView : MonoBehaviour
 {
+
+    [SerializeField] private new Collider collider;
+    [SerializeField] private BaseEnemyModel _model;
+    [SerializeField] private GameObject _projectile;
+
+    public bool Attacking;
+
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+        _model = GetComponent<BaseEnemyModel>();
+
+        UnshowPunchCollider();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartAttackAnimation()
     {
-        
+        if (anim != null && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
+            anim.SetTrigger("Attack");
     }
+
+    public void CanIdle()
+    {
+        anim.SetBool("InRange", true);
+    }
+
+    public void StopIdle()
+    {
+        anim.SetBool("InRange", false);
+    }
+
+    public void ShowPunchCollider()
+    {
+        if(collider != null)
+            collider.enabled = true;
+    }
+
+    public void UnshowPunchCollider()
+    {
+        if (collider != null)
+            collider.enabled = false;
+    }
+
+    
 }

@@ -9,5 +9,8 @@ public class EnemyStats : ScriptableObject
     [field: SerializeField] public GameObject currentObjective { get; private set; }
     [field: SerializeField] public float attackSpeed { get; private set; }
     [field: SerializeField] public float attackRange { get; private set; }
-    
+    [field: SerializeField] public float viewRange { get; private set; }
+    [field: SerializeField] public int moneyQuantity { get; private set; }
+    [field: SerializeField] public int Damage { get; private set; }
+
 }

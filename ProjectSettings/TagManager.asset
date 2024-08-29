@@ -5,26 +5,37 @@ TagManager:
   serializedVersion: 2
   tags:
   - Building
-  - Mine
   - Enemy
+  - Obstacule
+  - Temple
+  - Anchor
+  - Mine
+  - Coin
+  - Arrow
+  - Floor
+  - EnemyArrow
+  - golem
+  - GenericEnemy
+  - GoToGame
+  - ExitGame
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - Mina
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Obstacue
+  - Floor
+  - Building
+  - Temple
+  - Arrow
+  - EnemyArrow
+  - VRFloor
+  - Kill
+  - Wall
+  - TeleportWall
   - 
   - 
   - 

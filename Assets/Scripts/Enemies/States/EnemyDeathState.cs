@@ -5,10 +5,22 @@ using UnityEngine;
 public class EnemyDeathState<T> : State<T>
 {
     //Crear variable del modelo base de enemigo, así como tambien su constructor.
-    
-    public override void Enter()
+    BaseEnemyModel _model;
+    BaseEnemyView _view;
+
+    public EnemyDeathState(BaseEnemyModel model, BaseEnemyView view)
     {
-        base.Enter();
+        _model = model;
+        _view = view; 
+    }
+
+    public override void Execute()
+    {
+        base.Execute();
+        //Debug.Log("muerte");
+        _model.Dead();
+        _view.StartAttackAnimation();
+        WaveSpawner.Instance.RemoveEnemy(_model.gameObject);
         // Llamar al Dead dentro de la variable del modelo base.
     }
 }
