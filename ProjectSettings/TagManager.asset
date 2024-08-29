@@ -16,6 +16,8 @@ TagManager:
   - EnemyArrow
   - golem
   - GenericEnemy
+  - GoToGame
+  - ExitGame
   layers:
   - Default
   - TransparentFX
@@ -33,7 +35,7 @@ TagManager:
   - VRFloor
   - Kill
   - Wall
-  - 
+  - TeleportWall
   - 
   - 
   - 
