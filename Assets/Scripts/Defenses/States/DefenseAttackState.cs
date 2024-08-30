@@ -29,7 +29,8 @@ public class DefenseAttackState<T> : State<T>
         foreach(ArcherModel archer in Archers)
         {
             archer.StartShootAnimation();
+            AudioManager.Instance.Play("ShootArrow");
         }
-        
+
     }
 }

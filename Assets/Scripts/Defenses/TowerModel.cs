@@ -21,8 +21,10 @@ public class TowerModel : MonoBehaviour, IDamageable
     {
         CurrentLife = _stats.Life;
         _los = GetComponent<LoS>();
+        AudioManager.Instance.Play("ShootArrow");
+
     }
-    
+
     public GameObject CheckClosestEnemy()
     {
         GameObject[] enemyColliderList;
