@@ -18,23 +18,21 @@ public class ObjectPoolGolem : MonoBehaviour
             pooledObjects.Enqueue(objects);
         }
     }
-    private void AddToPool(Transform transform, GameObject _objects)
+    private void AddToPool(GameObject _objects)
     {
         GameObject objects = Instantiate(_objects);
-        _objects.transform.position = transform.position;
+        objects.SetActive(false);
+        pooledObjects.Enqueue(objects);
     }
     public GameObject GetPooled(Transform transform, GameObject _objects)
     {
+        AddToPool(_objects);
         if (pooledObjects.Count > 0 || _objects.activeInHierarchy)
         {
             _objects = pooledObjects.Dequeue();
             _objects.transform.position = transform.position;
             _objects.SetActive(true);
             return _objects;
-        }
-        else
-        {
-            AddToPool(transform, _objects);
         }
         return null;
     }
