@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AudioManager;
 
 public class AudioManager : MonoBehaviour
 {
@@ -22,6 +23,13 @@ public class AudioManager : MonoBehaviour
     }
 
     public List<Sound> sounds;
+
+    private void Start()
+    {
+        Play("ShootArrow");
+        Debug.Log("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV ");
+    }
+
 
     void Awake()
     {
@@ -52,6 +60,7 @@ public class AudioManager : MonoBehaviour
         if (sound != null)
         {
             sound.source.Play();
+            Debug.Log("Attempting to play sound: " + name);
         }
         else
         {

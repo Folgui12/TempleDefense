@@ -30,6 +30,7 @@ public class DefenseAttackState<T> : State<T>
         {
             archer.StartShootAnimation();
             AudioManager.Instance.Play("ShootArrow");
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }
 
     }
