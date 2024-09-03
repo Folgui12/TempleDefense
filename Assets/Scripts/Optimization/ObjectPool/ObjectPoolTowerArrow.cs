@@ -8,7 +8,7 @@ public class ObjectPoolTowerArrow : MonoBehaviour
     public GameObject arrow;
     private void Start()
     {
-        Pool(arrow, 30);
+        Pool(arrow, 1);
     }
     // Start is called before the first frame update
     public void Pool(GameObject _objects, int poolSize)
@@ -22,8 +22,18 @@ public class ObjectPoolTowerArrow : MonoBehaviour
             pooledObjects.Enqueue(objects);
         }
     }
+    private void AddToPool(GameObject _objects)
+    {
+        GameObject objects = Instantiate(_objects);
+        objects.SetActive(false);
+        pooledObjects.Enqueue(objects);
+    }
     public GameObject GetPooled(Transform transform, GameObject _objects, Quaternion rotation)
     {
+        if (pooledObjects.Count <= 0)
+        {
+            AddToPool(_objects);
+        }
         if (pooledObjects.Count > 0)
         {
             _objects = pooledObjects.Dequeue();

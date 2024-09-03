@@ -26,7 +26,10 @@ public class ObjectPoolCentauro : MonoBehaviour
     }
     public GameObject GetPooled(Transform transform, GameObject _objects)
     {
-        AddToPool(_objects);
+        if (pooledObjects.Count <= 0)
+        {
+            AddToPool(_objects);
+        }
         if (pooledObjects.Count > 0 || _objects.activeInHierarchy)
         {
             _objects = pooledObjects.Dequeue();
