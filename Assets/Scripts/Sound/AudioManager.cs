@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         Play("ShootArrow");
-        Debug.Log("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV ");
+        Debug.Log("Entering Start method ");
     }
 
 
