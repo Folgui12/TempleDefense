@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.39640743, a: 1}
+  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.3964075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16684,7 +16684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1494426217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16702,6 +16702,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: eef128e65d98db5479e1cd9a413077b5, type: 3}
     loop: 0
     volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - name: Background Music
+    clip: {fileID: 8300000, guid: 95440eb19c8219e4eb120c23294527da, type: 3}
+    loop: 1
+    volume: 0.629
     pitch: 0
     source: {fileID: 0}
 --- !u!4 &1494426218
@@ -22033,15 +22039,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262550313278539462, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.3
+      value: -10.45
       objectReference: {fileID: 0}
     - target: {fileID: 6262550313278539462, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -46.7
+      value: 4.25
       objectReference: {fileID: 0}
     - target: {fileID: 6262550313278539462, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 64.2
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 6538932635438410691, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_Name
@@ -22168,8 +22174,8 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3773578842230011357, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-    - {fileID: 4447330890598677631, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 8587618041127001293, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
     - {fileID: 2124753748552027551, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}

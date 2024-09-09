@@ -21,7 +21,7 @@ public class TowerModel : MonoBehaviour, IDamageable
     {
         CurrentLife = _stats.Life;
         _los = GetComponent<LoS>();
-        AudioManager.Instance.Play("ShootArrow");
+        //AudioManager.Instance.Play("ShootArrow");
 
     }
 

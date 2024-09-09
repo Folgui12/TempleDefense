@@ -24,13 +24,6 @@ public class AudioManager : MonoBehaviour
 
     public List<Sound> sounds;
 
-    private void Start()
-    {
-        Play("ShootArrow");
-        Debug.Log("Entering Start method ");
-    }
-
-
     void Awake()
     {
         if (Instance == null)
@@ -52,6 +45,12 @@ public class AudioManager : MonoBehaviour
             sound.source.volume = sound.volume;
             sound.source.pitch = sound.pitch;
         }
+    }
+
+    private void Start()
+    {
+        Play("Background Music");
+        Debug.Log("Entering Start method ");
     }
 
     public void Play(string name)
