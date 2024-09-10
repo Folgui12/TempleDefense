@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.3964075, a: 1}
+  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.39640743, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16684,7 +16684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1494426217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16704,10 +16704,10 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     source: {fileID: 0}
-  - name: Background Music
-    clip: {fileID: 8300000, guid: 95440eb19c8219e4eb120c23294527da, type: 3}
+  - name: CentaurMovement
+    clip: {fileID: 8300000, guid: ab803dcbd3bd2a04ba6e97e4cb192c33, type: 3}
     loop: 1
-    volume: 0.629
+    volume: 1
     pitch: 0
     source: {fileID: 0}
 --- !u!4 &1494426218

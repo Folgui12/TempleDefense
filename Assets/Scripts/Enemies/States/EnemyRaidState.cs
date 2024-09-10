@@ -32,8 +32,10 @@ public class EnemyRaidState<T> : State<T>, IPoints
     List<Vector3> _waypoints;
     int _nextPoint = 0;
     bool _isFinishPath = true;
-    public EnemyRaidState(BaseEnemyModel model)
+    private AudioSource _audioSource;
+    public EnemyRaidState(BaseEnemyModel model, AudioSource source)
     {
+        _audioSource = source;
         _model = model;
     }
     public override void Enter()
@@ -62,6 +64,12 @@ public class EnemyRaidState<T> : State<T>, IPoints
     }
     void Run()
     {
+        if (!_audioSource.isPlaying)
+        {
+            AudioManager.Instance.Play("CentaurMovement", _audioSource);
+
+        }
+
         if (IsFinishPath) return;
         var point = _waypoints[_nextPoint];
         var posPoint = point;

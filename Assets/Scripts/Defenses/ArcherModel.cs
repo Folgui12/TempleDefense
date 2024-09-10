@@ -9,6 +9,7 @@ public class ArcherModel : MonoBehaviour
     [SerializeField] private GameObject _arrow;
     [SerializeField] private Transform _arrowSpawnPoint;
     [SerializeField] private ObjectPoolTowerArrow _poolArrows;
+    public AudioSource audioSource;
     private TowerModel _tModel;
     public Animator anim;
     
@@ -18,6 +19,8 @@ public class ArcherModel : MonoBehaviour
         _tModel = GetComponentInParent<TowerModel>();
         _poolArrows = GameObject.FindObjectOfType<ObjectPoolTowerArrow>();
         anim = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
 
         //ArcherEventManager.ShootEvent += StartShootAnimation;
     }
@@ -35,6 +38,7 @@ public class ArcherModel : MonoBehaviour
         //arrow.Damage = _tModel._stats.Damage;
         GameObject currentArrow = _poolArrows.GetPooled(_arrowSpawnPoint, _arrow, Quaternion.Euler(new Vector3(0, 0, 90)));
         BulletMovement arrowRef = currentArrow.GetComponent<BulletMovement>();
+        AudioManager.Instance.Play("ShootArrow", audioSource);
 
         arrowRef.Target = _tModel._currentEnemy;
         arrowRef.Damage = _tModel._stats.Damage;

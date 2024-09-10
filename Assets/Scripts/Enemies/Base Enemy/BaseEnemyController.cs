@@ -8,6 +8,8 @@ public class BaseEnemyController : ManagedUpdateBehavior
 {
     BaseEnemyModel _model;
     BaseEnemyView _view;
+    public AudioSource audioSource;
+
 
     #region STEERING
     public Rigidbody target;
@@ -33,6 +35,8 @@ public class BaseEnemyController : ManagedUpdateBehavior
         _model = GetComponent<BaseEnemyModel>();
         _view = GetComponent<BaseEnemyView>();
         _los = GetComponent<LoS>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     protected override void Start()
@@ -48,7 +52,7 @@ public class BaseEnemyController : ManagedUpdateBehavior
         var idle = new EnemyIdleState<StatesEnum>();
         var dead = new EnemyDeathState<StatesEnum>(_model, _view    );
         var attack = new EnemyAttackState<StatesEnum>(_model, _view);
-        _stateFollowPoints = new EnemyRaidState<StatesEnum>(_model);
+        _stateFollowPoints = new EnemyRaidState<StatesEnum>(_model, audioSource);
         var air = new EnemyAirState<StatesEnum>(_model);
         _toTowerState = new EnemyToTowerState<StatesEnum>(_model, _model._currentBuilding, _steering, _obstacleAvoidance);
 
