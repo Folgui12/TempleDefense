@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AudioManager;
 
 public class AudioManager : MonoBehaviour
 {
@@ -35,23 +36,17 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        foreach (Sound sound in sounds)
-        {
-            sound.source = gameObject.AddComponent<AudioSource>();
-            sound.source.clip = sound.clip;
-            sound.source.loop = sound.loop;
-            sound.source.volume = sound.volume;
-            sound.source.pitch = sound.pitch;
-        }
     }
 
-    public void Play(string name)
+
+    public void Play(string name, AudioSource source)
     {
         Sound sound = sounds.Find(s => s.name == name);
+        source.clip = sound.clip;
         if (sound != null)
         {
-            sound.source.Play();
+            source.Play();
+            Debug.Log("Attempting to play sound: " + name);
         }
         else
         {

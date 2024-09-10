@@ -32,8 +32,13 @@ public class EnemyRaidState<T> : State<T>, IPoints
     List<Vector3> _waypoints;
     int _nextPoint = 0;
     bool _isFinishPath = true;
-    public EnemyRaidState(BaseEnemyModel model)
+    int _enemyType;
+    private AudioSource _audioSource;
+
+    public EnemyRaidState(BaseEnemyModel model, AudioSource source, int type)
     {
+        _audioSource = source;
+        _enemyType = type;
         _model = model;
     }
     public override void Enter()
@@ -62,6 +67,24 @@ public class EnemyRaidState<T> : State<T>, IPoints
     }
     void Run()
     {
+        if (!_audioSource.isPlaying)
+        {
+            switch (_enemyType)
+            {
+                case 0:
+                    AudioManager.Instance.Play("CentaurMovement", _audioSource);
+                    break;
+
+                case 1:
+                    AudioManager.Instance.Play("SatyrMovement", _audioSource);
+                    break;
+
+                case 2:
+                    AudioManager.Instance.Play("GolemMovement", _audioSource);
+                    break;
+            }
+        }
+
         if (IsFinishPath) return;
         var point = _waypoints[_nextPoint];
         var posPoint = point;
