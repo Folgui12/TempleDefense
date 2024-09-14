@@ -82,9 +82,11 @@ public class EnemyRaidState<T> : State<T>, IPoints
                 case 2:
                     AudioManager.Instance.Play("GolemMovement", _audioSource);
                     break;
+                case 3:
+                    break;
             }
         }
-
+        Debug.Log(IsFinishPath);
         if (IsFinishPath) return;
         var point = _waypoints[_nextPoint];
         var posPoint = point;

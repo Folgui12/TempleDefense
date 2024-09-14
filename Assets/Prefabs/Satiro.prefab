@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1480d9444e849845b59e64d3f31e997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 6976987850870593031}
   enemyType: 1
   target: {fileID: 0}
   timePrediction: 2
@@ -240,6 +240,7 @@ MonoBehaviour:
   _model: {fileID: 0}
   _projectile: {fileID: 0}
   Attacking: 0
+  anim: {fileID: 8833229388753142741}
 --- !u!114 &5675381141399080143
 MonoBehaviour:
   m_ObjectHideFlags: 0

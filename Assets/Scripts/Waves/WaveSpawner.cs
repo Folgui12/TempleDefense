@@ -27,6 +27,7 @@ public class WaveSpawner : ManagedUpdateBehavior
     public ObjectPoolSatiro poolSatiro;
     public ObjectPoolCentauro poolCentauro;
     public ObjectPoolGolem poolGolem;
+    public ObjectPoolFlyingEnemy poolFlying;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
 
@@ -41,6 +42,8 @@ public class WaveSpawner : ManagedUpdateBehavior
         poolSatiro.Pool(enemies[0].enemyPrefab, 1);
         poolCentauro.Pool(enemies[1].enemyPrefab, 1);
         poolGolem.Pool(enemies[2].enemyPrefab, 1);
+        poolFlying.Pool(enemies[3].enemyPrefab, 1);
+
     }
     // Start is called before the first frame update
     override protected void Start()
@@ -73,6 +76,10 @@ public class WaveSpawner : ManagedUpdateBehavior
                 if (enemy == enemies[2].enemyPrefab)
                 {
                     poolGolem.GetPooled(spawnLocation[spawnIndex], enemy);
+                }
+                if(enemy == enemies[3].enemyPrefab)
+                {
+                    poolFlying.GetPooled(spawnLocation[spawnIndex], enemy);
                 }
 
                 enemiesToSpawn.RemoveAt(0); // and remove it
@@ -136,6 +143,11 @@ public class WaveSpawner : ManagedUpdateBehavior
         {
             Debug.Log("Golem");
             poolGolem.ReturnToPool(enemy);
+        }
+        if(enemy.name == "FlyingEnemy(Clone)")
+        {
+            Debug.Log("flying");
+            poolFlying.ReturnToPool(enemy);
         }
     }
 

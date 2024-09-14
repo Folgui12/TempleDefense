@@ -11,12 +11,11 @@ public class BaseEnemyView : MonoBehaviour
 
     public bool Attacking;
 
-    Animator anim;
+    [SerializeField] private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
         _model = GetComponent<BaseEnemyModel>();
 
         UnshowPunchCollider();

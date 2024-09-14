@@ -35,7 +35,6 @@ public class BaseEnemyController : ManagedUpdateBehavior
         _model = GetComponent<BaseEnemyModel>();
         _view = GetComponent<BaseEnemyView>();
         _los = GetComponent<LoS>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     protected override void Start()
