@@ -18,6 +18,7 @@ public class FlyingEnemyPos : MonoBehaviour
             if(model.OnGround)
             {
                 transform.position = new Vector3(FloorPos.position.x, TransformAir, FloorPos.position.z);
+                
                 Debug.Log("Moving");
             }
         }
@@ -29,7 +30,7 @@ public class FlyingEnemyPos : MonoBehaviour
 
     public void MoveModel()
     {
-        FloorPos.position = new Vector3(transform.position.x, FloorPos.position.y, transform.position.z);
+        //FloorPos.position = new Vector3(transform.position.x, FloorPos.position.y, transform.position.z);
         model.gameObject.SetActive(true);
     }
 
@@ -37,6 +38,8 @@ public class FlyingEnemyPos : MonoBehaviour
     {
         if(collisionInfo.gameObject.CompareTag("Floor"))
         {
+            FloorPos.position = new Vector3(transform.position.x, FloorPos.position.y, transform.position.z);
+            model.gameObject.SetActive(true);
             animator.SetTrigger("HitGround");
         }
     }
