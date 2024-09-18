@@ -8,6 +8,8 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     public GameObject _currentEnemy;
 
+    public AudioSource audioSource;
+
     public float CurrentLife;
     LoS _los;
 
@@ -20,6 +22,7 @@ public class TowerModel : MonoBehaviour, IDamageable
     void Start()
     {
         CurrentLife = _stats.Life;
+        audioSource = GetComponent<AudioSource>();
         _los = GetComponent<LoS>();
     }
     
@@ -92,6 +95,7 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     public virtual void TakeDamage(int damage)
     {
+        AudioManager.Instance.Play("WoodHit", audioSource);
         CurrentLife -= damage;
     }
     
