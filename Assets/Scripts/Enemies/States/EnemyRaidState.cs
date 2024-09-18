@@ -83,6 +83,7 @@ public class EnemyRaidState<T> : State<T>, IPoints
                     AudioManager.Instance.Play("GolemMovement", _audioSource);
                     break;
                 case 3:
+                    AudioManager.Instance.Play("HarpyMovement", _audioSource);
                     break;
             }
         }
