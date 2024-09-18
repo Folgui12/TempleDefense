@@ -19,6 +19,11 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     private Rigidbody _rb;
 
+    private Collider _col;
+    public Collider _mainCol;
+
+    [SerializeField] Collider[] rigColliders;
+
     private LoS lineOfSight;
 
     private BaseEnemyView _view;
@@ -37,18 +42,26 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        _col = GetComponent<Collider>();
         _mainBuilding = GameObject.Find("Templo");
         lineOfSight = GetComponent<LoS>();
         _view = GetComponent<BaseEnemyView>();
         _currentBuilding = _mainBuilding;
         _waveSpawner = FindObjectOfType<WaveSpawner>();
         audioSource = GetComponent<AudioSource>();
+        rigColliders = GetComponentsInChildren<Collider>();
 
         CurrentLife = _stats.life;
     }
     private void Start()
     {
         _agentController.temple = _mainBuilding;
+        foreach (Collider col in rigColliders)
+        {
+            col.enabled = false;
+        }
+        _mainCol.enabled = true;
+        _col.enabled = true;
     }
     public void Move(Vector3 dir)
     {
@@ -112,34 +125,38 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public void Dead()
     {
 
-
-        if (this.transform.parent.gameObject.active)
+        foreach (Collider col in rigColliders)
         {
-            CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
-            //Destroy(gameObject);
-            //Destroy(_agentController);
-
-            _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
-
-            //switch (_controller.enemyType)
-            //{
-            //    case 0:
-            //        AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
-            //        break;
-
-            //    case 1:
-            //        AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
-            //        break;
-
-            //    case 2:
-            //        AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
-            //        break;
-
-            //    case 3:
-            //        AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
-            //        break;
-            //}
+            col.enabled = true;
         }
+
+        //if (transform.parent.gameObject.active)
+        //{
+        //    CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
+        //    //Destroy(gameObject);
+        //    //Destroy(_agentController);
+
+        //    _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+
+        //switch (_controller.enemyType)
+        //{
+        //    case 0:
+        //        AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
+        //        break;
+
+        //    case 1:
+        //        AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
+        //        break;
+
+        //    case 2:
+        //        AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
+        //        break;
+
+        //    case 3:
+        //        AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
+        //        break;
+        //}
+        //}
 
 
     }
@@ -175,6 +192,12 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     {
         transform.position = pos;
     }
+
+    public void Ragdoll()
+    {
+
+    }
+
     public void OnCollisionStay(Collision collisionInfo)
     {
         if (collisionInfo.gameObject.CompareTag("Floor"))

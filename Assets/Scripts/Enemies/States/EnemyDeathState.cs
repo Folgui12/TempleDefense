@@ -20,7 +20,7 @@ public class EnemyDeathState<T> : State<T>
         //Debug.Log("muerte");
         _model.Dead();
         _view.StartAttackAnimation();
-        WaveSpawner.Instance.RemoveEnemy(_model.gameObject);
+        //WaveSpawner.Instance.RemoveEnemy(_model.gameObject);
         // Llamar al Dead dentro de la variable del modelo base.
     }
 }
