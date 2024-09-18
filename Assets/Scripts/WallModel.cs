@@ -11,6 +11,8 @@ public class WallModel : TowerModel, IDamageable
 
     public override void TakeDamage(int damage)
     {
+        AudioManager.Instance.Play("WoodHit", audioSource);
+
         CurrentLife -= damage;
 
         if(CurrentLife < 0)

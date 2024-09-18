@@ -23,11 +23,16 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     private BaseEnemyView _view;
 
+    public BaseEnemyController _controller;
+
     public AgentController _agentController;
 
     public LeaderBehaviour _leaderBehaviour;
 
     public WaveSpawner _waveSpawner;
+
+    public AudioSource audioSource;
+
 
     private void Awake()
     {
@@ -37,6 +42,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         _view = GetComponent<BaseEnemyView>();
         _currentBuilding = _mainBuilding;
         _waveSpawner = FindObjectOfType<WaveSpawner>();
+        audioSource = GetComponent<AudioSource>();
 
         CurrentLife = _stats.life;
     }
@@ -62,7 +68,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     {
         Collider[] colliderList = Physics.OverlapSphere(transform.position, _stats.viewRange);
 
-        if(_currentBuilding == null)
+        if (_currentBuilding == null)
         {
             _currentBuilding = _mainBuilding;
         }
@@ -72,7 +78,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
             {
                 _currentBuilding = colliderList[i].gameObject;
             }
-            else if (Vector3.Distance(_currentBuilding.transform.position , transform.position) > _stats.viewRange)
+            else if (Vector3.Distance(_currentBuilding.transform.position, transform.position) > _stats.viewRange)
             {
                 _currentBuilding = _mainBuilding;
             }
@@ -83,22 +89,82 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public void TakeDamage(int damage)
     {
         CurrentLife -= damage;
+        //switch (_controller.enemyType)
+        //{
+        //    case 0:
+        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Centaur
+        //        break;
+
+        //    case 1:
+        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Satyr
+        //        break;
+
+        //    case 2:
+        //        AudioManager.Instance.Play("GolemHit", audioSource);        // Golem
+        //        break;
+
+        //    case 3:
+        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
+        //        break;
+        //}
     }
-    
+
     public void Dead()
     {
+
+
         if (this.transform.parent.gameObject.active)
         {
             CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
             //Destroy(gameObject);
             //Destroy(_agentController);
+
             _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+
+            //switch (_controller.enemyType)
+            //{
+            //    case 0:
+            //        AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
+            //        break;
+
+            //    case 1:
+            //        AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
+            //        break;
+
+            //    case 2:
+            //        AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
+            //        break;
+
+            //    case 3:
+            //        AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
+            //        break;
+            //}
         }
+
+
     }
 
     public void EnemyOnHand()
     {
         OnHand = true;
+        //switch (_controller.enemyType)
+        //{
+        //    case 0:
+        //        AudioManager.Instance.Play("CentaurGrabbed", audioSource);      // Centaur
+        //        break;
+
+        //    case 1:
+        //        AudioManager.Instance.Play("SatyrGrabbed", audioSource);        // Satyr
+        //        break;
+
+        //    case 2:
+        //        //AudioManager.Instance.Play("GolemHit", audioSource);          // Golem
+        //        break;
+
+        //    case 3:
+        //        AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
+        //        break;
+        //}
     }
 
     public void EnemyOffHand()
@@ -111,7 +177,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     }
     public void OnCollisionStay(Collision collisionInfo)
     {
-        if(collisionInfo.gameObject.CompareTag("Floor"))
+        if (collisionInfo.gameObject.CompareTag("Floor"))
         {
             OnGround = true;
         }
@@ -119,7 +185,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public void OnCollisionExit(Collision collisionInfo)
     {
-        if(collisionInfo.gameObject.CompareTag("Floor"))
+        if (collisionInfo.gameObject.CompareTag("Floor"))
         {
             OnGround = false;
         }
@@ -130,7 +196,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.blue;      
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, _stats.viewRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _stats.attackRange);

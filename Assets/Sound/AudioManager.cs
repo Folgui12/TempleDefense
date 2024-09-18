@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         if (sound != null)
         {
             source.Play();
-            Debug.Log("Attempting to play sound: " + name);
+            //Debug.Log("Attempting to play sound: " + name);
         }
         else
         {

@@ -32,7 +32,7 @@ public class EnemyRaidState<T> : State<T>, IPoints
     List<Vector3> _waypoints;
     int _nextPoint = 0;
     bool _isFinishPath = true;
-    int _enemyType;
+    public int _enemyType;
     private AudioSource _audioSource;
 
     public EnemyRaidState(BaseEnemyModel model, AudioSource source, int type)
