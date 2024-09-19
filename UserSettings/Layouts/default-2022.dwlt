@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -623,9 +623,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -29.617472, y: 41.62879, z: 65.17761}
+    m_Target: {x: 4.69359, y: 12.0707245, z: 9.795322}
     speed: 2
-    m_Value: {x: -29.617472, y: 41.62879, z: 65.17761}
+    m_Value: {x: 4.69359, y: 12.0707245, z: 9.795322}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -671,9 +671,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.038366746, y: 0.94106174, z: -0.3236833, w: 0.119636014}
+    m_Target: {x: -0.037582554, y: 0.9528977, z: -0.28916568, w: -0.114530325}
     speed: 2
-    m_Value: {x: 0.038463227, y: 0.93640405, z: -0.32837445, w: 0.11763635}
+    m_Value: {x: -0.03686772, y: 0.9505777, z: -0.28690913, w: -0.11280883}
   m_Size:
     m_Target: 1.697445
     speed: 2
@@ -738,24 +738,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 141}
-      m_SelectedIDs: 8eb7ffff
-      m_LastClickedID: -18546
-      m_ExpandedIDs: f6b7fffffab7ffff0ab8ffff1ab8ffff1eb8ffff22b8ffff26b8ffff2ab8ffff3eb8ffff42b8ffff56b8ffff5ab8ffff5eb8ffff62b8ffff66b8ffffc8cbffffcccbffffcecbffffd6cbffffd8cbffffdacbffffe2cbffffe4cbffff5cd9ffff0ce8ffff14e8ffff18e8ffff22e8ffff38e8ffff4ae8ffff54e8ffff58e8ffff62e8ffff66e8ffff6ae8ffff7ae8ffff84e8ffff8ee8ffff9ee8ffffa8e8ffffb2e8ffffbae8ffffdae8ffffdce8ffffeef7ffff94c00000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: e6f6ffff
+      m_LastClickedID: -2330
+      m_ExpandedIDs: 1cf6ffff26f6ffff2af6ffff6af6ffff6ef6ffff72f6ffffc2f6ffffe0f6ffffe6f6ffff28fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Trees
-        m_OriginalName: Trees
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 47320
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -1148,7 +1148,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 19}
     m_SelectedIDs: caf10000
     m_LastClickedID: 61898
-    m_ExpandedIDs: 0000000044b3000014b500001ab50000b2f1000000ca9a3b
+    m_ExpandedIDs: 00000000ecab0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1176,7 +1176,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000044b30000
+    m_ExpandedIDs: 00000000ecab0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
