@@ -20,7 +20,6 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     private Rigidbody _rb;
 
     private Collider _col;
-    public Collider _mainCol;
 
     [SerializeField] Collider[] rigColliders;
 
@@ -38,7 +37,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public AudioSource audioSource;
 
-
+    private bool m_oneTime;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -60,7 +59,6 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         {
             col.enabled = false;
         }
-        _mainCol.enabled = true;
         _col.enabled = true;
     }
     public void Move(Vector3 dir)
@@ -124,12 +122,11 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public void Dead()
     {
-
         foreach (Collider col in rigColliders)
         {
             col.enabled = true;
         }
-
+        _view.StopAnim();
         //if (transform.parent.gameObject.active)
         //{
         //    CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);

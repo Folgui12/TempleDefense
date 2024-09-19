@@ -49,5 +49,10 @@ public class BaseEnemyView : MonoBehaviour
             collider.enabled = false;
     }
 
+    public void StopAnim()
+    {
+        Debug.Log("asdawd");
+        anim.enabled = false;
+    }
     
 }

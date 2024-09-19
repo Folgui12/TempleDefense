@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -479,9 +479,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 307992167083952694, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 329564782930384960, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 625413695924049107, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936504801252442000, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2048050853489160663, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
       propertyPath: m_Constraints
@@ -490,6 +502,22 @@ PrefabInstance:
     - target: {fileID: 2048050853489160663, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085256257007976044, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105127240360829573, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652804233892249408, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681350439992069468, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -531,10 +559,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4439545894814745791, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259693034470484909, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5496364351099582859, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
       propertyPath: m_Name
       value: Satiro
       objectReference: {fileID: 0}
+    - target: {fileID: 5607376207578342001, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269029482368557254, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: EnemyModel
+      value: 
+      objectReference: {fileID: 2135776747}
     - target: {fileID: 6508483097272433868, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
       propertyPath: m_Height
       value: 0.743727
@@ -559,7 +603,28 @@ PrefabInstance:
       propertyPath: collider
       value: 
       objectReference: {fileID: 1865772001}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2048050853489160663, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 3652804233892249408, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 3308818925230777259, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 4439545894814745791, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 9160761472786491933, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 5259693034470484909, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 3169014628760763455, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 2105127240360829573, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 5716859846564835129, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 329564782930384960, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 5274239822702902789, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 5607376207578342001, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 2302781858206843860, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 2085256257007976044, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 4801706526269511722, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 1936504801252442000, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 2408483280110637335, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 3681350439992069468, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 1121568517629021301, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 307992167083952694, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+    - {fileID: 8590779996836460850, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -820,6 +885,17 @@ CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 6508483097272433868, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
   m_PrefabInstance: {fileID: 1034231809}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2135776747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4151799648278775311, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+  m_PrefabInstance: {fileID: 1034231809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5af99b7dcb3e874a87ca9b8e22aef5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
