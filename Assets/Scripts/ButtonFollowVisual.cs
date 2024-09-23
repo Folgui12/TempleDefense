@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Filtering;
+using UnityEngine.XR;
 
 public class ButtonFollowVisual : MonoBehaviour
 {
@@ -45,7 +43,7 @@ public class ButtonFollowVisual : MonoBehaviour
 
             float pokeAngle = Vector3.Angle(offset, visualTarget.TransformDirection(localAxis));
 
-            if(pokeAngle > followAngleThreshold)
+            if(pokeAngle < followAngleThreshold)
             {
                 isFollowing = true;
                 freeze = false;
@@ -77,7 +75,8 @@ public class ButtonFollowVisual : MonoBehaviour
         if (freeze)
             return;
 
-        if(isFollowing) 
+        if(isFollowing && TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.gripButton, out bool gripButton) && 
+            gripButton) 
         {
             Vector3 localTargetPosicion = visualTarget.InverseTransformPoint(pokeAttachTransform.position + offset);
 
