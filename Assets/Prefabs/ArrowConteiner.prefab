@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   LockOnTarget: {fileID: 0}
-  arrowSpeed: 12
+  arrowSpeed: 20
   Damage: 0
   lifeTime: 10
   lifeCounter: 0

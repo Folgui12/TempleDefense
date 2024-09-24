@@ -30,7 +30,7 @@ public class ObjectPoolFlyingEnemy : MonoBehaviour
         {
             AddToPool(_objects);
         }
-        if (pooledObjects.Count > 0 || _objects.activeInHierarchy)
+        if (pooledObjects.Count > 0)
         {
             _objects = pooledObjects.Dequeue();
             _objects.transform.position = transform.position;

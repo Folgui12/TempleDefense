@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349697d5cd5f478c975c6d7c7cb6fb42, type: 3}
   m_Name: TankStats
   m_EditorClassIdentifier: 
-  <life>k__BackingField: 30
+  <life>k__BackingField: 20
   <travelSpeed>k__BackingField: 3
   <currentObjective>k__BackingField: {fileID: 0}
   <attackSpeed>k__BackingField: 0.3
