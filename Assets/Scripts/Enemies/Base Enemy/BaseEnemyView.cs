@@ -11,7 +11,7 @@ public class BaseEnemyView : MonoBehaviour
 
     public bool Attacking;
 
-    [SerializeField] private Animator anim;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -49,5 +49,10 @@ public class BaseEnemyView : MonoBehaviour
             collider.enabled = false;
     }
 
+    public void StopAnim()
+    {
+        Debug.Log("asdawd");
+        anim.enabled = false;
+    }
     
 }

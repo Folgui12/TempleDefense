@@ -125,6 +125,8 @@ public class BaseEnemyController : ManagedUpdateBehavior
     {
         base.CustomLightUpdate();
         _model._currentBuilding = _model.CheckClosest();
+        _model._Body.transform.position = _model.transform.position;
+        _model._Armature.transform.position = _model.transform.position;
         _fsm.OnUpdate();
         _root.Execute();
     }

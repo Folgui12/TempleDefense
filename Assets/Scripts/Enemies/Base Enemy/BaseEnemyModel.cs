@@ -19,13 +19,15 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     private Rigidbody _rb;
 
+    [SerializeField] Collider[] rigColliders;
+
+    public Collider _collider;
+
     private LoS lineOfSight;
 
     private BaseEnemyView _view;
 
     public BaseEnemyController _controller;
-
-    public int enemyType;
 
     public AgentController _agentController;
 
@@ -35,7 +37,8 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public AudioSource audioSource;
 
-
+    public GameObject _Body;
+    public GameObject _Armature;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -45,12 +48,17 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         _currentBuilding = _mainBuilding;
         _waveSpawner = FindObjectOfType<WaveSpawner>();
         audioSource = GetComponent<AudioSource>();
+        rigColliders = GetComponentsInChildren<Collider>();
 
         CurrentLife = _stats.life;
     }
     private void Start()
     {
         _agentController.temple = _mainBuilding;
+        foreach (Collider col in rigColliders)
+        {
+            col.enabled = false;
+        }
     }
     public void Move(Vector3 dir)
     {
@@ -90,92 +98,130 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public void TakeDamage(int damage)
     {
-        switch (enemyType)
-        {
-            case 0:
-                AudioManager.Instance.Play("ArrowHit", audioSource);        // Centaur
-                break;
-
-            case 1:
-                AudioManager.Instance.Play("ArrowHit", audioSource);        // Satyr
-                break;
-
-            case 2:
-                AudioManager.Instance.Play("GolemHit", audioSource);        // Golem
-                break;
-
-            case 3:
-                AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
-                break;
-        }
         CurrentLife -= damage;
+        //switch (_controller.enemyType)
+        //{
+        //    case 0:
+        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Centaur
+        //        break;
+
+        //    case 1:
+        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Satyr
+        //        break;
+
+        //    case 2:
+        //        AudioManager.Instance.Play("GolemHit", audioSource);        // Golem
+        //        break;
+
+        //    case 3:
+        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
+        //        break;
+        //}
     }
 
     public void Dead()
     {
-
-
-        if (this.transform.parent.gameObject.active)
+        foreach (Collider col in rigColliders)
         {
-            CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
-            //Destroy(gameObject);
-            //Destroy(_agentController);
-
-            switch (enemyType)
-            {
-                case 0:
-                    AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
-                    break;
-
-                case 1:
-                    AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
-                    break;
-
-                case 2:
-                    AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
-                    break;
-
-                case 3:
-                    AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
-                    break;
-            }
-            _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
-
+            col.enabled = !col.enabled!;
         }
+        _collider.enabled = true;
+        _view.anim.enabled = false;
+        //if (transform.parent.gameObject.active)
+        //{
+        //    CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
+        //    //Destroy(gameObject);
+        //    //Destroy(_agentController);
 
+        //    _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
 
+        //switch (_controller.enemyType)
+        //{
+        //    case 0:
+        //        AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
+        //        break;
+
+        //    case 1:
+        //        AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
+        //        break;
+
+        //    case 2:
+        //        AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
+        //        break;
+
+        //    case 3:
+        //        AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
+        //        break;
+        //}
+        //}
     }
 
     public void EnemyOnHand()
     {
         OnHand = true;
-        switch (enemyType)
-        {
-            case 0:
-                AudioManager.Instance.Play("CentaurGrabbed", audioSource);      // Centaur
-                break;
+        OnGround = false;
+        _rb.velocity = new Vector3(0,0,0); 
+        //foreach (Rigidbody col in rigColliders2)
+        //{
+        //    col.useGravity = false;
+        //}
+        //switch (_controller.enemyType)
+        //{
+        //    case 0:
+        //        AudioManager.Instance.Play("CentaurGrabbed", audioSource);      // Centaur
+        //        break;
 
-            case 1:
-                AudioManager.Instance.Play("SatyrGrabbed", audioSource);        // Satyr
-                break;
+        //    case 1:
+        //        AudioManager.Instance.Play("SatyrGrabbed", audioSource);        // Satyr
+        //        break;
 
-            case 2:
-            //    AudioManager.Instance.Play("GolemHit", audioSource);          // Golem
-                break;
+        //    case 2:
+        //        //AudioManager.Instance.Play("GolemHit", audioSource);          // Golem
+        //        break;
 
-            case 3:
-                AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
-                break;
-        }
+        //    case 3:
+        //        AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
+        //        break;
+        //}
     }
 
     public void EnemyOffHand()
     {
         OnHand = false;
+        //foreach (Rigidbody col in rigColliders2)
+        //{
+        //    col.useGravity = true;
+        //}
     }
     public void SetPosition(Vector3 pos)
     {
         transform.position = pos;
+    }
+
+    public void RagdollOn()
+    {
+        foreach (Collider col in rigColliders)
+        {
+            col.enabled = !col.enabled!;
+        }
+        _collider.enabled = true;
+        _view.anim.enabled = false;
+    }
+    public void RagdollOff() 
+    {
+        foreach (Collider col in rigColliders)
+        {
+            col.enabled = !col.enabled!;
+        }
+        _collider.enabled = true;
+        _view.anim.enabled = true;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            OnGround = true;
+        }
     }
     public void OnCollisionStay(Collision collisionInfo)
     {
