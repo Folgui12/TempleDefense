@@ -5,7 +5,7 @@ using UnityEngine;
 public class BaseEnemyView : MonoBehaviour
 {
 
-    [SerializeField] private new Collider collider;
+    public Collider col;
     [SerializeField] private BaseEnemyModel _model;
     [SerializeField] private GameObject _projectile;
 
@@ -39,14 +39,14 @@ public class BaseEnemyView : MonoBehaviour
 
     public void ShowPunchCollider()
     {
-        if(collider != null)
-            collider.enabled = true;
+        if(col != null)
+            col.enabled = true;
     }
 
     public void UnshowPunchCollider()
     {
-        if (collider != null)
-            collider.enabled = false;
+        if (col != null)
+            col.enabled = false;
     }
 
     public void StopAnim()
@@ -54,5 +54,4 @@ public class BaseEnemyView : MonoBehaviour
         Debug.Log("asdawd");
         anim.enabled = false;
     }
-    
 }

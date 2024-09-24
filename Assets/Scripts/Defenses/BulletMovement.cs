@@ -56,9 +56,9 @@ public class BulletMovement : ManagedUpdateBehavior
                 arrowTower.ReturnToPool(gameObject);
             }
         }
-
         if (Target != null && Target.activeInHierarchy)
         {
+            
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position + new Vector3(0, 1, 0), arrowSpeed * Time.deltaTime);
             transform.LookAt(Target.transform.position + new Vector3(0, 1, 0), Vector3.up);
         }

@@ -78,7 +78,7 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Arrow"))
+        if (other.gameObject.CompareTag("EnemyArrow"))
         {
             BulletMovement arrowHit = other.gameObject.GetComponent<BulletMovement>();
 

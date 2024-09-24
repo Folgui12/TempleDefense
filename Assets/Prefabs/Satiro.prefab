@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3273640679070278718}
   - component: {fileID: 5576568996086777704}
-  m_Layer: 18
+  - component: {fileID: 1131228885297907110}
+  m_Layer: 3
   m_Name: WeaponCollider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,6 +56,19 @@ CapsuleCollider:
   m_Height: 0.6905814
   m_Direction: 0
   m_Center: {x: -0.12028998, y: 0.0038196428, z: 0.00000002976779}
+--- !u!114 &1131228885297907110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825747654781277051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2590d722cc434540810379d14f0a06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyModel: {fileID: 5159143624300687865}
 --- !u!1 &5496364351099582859
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,11 +929,6 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!4 &3639068564306094370 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4037421758456606236, guid: 886395b51f3b42f4f97127978ec74246, type: 3}
-  m_PrefabInstance: {fileID: 8464695653757597894}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3647039654524038081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5180336833735201543, guid: 886395b51f3b42f4f97127978ec74246, type: 3}
@@ -1524,6 +1533,11 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &7454103618360762768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7923265068725479082, guid: 886395b51f3b42f4f97127978ec74246, type: 3}
+  m_PrefabInstance: {fileID: 8464695653757597894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8282711956779884333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 886395b51f3b42f4f97127978ec74246, type: 3}
@@ -1576,12 +1590,15 @@ MonoBehaviour:
   OnGround: 0
   _stats: {fileID: 11400000, guid: a1707af457784064692380237e437916, type: 2}
   rigColliders: []
-  _controller: {fileID: 3577315039978631366}
+  rigColliders2: []
+  _collider: {fileID: 4542430850044897213}
   _agentController: {fileID: 7987452409769814164}
   _leaderBehaviour: {fileID: 7520851507107000534}
   _waveSpawner: {fileID: 0}
-  audioSource: {fileID: 0}
-  _Center: {fileID: 3639068564306094370}
+  audioSource: {fileID: 6836533104890444915}
+  _Body: {fileID: 7454103618360762768}
+  _Armature: {fileID: 495548718969816281}
+  enemyType: 1
 --- !u!114 &2845323519143057923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,7 +1611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4325902b0973b43aaba0bd8bf77e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 5576568996086777704}
+  col: {fileID: 5576568996086777704}
   _model: {fileID: 5159143624300687865}
   _projectile: {fileID: 0}
   Attacking: 0

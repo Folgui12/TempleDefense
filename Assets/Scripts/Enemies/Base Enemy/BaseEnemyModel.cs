@@ -21,13 +21,13 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     [SerializeField] Collider[] rigColliders;
 
+    [SerializeField] Rigidbody[] rigColliders2;
+
     public Collider _collider;
 
     private LoS lineOfSight;
 
     private BaseEnemyView _view;
-
-    public BaseEnemyController _controller;
 
     public AgentController _agentController;
 
@@ -39,6 +39,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public GameObject _Body;
     public GameObject _Armature;
+    public int enemyType;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -49,6 +50,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         _waveSpawner = FindObjectOfType<WaveSpawner>();
         audioSource = GetComponent<AudioSource>();
         rigColliders = GetComponentsInChildren<Collider>();
+        rigColliders2 = GetComponentsInChildren<Rigidbody>();
 
         CurrentLife = _stats.life;
     }
@@ -99,24 +101,24 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public void TakeDamage(int damage)
     {
         CurrentLife -= damage;
-        //switch (_controller.enemyType)
-        //{
-        //    case 0:
-        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Centaur
-        //        break;
+        switch (enemyType)
+        {
+            case 0:
+                AudioManager.Instance.Play("ArrowHit", audioSource);        // Centaur
+                break;
 
-        //    case 1:
-        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Satyr
-        //        break;
+            case 1:
+                AudioManager.Instance.Play("ArrowHit", audioSource);        // Satyr
+                break;
 
-        //    case 2:
-        //        AudioManager.Instance.Play("GolemHit", audioSource);        // Golem
-        //        break;
+            case 2:
+                AudioManager.Instance.Play("GolemHit", audioSource);        // Golem
+                break;
 
-        //    case 3:
-        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
-        //        break;
-        //}
+            case 3:
+                AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
+                break;
+        }
     }
 
     public void Dead()
@@ -125,64 +127,75 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         {
             col.enabled = !col.enabled!;
         }
-        _collider.enabled = true;
+        foreach (Rigidbody col in rigColliders2)
+        {
+            col.useGravity = false;
+        }
+        _collider.enabled = false;
         _view.anim.enabled = false;
-        //if (transform.parent.gameObject.active)
-        //{
-        //    CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
-        //    //Destroy(gameObject);
-        //    //Destroy(_agentController);
 
-        //    _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+        Debug.Log(_view.col);
+        _view.col.enabled = false;
 
-        //switch (_controller.enemyType)
-        //{
-        //    case 0:
-        //        AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
-        //        break;
+        switch (enemyType)
+        {
+            case 0:
+                AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
+                break;
 
-        //    case 1:
-        //        AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
-        //        break;
+            case 1:
+                AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
+                break;
 
-        //    case 2:
-        //        AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
-        //        break;
+            case 2:
+                AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
+                break;
 
-        //    case 3:
-        //        AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
-        //        break;
-        //}
-        //}
+            case 3:
+                AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
+                break;
+        }
+
+        Invoke("KickModel", 3);
+    }
+
+    private void KickModel()
+    {
+        if (transform.parent.gameObject.active)
+        {
+            CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
+            _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+        }
+
     }
 
     public void EnemyOnHand()
     {
         OnHand = true;
         OnGround = false;
-        _rb.velocity = new Vector3(0,0,0); 
-        //foreach (Rigidbody col in rigColliders2)
-        //{
-        //    col.useGravity = false;
-        //}
-        //switch (_controller.enemyType)
-        //{
-        //    case 0:
-        //        AudioManager.Instance.Play("CentaurGrabbed", audioSource);      // Centaur
-        //        break;
+        _rb.velocity = new Vector3(0,0,0);
+    //foreach (Rigidbody col in rigColliders2)
+    //{
+    //    col.useGravity = false;
+    //}
+        switch (enemyType)
+        {
+            case 0:
+                AudioManager.Instance.Play("CentaurGrabbed", audioSource);      // Centaur
+                break;
 
-        //    case 1:
-        //        AudioManager.Instance.Play("SatyrGrabbed", audioSource);        // Satyr
-        //        break;
+            case 1:
+                AudioManager.Instance.Play("SatyrGrabbed", audioSource);        // Satyr
+                break;
 
-        //    case 2:
-        //        //AudioManager.Instance.Play("GolemHit", audioSource);          // Golem
-        //        break;
+            case 2:
+                //AudioManager.Instance.Play("GolemHit", audioSource);          // Golem
+                break;
 
-        //    case 3:
-        //        AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
-        //        break;
-        //}
+            case 3:
+                AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
+                break;
+        }
     }
 
     public void EnemyOffHand()

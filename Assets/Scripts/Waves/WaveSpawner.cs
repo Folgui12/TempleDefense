@@ -42,7 +42,7 @@ public class WaveSpawner : ManagedUpdateBehavior
         poolSatiro.Pool(enemies[0].enemyPrefab, 1);
         poolCentauro.Pool(enemies[1].enemyPrefab, 1);
         poolGolem.Pool(enemies[2].enemyPrefab, 1);
-        poolFlying.Pool(enemies[3].enemyPrefab, 1);
+        //poolFlying.Pool(enemies[3].enemyPrefab, 1);
 
     }
     // Start is called before the first frame update
@@ -77,10 +77,10 @@ public class WaveSpawner : ManagedUpdateBehavior
                 {
                     poolGolem.GetPooled(spawnLocation[spawnIndex], enemy);
                 }
-                if(enemy == enemies[3].enemyPrefab)
-                {
-                    poolFlying.GetPooled(spawnLocation[spawnIndex], enemy);
-                }
+                //if(enemy == enemies[3].enemyPrefab)
+                //{
+                //    poolFlying.GetPooled(spawnLocation[spawnIndex], enemy);
+                //}
 
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
