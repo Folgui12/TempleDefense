@@ -1424,9 +1424,11 @@ MonoBehaviour:
   OnHand: 0
   OnGround: 0
   _stats: {fileID: 11400000, guid: 16d86e9a6ebfda6458a8b94eab5d63f4, type: 2}
+  _controller: {fileID: 0}
   _agentController: {fileID: 4733299224834507182}
   _leaderBehaviour: {fileID: 4706913792767495594}
   _waveSpawner: {fileID: 0}
+  audioSource: {fileID: 8157922555254745127}
 --- !u!114 &7928936517223088336
 MonoBehaviour:
   m_ObjectHideFlags: 0

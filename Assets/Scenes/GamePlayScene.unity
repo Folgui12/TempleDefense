@@ -2064,6 +2064,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6599321982816783307, guid: 6152d7947813b8b469462f68160db054, type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22276,7 +22280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262550313278539462, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -46.7
+      value: 8.2
       objectReference: {fileID: 0}
     - target: {fileID: 6262550313278539462, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.z

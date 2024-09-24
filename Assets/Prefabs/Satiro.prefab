@@ -626,6 +626,7 @@ MonoBehaviour:
   OnGround: 0
   _stats: {fileID: 11400000, guid: a1707af457784064692380237e437916, type: 2}
   _controller: {fileID: 3707383878673186435}
+  enemyType: 1
   _agentController: {fileID: 7987452409769814164}
   _leaderBehaviour: {fileID: 3884046937734504180}
   _waveSpawner: {fileID: 0}

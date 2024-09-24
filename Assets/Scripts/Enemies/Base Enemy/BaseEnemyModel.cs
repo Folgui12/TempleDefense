@@ -25,6 +25,8 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public BaseEnemyController _controller;
 
+    public int enemyType;
+
     public AgentController _agentController;
 
     public LeaderBehaviour _leaderBehaviour;
@@ -89,24 +91,24 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public void TakeDamage(int damage)
     {
         CurrentLife -= damage;
-        //switch (_controller.enemyType)
-        //{
-        //    case 0:
-        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Centaur
-        //        break;
+        switch (enemyType)
+        {
+            case 0:
+                AudioManager.Instance.Play("ArrowHit", audioSource);        // Centaur
+                break;
 
-        //    case 1:
-        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Satyr
-        //        break;
+            case 1:
+                AudioManager.Instance.Play("ArrowHit", audioSource);        // Satyr
+                break;
 
-        //    case 2:
-        //        AudioManager.Instance.Play("GolemHit", audioSource);        // Golem
-        //        break;
+            case 2:
+                AudioManager.Instance.Play("GolemHit", audioSource);        // Golem
+                break;
 
-        //    case 3:
-        //        AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
-        //        break;
-        //}
+            case 3:
+                AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
+                break;
+        }
     }
 
     public void Dead()
@@ -119,26 +121,26 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
             //Destroy(gameObject);
             //Destroy(_agentController);
 
+            switch (enemyType)
+            {
+                case 0:
+                    AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
+                    break;
+
+                case 1:
+                    AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
+                    break;
+
+                case 2:
+                    AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
+                    break;
+
+                case 3:
+                    AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
+                    break;
+            }
             _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
 
-            //switch (_controller.enemyType)
-            //{
-            //    case 0:
-            //        AudioManager.Instance.Play("LowPop", audioSource);          // Centaur
-            //        break;
-
-            //    case 1:
-            //        AudioManager.Instance.Play("HighPop", audioSource);         // Satyr
-            //        break;
-
-            //    case 2:
-            //        AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
-            //        break;
-
-            //    case 3:
-            //        AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
-            //        break;
-            //}
         }
 
 
@@ -147,24 +149,24 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public void EnemyOnHand()
     {
         OnHand = true;
-        //switch (_controller.enemyType)
-        //{
-        //    case 0:
-        //        AudioManager.Instance.Play("CentaurGrabbed", audioSource);      // Centaur
-        //        break;
+        switch (enemyType)
+        {
+            case 0:
+                AudioManager.Instance.Play("CentaurGrabbed", audioSource);      // Centaur
+                break;
 
-        //    case 1:
-        //        AudioManager.Instance.Play("SatyrGrabbed", audioSource);        // Satyr
-        //        break;
+            case 1:
+                AudioManager.Instance.Play("SatyrGrabbed", audioSource);        // Satyr
+                break;
 
-        //    case 2:
-        //        //AudioManager.Instance.Play("GolemHit", audioSource);          // Golem
-        //        break;
+            case 2:
+            //    AudioManager.Instance.Play("GolemHit", audioSource);          // Golem
+                break;
 
-        //    case 3:
-        //        AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
-        //        break;
-        //}
+            case 3:
+                AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
+                break;
+        }
     }
 
     public void EnemyOffHand()
