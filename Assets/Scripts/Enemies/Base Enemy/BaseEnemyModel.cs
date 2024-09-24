@@ -90,7 +90,6 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public void TakeDamage(int damage)
     {
-        CurrentLife -= damage;
         switch (enemyType)
         {
             case 0:
@@ -109,6 +108,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
                 AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
                 break;
         }
+        CurrentLife -= damage;
     }
 
     public void Dead()
