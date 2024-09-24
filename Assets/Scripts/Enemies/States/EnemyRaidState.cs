@@ -44,6 +44,7 @@ public class EnemyRaidState<T> : State<T>, IPoints
     public override void Enter()
     {
         _model._agentController.RunAStarPlusVector();
+        _model.RagdollOff();
         base.Enter();
     }
     public override void Execute()
@@ -87,7 +88,6 @@ public class EnemyRaidState<T> : State<T>, IPoints
                     break;
             }
         }
-        Debug.Log(IsFinishPath);
         if (IsFinishPath) return;
         var point = _waypoints[_nextPoint];
         var posPoint = point;

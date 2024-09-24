@@ -11,7 +11,7 @@ public class BaseEnemyView : MonoBehaviour
 
     public bool Attacking;
 
-    [SerializeField] private Animator anim;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()

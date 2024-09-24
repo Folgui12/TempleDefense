@@ -19,9 +19,9 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     private Rigidbody _rb;
 
-    private Collider _col;
-
     [SerializeField] Collider[] rigColliders;
+
+    public Collider _collider;
 
     private LoS lineOfSight;
 
@@ -37,11 +37,11 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public AudioSource audioSource;
 
-    private bool m_oneTime;
+    public GameObject _Body;
+    public GameObject _Armature;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _col = GetComponent<Collider>();
         _mainBuilding = GameObject.Find("Templo");
         lineOfSight = GetComponent<LoS>();
         _view = GetComponent<BaseEnemyView>();
@@ -59,7 +59,6 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         {
             col.enabled = false;
         }
-        _col.enabled = true;
     }
     public void Move(Vector3 dir)
     {
@@ -124,9 +123,10 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     {
         foreach (Collider col in rigColliders)
         {
-            col.enabled = true;
+            col.enabled = !col.enabled!;
         }
-        _view.StopAnim();
+        _collider.enabled = true;
+        _view.anim.enabled = false;
         //if (transform.parent.gameObject.active)
         //{
         //    CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
@@ -154,13 +154,17 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         //        break;
         //}
         //}
-
-
     }
 
     public void EnemyOnHand()
     {
         OnHand = true;
+        OnGround = false;
+        _rb.velocity = new Vector3(0,0,0); 
+        //foreach (Rigidbody col in rigColliders2)
+        //{
+        //    col.useGravity = false;
+        //}
         //switch (_controller.enemyType)
         //{
         //    case 0:
@@ -184,17 +188,41 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public void EnemyOffHand()
     {
         OnHand = false;
+        //foreach (Rigidbody col in rigColliders2)
+        //{
+        //    col.useGravity = true;
+        //}
     }
     public void SetPosition(Vector3 pos)
     {
         transform.position = pos;
     }
 
-    public void Ragdoll()
+    public void RagdollOn()
     {
-
+        foreach (Collider col in rigColliders)
+        {
+            col.enabled = !col.enabled!;
+        }
+        _collider.enabled = true;
+        _view.anim.enabled = false;
     }
-
+    public void RagdollOff() 
+    {
+        foreach (Collider col in rigColliders)
+        {
+            col.enabled = !col.enabled!;
+        }
+        _collider.enabled = true;
+        _view.anim.enabled = true;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            OnGround = true;
+        }
+    }
     public void OnCollisionStay(Collision collisionInfo)
     {
         if (collisionInfo.gameObject.CompareTag("Floor"))
