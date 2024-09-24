@@ -18527,7 +18527,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf6f6e1011b310d4c95143ee91f5e28a, type: 2}
+  - {fileID: 2100000, guid: b0f5cbb38de795f418a4c109c47480a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18598,8 +18598,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 6.222698
-  MaxDistance: 45.95045
+  MinDistance: 1
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
