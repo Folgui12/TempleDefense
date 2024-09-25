@@ -42,8 +42,6 @@ public class WaveSpawner : ManagedUpdateBehavior
         poolSatiro.Pool(enemies[0].enemyPrefab, 1);
         poolCentauro.Pool(enemies[1].enemyPrefab, 1);
         poolGolem.Pool(enemies[2].enemyPrefab, 1);
-        //poolFlying.Pool(enemies[3].enemyPrefab, 1);
-
     }
     // Start is called before the first frame update
     override protected void Start()
@@ -52,8 +50,7 @@ public class WaveSpawner : ManagedUpdateBehavior
         NextWave();
         //UpdateWavevCounter();
     }
- 
-    // Update is called once per frame
+
     override protected void CustomLightFixedUpdate()
     {
         base.CustomLightFixedUpdate();
@@ -77,10 +74,6 @@ public class WaveSpawner : ManagedUpdateBehavior
                 {
                     poolGolem.GetPooled(spawnLocation[spawnIndex], enemy);
                 }
-                //if(enemy == enemies[3].enemyPrefab)
-                //{
-                //    poolFlying.GetPooled(spawnLocation[spawnIndex], enemy);
-                //}
 
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
@@ -94,7 +87,6 @@ public class WaveSpawner : ManagedUpdateBehavior
                 {
                     spawnIndex = 0;
                 }
-
             }
             else
             {
@@ -106,13 +98,6 @@ public class WaveSpawner : ManagedUpdateBehavior
             spawnTimer -= Time.fixedDeltaTime;
             waveTimer -= Time.fixedDeltaTime;
         }
-
-        //if(waveTimer<=0 && spawnedEnemies.Count <=0)
-        //{
-        //    currWave++;
-        //    GenerateWave();
-        //}
-
         ActiveEnemiesManager.Instance.GetAllActiveEnemies();
 
     }
@@ -144,11 +129,7 @@ public class WaveSpawner : ManagedUpdateBehavior
             Debug.Log("Golem");
             poolGolem.ReturnToPool(enemy);
         }
-        //if(enemy.name == "FlyingEnemy(Clone)")
-        //{
-        //    Debug.Log("flying");
-        //    poolFlying.ReturnToPool(enemy);
-        //}
+
     }
 
     public void GenerateWave()
@@ -157,9 +138,6 @@ public class WaveSpawner : ManagedUpdateBehavior
         {
             waveValue = currWave * 10;
             GenerateEnemies();
-
-            spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies
-            waveTimer = waveDuration; // wave duration is read only
         }
     }
  

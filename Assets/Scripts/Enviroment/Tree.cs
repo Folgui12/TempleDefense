@@ -12,7 +12,7 @@ public class Tree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("golem"))
+        if (other.gameObject.layer == 17)
         {
             Debug.Log(_grid);
             _grid.KillCollider();

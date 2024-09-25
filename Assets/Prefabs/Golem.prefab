@@ -1312,7 +1312,7 @@ GameObject:
   - component: {fileID: 457796865172914142}
   - component: {fileID: 3958534222892810424}
   - component: {fileID: 2899803174021759696}
-  m_Layer: 3
+  m_Layer: 17
   m_Name: GolemModel
   m_TagString: GenericEnemy
   m_Icon: {fileID: 0}

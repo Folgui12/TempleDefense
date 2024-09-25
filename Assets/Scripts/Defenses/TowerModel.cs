@@ -78,14 +78,14 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Arrow"))
+        if (other.gameObject.CompareTag("EnemyArrow"))
         {
             BulletMovement arrowHit = other.gameObject.GetComponent<BulletMovement>();
 
             TakeDamage(arrowHit.Damage);
         }
 
-        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("golem"))
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.layer == 17)
         {
             BaseEnemyModel enemyRef = other.gameObject.GetComponent<MeleeDamageRef>().EnemyModel;
 
