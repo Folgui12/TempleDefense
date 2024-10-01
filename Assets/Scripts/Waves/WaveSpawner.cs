@@ -54,7 +54,7 @@ public class WaveSpawner : ManagedUpdateBehavior
     override protected void CustomLightFixedUpdate()
     {
         base.CustomLightFixedUpdate();
-        if(spawnTimer <=0)
+        if (spawnTimer <=0)
         {
             //spawn an enemy
             if(enemiesToSpawn.Count > 0)
@@ -77,26 +77,14 @@ public class WaveSpawner : ManagedUpdateBehavior
 
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
-                spawnTimer = spawnInterval;  
- 
-                if(spawnIndex + 1 <= spawnLocation.Length-1)
-                {
-                    spawnIndex++;
-                }
-                else
-                {
-                    spawnIndex = 0;
-                }
+                spawnTimer = spawnInterval;
+
+                spawnIndex = Random.Range(0, spawnLocation.Length);
             }
         }
         else
         {
             spawnTimer -= Time.fixedDeltaTime;
-        }
-
-        if(currWave > 5 && MaxRando < enemies.Count)
-        {
-            MaxRando += 1;
         }
         ActiveEnemiesManager.Instance.GetAllActiveEnemies();
 
@@ -152,13 +140,17 @@ public class WaveSpawner : ManagedUpdateBehavior
         // in a loop grab a random enemy 
         // see if we can afford it
         // if we can, add it to our list, and deduct the cost.
- 
+
         // repeat... 
- 
+
         //  -> if we have no points left, leave the loop
- 
+
+        if (currWave >= 5 && MaxRando < enemies.Count)
+        {
+            MaxRando += 1;
+        }
         List<GameObject> generatedEnemies = new List<GameObject>();
-        while(waveValue>0 || generatedEnemies.Count <50)
+        while(waveValue>0 || generatedEnemies.Count < 50)
         {
             int randEnemyId = Random.Range(0, MaxRando);
             int randEnemyCost = enemies[randEnemyId].cost;

@@ -23,10 +23,23 @@ public class BaseEnemyView : MonoBehaviour
 
     public void StartAttackAnimation()
     {
-        if (anim != null && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
-            anim.SetTrigger("Attack");
+        //if (anim != null && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
+        //    anim.SetTrigger("Attack");
+        if (Attacking == true)
+        {
+            StartCoroutine(AnimAttack());
+        }
+        else if (Attacking == false)
+        {
+            StopCoroutine(AnimAttack());
+        }
     }
 
+    public IEnumerator AnimAttack()
+    {
+        anim.SetTrigger("Attack");
+        yield return new WaitForSeconds (_model._stats.attackSpeed);
+    }
     public void CanIdle()
     {
         anim.SetBool("InRange", true);
@@ -48,6 +61,4 @@ public class BaseEnemyView : MonoBehaviour
         if (collider != null)
             collider.enabled = false;
     }
-
-    
 }

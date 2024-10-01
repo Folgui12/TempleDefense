@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.39640743, a: 1}
+  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.3964075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -316,6 +316,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6073552050407254908, guid: 0c2beba65f2355349a5d52e1332b0c48, type: 3}
   m_PrefabInstance: {fileID: 1926266640}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &14107066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.79036
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.0940895
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711122348610977201, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496364351099582859, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
+      propertyPath: m_Name
+      value: Satiro
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8bc60273924945449b224cdd0b2583df, type: 3}
 --- !u!1 &21822047
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +668,7 @@ MonoBehaviour:
     cost: 2
   - enemyPrefab: {fileID: 5945309254849029585, guid: 345e8cd1553a6de4fb9b323e91445195, type: 3}
     cost: 15
-  MaxRando: 1
+  MaxRando: 2
   currWave: 3
   waveValue: 1
   enemiesToSpawn: []
@@ -9152,6 +9209,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: fb5b97902494007438c13cf928e4af59, type: 2}
     - target: {fileID: 4426057741251600392, guid: ceacb34dbc27cd340b566d8f2055be54, type: 3}
+      propertyPath: canSellDefense
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426057741251600392, guid: ceacb34dbc27cd340b566d8f2055be54, type: 3}
       propertyPath: Defenses.Array.data[0]
       value: 
       objectReference: {fileID: 3026054146025631727, guid: 6152d7947813b8b469462f68160db054, type: 3}
@@ -13024,7 +13085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1231964088
 Transform:
   m_ObjectHideFlags: 0
@@ -14557,7 +14618,7 @@ Transform:
   m_GameObject: {fileID: 1334882077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28, y: 15.7, z: -41}
+  m_LocalPosition: {x: -57.4, y: 15.7, z: -41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60105,3 +60166,4 @@ SceneRoots:
   - {fileID: 566561801}
   - {fileID: 1431415041}
   - {fileID: 2093839962}
+  - {fileID: 14107066}

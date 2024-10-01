@@ -16,7 +16,7 @@ public class EnemyAttackState<T> : State<T>
     public override void Enter()
     {
         base.Enter();
-
+        _view.Attacking = true;
         _view.CanIdle();
     }
 
@@ -30,7 +30,7 @@ public class EnemyAttackState<T> : State<T>
     public override void Sleep()
     {
         base.Sleep();
-
+        _view.Attacking = false;
         _view.StopIdle();
     }
 }

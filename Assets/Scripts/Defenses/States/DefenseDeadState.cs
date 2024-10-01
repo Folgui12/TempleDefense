@@ -15,7 +15,6 @@ public class DefenseDeadState<T> : State<T>
     public override void Execute()
     {
         base.Execute();
-        Debug.Log("Defense Die");
         _model.Dead();
     }
 }

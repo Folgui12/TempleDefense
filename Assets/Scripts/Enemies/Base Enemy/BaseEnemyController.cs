@@ -67,13 +67,11 @@ public class BaseEnemyController : ManagedUpdateBehavior
         attack.AddTransition(StatesEnum.InAir, air);
         attack.AddTransition(StatesEnum.ToTower, _toTowerState);
 
-
         _stateFollowPoints.AddTransition(StatesEnum.Idle, idle);
         _stateFollowPoints.AddTransition(StatesEnum.Dead, dead);
         _stateFollowPoints.AddTransition(StatesEnum.Attack, attack);
         _stateFollowPoints.AddTransition(StatesEnum.InAir, air);
         _stateFollowPoints.AddTransition(StatesEnum.ToTower, _toTowerState);
-
 
         air.AddTransition(StatesEnum.Idle, idle);
         air.AddTransition(StatesEnum.Dead, dead);
