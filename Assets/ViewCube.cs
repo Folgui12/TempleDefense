@@ -14,14 +14,14 @@ public class ViewCube : MonoBehaviour
     {
         correctedRayForward = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up);
 
-        if (Physics.Raycast(transform.position, correctedRayForward, out hit, 100f))
-        {
-            if (hit.collider.gameObject.layer == 18)
-            {   
-                hit.collider.gameObject.SetActive(false);
-                this.enabled = false;
-            }
-        }
+        //if (Physics.Raycast(transform.position, correctedRayForward, out hit, 100f))
+        //{
+        //    if (hit.collider.gameObject.layer == 18)
+        //    {   
+        //        hit.collider.gameObject.SetActive(false);
+        //        this.enabled = false;
+        //    }
+        //}
         
         Debug.DrawRay(transform.position, transform.forward * 100.0f, Color.green);
     }

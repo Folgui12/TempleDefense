@@ -10,6 +10,8 @@ public class WaveSpawner : ManagedUpdateBehavior
     public Text WaveCounter; 
 
     public List<Enemy> enemies = new List<Enemy>();
+    public int MaxRando = 1;
+
     public int currWave;
     public int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
@@ -20,14 +22,12 @@ public class WaveSpawner : ManagedUpdateBehavior
     public int spawnIndex;
  
     public int waveDuration;
-    private float waveTimer;
     public float spawnInterval;
     public float spawnTimer;
 
     public ObjectPoolSatiro poolSatiro;
     public ObjectPoolCentauro poolCentauro;
     public ObjectPoolGolem poolGolem;
-    public ObjectPoolFlyingEnemy poolFlying;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
 
@@ -88,15 +88,15 @@ public class WaveSpawner : ManagedUpdateBehavior
                     spawnIndex = 0;
                 }
             }
-            else
-            {
-                waveTimer = 0; // if no enemies remain, end wave
-            }
         }
         else
         {
             spawnTimer -= Time.fixedDeltaTime;
-            waveTimer -= Time.fixedDeltaTime;
+        }
+
+        if(currWave > 5 && MaxRando < enemies.Count)
+        {
+            MaxRando += 1;
         }
         ActiveEnemiesManager.Instance.GetAllActiveEnemies();
 
@@ -113,7 +113,11 @@ public class WaveSpawner : ManagedUpdateBehavior
     public void RemoveEnemy(GameObject enemy)
     {
         if (spawnedEnemies.Contains(enemy))
+        {
+            Debug.Log("pete");
             spawnedEnemies.Remove(enemy);
+        }
+
         if (enemy.name == "Satiro(Clone)")
         {
             Debug.Log("Satiro");
@@ -129,7 +133,7 @@ public class WaveSpawner : ManagedUpdateBehavior
             Debug.Log("Golem");
             poolGolem.ReturnToPool(enemy);
         }
-
+        spawnedEnemies.Remove(enemy);
     }
 
     public void GenerateWave()
@@ -156,7 +160,7 @@ public class WaveSpawner : ManagedUpdateBehavior
         List<GameObject> generatedEnemies = new List<GameObject>();
         while(waveValue>0 || generatedEnemies.Count <50)
         {
-            int randEnemyId = Random.Range(0, enemies.Count);
+            int randEnemyId = Random.Range(0, MaxRando);
             int randEnemyCost = enemies[randEnemyId].cost;
  
             if(waveValue-randEnemyCost>=0)

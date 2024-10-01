@@ -20,7 +20,6 @@ public class BulletMovement : ManagedUpdateBehavior
 
     public ObjectPoolArrows arrowArrows;
     public ObjectPoolTowerArrow arrowTower;
-
     private void Awake()
     {
         if(gameObject.tag == "EnemyArrow")
@@ -62,7 +61,7 @@ public class BulletMovement : ManagedUpdateBehavior
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position + new Vector3(0, 1, 0), arrowSpeed * Time.deltaTime);
             transform.LookAt(Target.transform.position + new Vector3(0, 1, 0), Vector3.up);
         }
-        else
+        else if(isActiveAndEnabled)
         {
             if (gameObject.tag == "EnemyArrow")
             {

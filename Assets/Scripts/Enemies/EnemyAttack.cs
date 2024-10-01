@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         _enemyModel = GetComponent<BaseEnemyModel>();
-        _poolArrows = GameObject.FindObjectOfType<ObjectPoolArrows>();
+        _poolArrows = FindObjectOfType<ObjectPoolArrows>();
         anim = GetComponent<Animator>();
 
         EnemyEventManager.ShootEvent += StartShootAnimation;

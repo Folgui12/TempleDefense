@@ -17,7 +17,7 @@ public class ArcherModel : MonoBehaviour
     void Start()
     {
         _tModel = GetComponentInParent<TowerModel>();
-        _poolArrows = GameObject.FindObjectOfType<ObjectPoolTowerArrow>();
+        _poolArrows = FindObjectOfType<ObjectPoolTowerArrow>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
