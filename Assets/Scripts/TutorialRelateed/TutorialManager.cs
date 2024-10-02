@@ -12,8 +12,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject textView;
     [SerializeField] private GameObject textMove;
     [SerializeField] private GameObject textRotation;
-    [SerializeField] private GameObject textPinch;
-    [SerializeField] private GameObject textPoke;
+    [SerializeField] private List<GameObject> innerWalls;
 
     public float walkTime;
     private float walkTimer;
@@ -26,8 +25,6 @@ public class TutorialManager : MonoBehaviour
     private bool FirstTimeSeing;
     private bool FirstSteps;
     private bool FirstRotation;
-    private bool FirstPinch;
-    private bool FirstPoke;
     public bool FirstFistClose;
 
     private void Awake()
@@ -74,13 +71,21 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         }
+        if(FirstRotation)
+        {
+
+        }
     }
 
     public void FirstRotationsDone()
     {
         FirstRotation = true;
         textRotation.SetActive(false);
-        textPinch.SetActive(true);
+
+        foreach (GameObject wall in innerWalls)
+        {
+            wall.SetActive(false);
+        }
     }
 
     public void FirstStepsDone()

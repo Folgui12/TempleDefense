@@ -20,7 +20,7 @@ public class ViewCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 100f))
+        if (Physics.Raycast(transform.position, transform.position + transform.forward, out hit, 100f))
         {
             if (hit.collider.gameObject.layer == 18)
             {
@@ -40,6 +40,6 @@ public class ViewCube : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.forward * 100.0f);
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * 100.0f);
     }
 }
