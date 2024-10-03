@@ -7,13 +7,13 @@ public class WaveSpawner : ManagedUpdateBehavior
 {
     public static WaveSpawner Instance;
 
-    public Text WaveCounter; 
+    public Text WaveCounter;
 
     public List<Enemy> enemies = new List<Enemy>();
     public int MaxRando = 1;
 
     public int currWave;
-    public int waveValue;
+    [SerializeField] private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
 
     public GameObject enemy;
@@ -24,6 +24,7 @@ public class WaveSpawner : ManagedUpdateBehavior
     public int waveDuration;
     public float spawnInterval;
     public float spawnTimer;
+    public int WaveMultyplier;
 
     public ObjectPoolSatiro poolSatiro;
     public ObjectPoolCentauro poolCentauro;
@@ -48,9 +49,7 @@ public class WaveSpawner : ManagedUpdateBehavior
     {
         base.Start();
         NextWave();
-        //UpdateWavevCounter();
     }
-
     override protected void CustomLightFixedUpdate()
     {
         base.CustomLightFixedUpdate();
@@ -95,17 +94,10 @@ public class WaveSpawner : ManagedUpdateBehavior
         currWave++;
         UpdateWavevCounter();
         GenerateWave();
-        
     }
 
     public void RemoveEnemy(GameObject enemy)
     {
-        if (spawnedEnemies.Contains(enemy))
-        {
-            Debug.Log("pete");
-            spawnedEnemies.Remove(enemy);
-        }
-
         if (enemy.name == "Satiro(Clone)")
         {
             Debug.Log("Satiro");
@@ -128,7 +120,7 @@ public class WaveSpawner : ManagedUpdateBehavior
     {
         if(currWave > 0)
         {
-            waveValue = currWave * 10;
+            waveValue = currWave * WaveMultyplier;
             GenerateEnemies();
         }
     }

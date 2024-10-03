@@ -612,8 +612,8 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 5945309254849029585, guid: 345e8cd1553a6de4fb9b323e91445195, type: 3}
     cost: 15
   MaxRando: 2
-  currWave: 3
-  waveValue: 1
+  currWave: 0
+  waveValue: 0
   enemiesToSpawn: []
   enemy: {fileID: 0}
   spawnLocation:
@@ -624,6 +624,7 @@ MonoBehaviour:
   waveDuration: 20
   spawnInterval: 1.5
   spawnTimer: 0
+  WaveMultyplier: 5
   poolSatiro: {fileID: 829869024}
   poolCentauro: {fileID: 318842337}
   poolGolem: {fileID: 473329559}
@@ -10945,6 +10946,63 @@ Transform:
   - {fileID: 6137466811474403869}
   m_Father: {fileID: 543450652054257992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1022551813
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -62.50499
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.816189
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_Name
+      value: FogataSpawn (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
 --- !u!4 &1046104307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3582887090962626138, guid: ceacb34dbc27cd340b566d8f2055be54, type: 3}
@@ -13028,7 +13086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1231964088
 Transform:
   m_ObjectHideFlags: 0
@@ -23114,6 +23172,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d18dadd1ccf06439b730e4b8e1cccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2135635345
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -62.477818
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -46.41
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
+      propertyPath: m_Name
+      value: FogataSpawn
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f64dcb0b13fdf62448a0b8dea6cd9041, type: 3}
 --- !u!1001 &2141496285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60109,3 +60224,5 @@ SceneRoots:
   - {fileID: 566561801}
   - {fileID: 1431415041}
   - {fileID: 2093839962}
+  - {fileID: 2135635345}
+  - {fileID: 1022551813}
