@@ -12,6 +12,9 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject textView;
     [SerializeField] private GameObject textMove;
     [SerializeField] private GameObject textRotation;
+    [SerializeField] private GameObject textCanvas;
+    [SerializeField] private GameObject WorldIlumination;
+    [SerializeField] private GameObject SpotLight;
     [SerializeField] private List<GameObject> innerWalls;
 
     public float walkTime;
@@ -71,16 +74,14 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         }
-        if(FirstRotation)
-        {
-
-        }
     }
 
     public void FirstRotationsDone()
     {
         FirstRotation = true;
-        textRotation.SetActive(false);
+        textCanvas.SetActive(false);
+        WorldIlumination.SetActive(true);
+        SpotLight.SetActive(false);
 
         foreach (GameObject wall in innerWalls)
         {
