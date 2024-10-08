@@ -30,8 +30,6 @@ public class WaveSpawner : ManagedUpdateBehavior
     public ObjectPoolCentauro poolCentauro;
     public ObjectPoolGolem poolGolem;
 
-    public List<GameObject> spawnedEnemies = new List<GameObject>();
-
     [SerializeField] private GameObject VFX;
 
     private void Awake()
@@ -48,6 +46,10 @@ public class WaveSpawner : ManagedUpdateBehavior
     override protected void Start()
     {
         base.Start();
+        NextWave();
+    }
+    void Update()
+    {
         NextWave();
     }
     override protected void CustomLightFixedUpdate()
@@ -75,7 +77,6 @@ public class WaveSpawner : ManagedUpdateBehavior
                 }
 
                 enemiesToSpawn.RemoveAt(0); // and remove it
-                spawnedEnemies.Add(enemy);
                 spawnTimer = spawnInterval;
 
                 spawnIndex = Random.Range(0, spawnLocation.Length);
@@ -91,9 +92,11 @@ public class WaveSpawner : ManagedUpdateBehavior
  
     public void NextWave()
     {
-        currWave++;
-        UpdateWavevCounter();
-        GenerateWave();
+        if(ActiveEnemiesManager.Instance.activeEnemies.Length <= 0){
+            currWave++;
+            UpdateWavevCounter();
+            GenerateWave();
+        }
     }
 
     public void RemoveEnemy(GameObject enemy)
@@ -113,7 +116,6 @@ public class WaveSpawner : ManagedUpdateBehavior
             Debug.Log("Golem");
             poolGolem.ReturnToPool(enemy);
         }
-        spawnedEnemies.Remove(enemy);
     }
 
     public void GenerateWave()
