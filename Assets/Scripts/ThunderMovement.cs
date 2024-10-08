@@ -29,7 +29,7 @@ public class ThunderMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Floor"))
+        if(other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("GenericEnemy"))
         {
             Debug.Log("HITGOUND");
             Instantiate(Fresnel, transform.position, transform.rotation);

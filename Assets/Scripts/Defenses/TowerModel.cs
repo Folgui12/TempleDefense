@@ -76,6 +76,12 @@ public class TowerModel : MonoBehaviour, IDamageable
         _grid.KillCollider();
     }
 
+    private void OnDestroy()
+    {
+        if(name != "Muro")
+                GetComponentInParent<SpawnDefenseArea>().CanSpawnAgain();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("EnemyArrow"))

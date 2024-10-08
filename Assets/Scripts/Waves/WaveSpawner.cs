@@ -30,6 +30,9 @@ public class WaveSpawner : ManagedUpdateBehavior
     public ObjectPoolCentauro poolCentauro;
     public ObjectPoolGolem poolGolem;
 
+    public bool canHitButton;
+    public ButtonBehaviour NextRoundButton;
+
     [SerializeField] private GameObject VFX;
 
     private void Awake()
@@ -42,16 +45,12 @@ public class WaveSpawner : ManagedUpdateBehavior
         poolCentauro.Pool(enemies[1].enemyPrefab, 1);
         poolGolem.Pool(enemies[2].enemyPrefab, 1);
     }
-    // Start is called before the first frame update
-    override protected void Start()
+    private void Start()
     {
         base.Start();
-        NextWave();
+        canHitButton = false;
     }
-    void Update()
-    {
-        NextWave();
-    }
+
     override protected void CustomLightFixedUpdate()
     {
         base.CustomLightFixedUpdate();
@@ -76,6 +75,8 @@ public class WaveSpawner : ManagedUpdateBehavior
                     poolGolem.GetPooled(spawnLocation[spawnIndex], enemy);
                 }
 
+                canHitButton = false;
+
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnTimer = spawnInterval;
 
@@ -86,17 +87,21 @@ public class WaveSpawner : ManagedUpdateBehavior
         {
             spawnTimer -= Time.fixedDeltaTime;
         }
+
         ActiveEnemiesManager.Instance.GetAllActiveEnemies();
 
+        if (!canHitButton && ActiveEnemiesManager.Instance.activeEnemies.Length <= 0 && enemiesToSpawn.Count <= 0)
+        {
+            canHitButton = true;
+            NextRoundButton.FinishRound();
+        }
     }
- 
+
     public void NextWave()
     {
-        if(ActiveEnemiesManager.Instance.activeEnemies.Length <= 0){
-            currWave++;
-            UpdateWavevCounter();
-            GenerateWave();
-        }
+        currWave++;
+        UpdateWavevCounter();
+        GenerateWave();
     }
 
     public void RemoveEnemy(GameObject enemy)

@@ -8,6 +8,8 @@ public class ActiveEnemiesManager : MonoBehaviour
 
     public GameObject[] activeEnemies;
 
+    public Animator animator;
+
     private void Awake()
     {
         if(Instance == null)

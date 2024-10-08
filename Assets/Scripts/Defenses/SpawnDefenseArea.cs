@@ -17,11 +17,13 @@ public class SpawnDefenseArea : MonoBehaviour
 
     private TypeOfDefenseCoin coin;
 
+    private bool alreadyWithDefense;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        canSellDefense = false;
+        alreadyWithDefense = false; 
 
         typeOfDefenses = new Dictionary<DefenseType, GameObject>();
 
@@ -35,7 +37,7 @@ public class SpawnDefenseArea : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.CompareTag("Coin") && currentDefense == null)
+        if(other.gameObject.CompareTag("Coin") && !alreadyWithDefense)
         {
             coin = other.gameObject.GetComponent<TypeOfDefenseCoin>();
 
@@ -50,17 +52,24 @@ public class SpawnDefenseArea : MonoBehaviour
 
                 if(typeOfDefenses.ContainsKey(newDefense))
                 {
-                        var defense = Instantiate(typeOfDefenses[newDefense], transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+                    var defense = Instantiate(typeOfDefenses[newDefense], transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
 
-                        currentDefense = defense.GetComponent<TowerModel>()._stats;
+                    defense.transform.parent = gameObject.transform;    
+
+                    currentDefense = defense.GetComponent<TowerModel>()._stats;
+
+                    alreadyWithDefense = true;
                 }
-
-                canSellDefense = true;
 
                 Destroy(other.gameObject);
             }
             
         }
+    }
+
+    public void CanSpawnAgain()
+    {
+        alreadyWithDefense = false;
     }
 
     void OnTriggerExit(Collider other)
