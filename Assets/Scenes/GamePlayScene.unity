@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.39640743, a: 1}
+  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.3964075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -487,11 +487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b75e6c44b2829469768f04c03b9420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &51376674 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1379305967054326743, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-  m_PrefabInstance: {fileID: 2026865695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &52550647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9369,11 +9364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d18dadd1ccf06439b730e4b8e1cccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &844327968 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 255682581611202876, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-  m_PrefabInstance: {fileID: 2026865695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &844327972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10096,11 +10086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d18dadd1ccf06439b730e4b8e1cccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &915755372 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 607705728938538115, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-  m_PrefabInstance: {fileID: 2026865695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &924549825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11351,105 +11336,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069961653}
   m_Mesh: {fileID: -5161419522511818256, guid: 655ae3e7598b488469c75c610bc7ad15, type: 3}
---- !u!1 &1076385800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1076385801}
-  - component: {fileID: 1076385802}
-  m_Layer: 0
-  m_Name: Left Hand Poke Interactor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1076385801
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076385800}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 915755372}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1076385802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076385800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0924bcaa9eb50df458a783ae0e2b59f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 4294967295
-  m_AttachTransform: {fileID: 51376674}
-  m_KeepSelectedTargetValid: 1
-  m_DisableVisualsWhenBlockedInGroup: 1
-  m_StartingSelectedInteractable: {fileID: 0}
-  m_StartingTargetFilter: {fileID: 0}
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PokeDepth: 0.1
-  m_PokeWidth: 0.0075
-  m_PokeSelectWidth: 0.015
-  m_PokeHoverRadius: 0.015
-  m_PokeInteractionOffset: 0.005
-  m_PhysicsLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_PhysicsTriggerInteraction: 1
-  m_RequirePokeFilter: 1
-  m_EnableUIInteraction: 1
-  m_DebugVisualizationsEnabled: 0
-  m_UIHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_UIHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &1076883147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12113,11 +11999,6 @@ Transform:
   - {fileID: 1411454914}
   m_Father: {fileID: 676536502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1138381175 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 565285625385238765, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-  m_PrefabInstance: {fileID: 2026865695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1146119516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14542,105 +14423,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c2beba65f2355349a5d52e1332b0c48, type: 3}
---- !u!1 &1332159259
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1332159260}
-  - component: {fileID: 1332159261}
-  m_Layer: 0
-  m_Name: Right Hand Poke Interactor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1332159260
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332159259}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 844327968}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1332159261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332159259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0924bcaa9eb50df458a783ae0e2b59f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 1320124115}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 4294967295
-  m_AttachTransform: {fileID: 1138381175}
-  m_KeepSelectedTargetValid: 1
-  m_DisableVisualsWhenBlockedInGroup: 1
-  m_StartingSelectedInteractable: {fileID: 0}
-  m_StartingTargetFilter: {fileID: 0}
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PokeDepth: 0.1
-  m_PokeWidth: 0.0075
-  m_PokeSelectWidth: 0.015
-  m_PokeHoverRadius: 0.015
-  m_PokeInteractionOffset: 0.005
-  m_PhysicsLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_PhysicsTriggerInteraction: 1
-  m_RequirePokeFilter: 1
-  m_EnableUIInteraction: 1
-  m_DebugVisualizationsEnabled: 0
-  m_UIHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_UIHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1334882077
 GameObject:
   m_ObjectHideFlags: 0
@@ -22462,15 +22244,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262550313278539462, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -62.9
       objectReference: {fileID: 0}
     - target: {fileID: 6262550313278539462, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -38.9
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: 6262550313278539462, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.8
+      value: 63.8
       objectReference: {fileID: 0}
     - target: {fileID: 6538932635438410691, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_Name
@@ -22606,13 +22388,7 @@ PrefabInstance:
     - {fileID: 5319205512590465990, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
     - {fileID: 8395910462156229420, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
     - {fileID: 7843081188431619706, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 255682581611202876, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1332159260}
-    - targetCorrespondingSourceObject: {fileID: 607705728938538115, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1076385801}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1956219021655382380, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       insertIndex: -1
