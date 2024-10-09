@@ -99,9 +99,12 @@ public class WaveSpawner : ManagedUpdateBehavior
 
     public void NextWave()
     {
-        currWave++;
-        UpdateWavevCounter();
-        GenerateWave();
+        if (ActiveEnemiesManager.Instance.activeEnemies.Length <= 0 && enemiesToSpawn.Count <= 0)
+        {
+            currWave++;
+            UpdateWavevCounter();
+            GenerateWave();
+        }
     }
 
     public void RemoveEnemy(GameObject enemy)

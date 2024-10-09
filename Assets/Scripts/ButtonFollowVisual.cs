@@ -75,8 +75,7 @@ public class ButtonFollowVisual : MonoBehaviour
         if (freeze)
             return;
 
-        if(isFollowing && TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.gripButton, out bool gripButton) && 
-            gripButton) 
+        if(isFollowing) 
         {
             Vector3 localTargetPosicion = visualTarget.InverseTransformPoint(pokeAttachTransform.position + offset);
 
