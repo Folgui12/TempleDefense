@@ -16,6 +16,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject WorldIlumination;
     [SerializeField] private GameObject SpotLight;
     [SerializeField] private List<GameObject> innerWalls;
+    [SerializeField] private VRnoPeeking noPeekingRef;
 
     public float walkTime;
     private float walkTimer;
@@ -86,6 +87,9 @@ public class TutorialManager : MonoBehaviour
         foreach (GameObject wall in innerWalls)
         {
             wall.SetActive(false);
+
+            if(wall.name == "BasicSpace")
+                noPeekingRef.enabled = false;
         }
     }
 

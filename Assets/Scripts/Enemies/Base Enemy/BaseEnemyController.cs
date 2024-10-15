@@ -127,11 +127,11 @@ public class BaseEnemyController : ManagedUpdateBehavior
         _root.Execute();
     }
     
-    private void OnDrawGizmosSelected()
+    /*private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(_los.Origin, radius);
-    }
+    }*/
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Arrow"))
