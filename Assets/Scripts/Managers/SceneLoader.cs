@@ -14,6 +14,11 @@ public class SceneLoader : MonoBehaviour
             Destroy(this);
     }
 
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
+
     public void LoadGameScene()
     {
         SceneManager.LoadScene("GamePlayScene");
