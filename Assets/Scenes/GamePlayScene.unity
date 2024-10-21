@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7414627, g: 0.6479272, b: 0.3964075, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20806,44 +20806,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d18dadd1ccf06439b730e4b8e1cccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1920284983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1500514435576974616, guid: 18b35f5a93ccf5d4e951b37c0793c62a, type: 3}
-  m_PrefabInstance: {fileID: 5577454646325366007}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1920284984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292267632524262978, guid: 18b35f5a93ccf5d4e951b37c0793c62a, type: 3}
   m_PrefabInstance: {fileID: 5577454646325366007}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1920284985
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920284983}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 35f87ed15240c724497b2f39d9789875, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1920284986
+--- !u!114 &1920284986 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5757294020387748745, guid: 18b35f5a93ccf5d4e951b37c0793c62a, type: 3}
+  m_PrefabInstance: {fileID: 5577454646325366007}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920284983}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84484bd2bb8f01a43b3bf841221a70fe, type: 3}
@@ -42899,13 +42872,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1500514435576974616, guid: 18b35f5a93ccf5d4e951b37c0793c62a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1920284985}
-    - targetCorrespondingSourceObject: {fileID: 1500514435576974616, guid: 18b35f5a93ccf5d4e951b37c0793c62a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1920284986}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18b35f5a93ccf5d4e951b37c0793c62a, type: 3}
 --- !u!4 &5586477883314859967
 Transform:

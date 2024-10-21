@@ -68,7 +68,6 @@ public class TutorialManager : MonoBehaviour
                     rotationCounter++;
                     delayBetweenRotationTimer = 0;
                 }
-                Debug.Log(rotationCounter);
                 if (rotationCounter >= rotationRounds)
                 {
                     FirstRotationsDone();
