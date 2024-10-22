@@ -79,7 +79,12 @@ public class TowerModel : MonoBehaviour, IDamageable
     private void OnDestroy()
     {
         if(name != "Muro")
-                GetComponentInParent<SpawnDefenseArea>().CanSpawnAgain();
+        {
+            SpawnDefenseArea spawnRef = GetComponentInParent<SpawnDefenseArea>();
+            if(spawnRef != null ) 
+                spawnRef.CanSpawnAgain();
+        }    
+                
     }
 
     private void OnTriggerEnter(Collider other)

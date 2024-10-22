@@ -49,6 +49,7 @@ public class WaveSpawner : ManagedUpdateBehavior
     {
         base.Start();
         canHitButton = false;
+        NextWave();
     }
 
     override protected void CustomLightFixedUpdate()
@@ -111,17 +112,14 @@ public class WaveSpawner : ManagedUpdateBehavior
     {
         if (enemy.name == "Satiro(Clone)")
         {
-            Debug.Log("Satiro");
             poolSatiro.ReturnToPool(enemy);
         }
         if (enemy.name == "Centauro(Clone)")
         {
-            Debug.Log("Centauro");
             poolCentauro.ReturnToPool(enemy);
         }
         if (enemy.name == "Golem(Clone)")
         {
-            Debug.Log("Golem");
             poolGolem.ReturnToPool(enemy);
         }
     }
