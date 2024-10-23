@@ -71,6 +71,7 @@ public class TutorialManager : MonoBehaviour
                 if (rotationCounter >= rotationRounds)
                 {
                     FirstRotationsDone();
+                    GameManager.Instance.firstTutoFinish = true;
                 }
             }
         }

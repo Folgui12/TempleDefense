@@ -72,7 +72,7 @@ Material:
     - _BumpScale: 1
     - _ColorChangeFoam: 53.05
     - _Cutoff: 0.5
-    - _Depth: 0.42
+    - _Depth: 0.31
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Float1: 0.08240313

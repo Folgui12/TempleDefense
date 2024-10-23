@@ -46,7 +46,7 @@ public class TutorialSpawner : MonoBehaviour
     {
         if (!IsCentauroSpawn)
         {
-            poolSatiro.GetPooled(SpawnPoint, Centauro);
+            poolCentauro.GetPooled(SpawnPoint, Centauro);
             IsCentauroSpawn = true;
 
         }

@@ -113,14 +113,11 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public void Dead()
     {
-
-
         if (this.transform.parent.gameObject.active)
         {
             CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
             //Destroy(gameObject);
             //Destroy(_agentController);
-
             switch (enemyType)
             {
                 case 0:
@@ -140,10 +137,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
                     break;
             }
             _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
-
         }
-
-
     }
 
     public void EnemyOnHand()
@@ -169,6 +163,10 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         }
     }
 
+    private void OnEnable()
+    {
+        CurrentLife = _stats.life;
+    }
     public void EnemyOffHand()
     {
         OnHand = false;

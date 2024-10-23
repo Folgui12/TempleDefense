@@ -45,16 +45,17 @@ public class WaveSpawner : ManagedUpdateBehavior
         poolCentauro.Pool(enemies[1].enemyPrefab, 1);
         poolGolem.Pool(enemies[2].enemyPrefab, 1);
     }
-    private void Start()
+    override protected void Start()
     {
         base.Start();
         canHitButton = false;
-        NextWave();
-    }
+        
 
+    }
     override protected void CustomLightFixedUpdate()
     {
         base.CustomLightFixedUpdate();
+        NextWave();
         if (spawnTimer <=0)
         {
             //spawn an enemy

@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    [SerializeField] private float minimunTimeToLearn;
+    [SerializeField] private GameObject aWayOut;
+    
     public static GameManager Instance;
+
+    public bool firstTutoFinish;
+
+    private float timer;
 
     private void Awake()
     {
@@ -18,6 +24,21 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //NextRoundAux();
+        firstTutoFinish = false;
+    }
+
+    private void Update()
+    {
+        if(firstTutoFinish) 
+        {
+            if(timer > minimunTimeToLearn) 
+            {
+                aWayOut.SetActive(true);
+                firstTutoFinish = false;
+            }
+
+            timer += Time.deltaTime;
+        }
     }
 
     public void NextRoundAux()

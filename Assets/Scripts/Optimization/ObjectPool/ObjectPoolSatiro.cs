@@ -32,11 +32,11 @@ public class ObjectPoolSatiro : MonoBehaviour
         }
         if (pooledObjects.Count > 0)
         {
-            _objects = pooledObjects.Dequeue();
-            _objects.transform.position = transform.position;
-            _objects.SetActive(true);
-            return _objects;
-        }    
+            var instance = pooledObjects.Dequeue();
+            instance.transform.position = transform.position;
+            instance.SetActive(true);
+            return instance;
+        }
         return null;
     }
     public void ReturnToPool(GameObject _objects)

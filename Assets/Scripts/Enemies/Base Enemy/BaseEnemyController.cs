@@ -44,11 +44,15 @@ public class BaseEnemyController : ManagedUpdateBehavior
         InitializedTree();
         InitializeFSM();       
     }
-
+    private void OnEnable()
+    {
+        InitializedTree();
+        InitializeFSM();
+    }
     void InitializeFSM()
     {
         var idle = new EnemyIdleState<StatesEnum>();
-        var dead = new EnemyDeathState<StatesEnum>(_model, _view    );
+        var dead = new EnemyDeathState<StatesEnum>(_model, _view);
         var attack = new EnemyAttackState<StatesEnum>(_model, _view);
         _stateFollowPoints = new EnemyRaidState<StatesEnum>(_model, audioSource, enemyType);
         var air = new EnemyAirState<StatesEnum>(_model);
