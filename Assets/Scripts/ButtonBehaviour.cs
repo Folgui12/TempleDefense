@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehaviour : MonoBehaviour
 {
+    public MusicManager musicManager;
+
     private Animator animator;
     private bool ButtonActive = true;
     public float DeactiveTime;
@@ -34,12 +36,15 @@ public class ButtonBehaviour : MonoBehaviour
     public void StartRound()
     {
         ButtonActive = false;
+        musicManager.PlayBattleMusic();
         animator.SetTrigger("StartRound");
+
     }
 
     public void FinishRound()
     {
         ButtonActive = true;
+        musicManager.StopMusic();
         animator.SetTrigger("FinishRound");
     }
 }

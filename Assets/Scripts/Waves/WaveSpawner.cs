@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WaveSpawner : ManagedUpdateBehavior
 {
     public static WaveSpawner Instance;
+    //public MusicManager musicManager;
 
     public Text WaveCounter;
 
@@ -44,12 +45,12 @@ public class WaveSpawner : ManagedUpdateBehavior
         poolSatiro.Pool(enemies[0].enemyPrefab, 1);
         poolCentauro.Pool(enemies[1].enemyPrefab, 1);
         poolGolem.Pool(enemies[2].enemyPrefab, 1);
+
     }
     override protected void Start()
     {
         base.Start();
         canHitButton = false;
-        
 
     }
     override protected void CustomLightFixedUpdate()
@@ -58,9 +59,11 @@ public class WaveSpawner : ManagedUpdateBehavior
         NextWave();
         if (spawnTimer <=0)
         {
+
             //spawn an enemy
-            if(enemiesToSpawn.Count > 0)
+            if (enemiesToSpawn.Count > 0)
             {
+
                 Instantiate(VFX, spawnLocation[spawnIndex].transform.position, spawnLocation[spawnIndex].transform.rotation);
                 enemy = enemiesToSpawn[0];
 
@@ -95,12 +98,14 @@ public class WaveSpawner : ManagedUpdateBehavior
         if (!canHitButton && ActiveEnemiesManager.Instance.activeEnemies.Length <= 0 && enemiesToSpawn.Count <= 0)
         {
             canHitButton = true;
+            //musicManager.StopMusic();
             NextRoundButton.FinishRound();
         }
     }
 
     public void NextWave()
     {
+
         if (ActiveEnemiesManager.Instance.activeEnemies.Length <= 0 && enemiesToSpawn.Count <= 0)
         {
             currWave++;
