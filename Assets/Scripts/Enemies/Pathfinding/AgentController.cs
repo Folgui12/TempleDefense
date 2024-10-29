@@ -12,8 +12,9 @@ public class AgentController : MonoBehaviour
     public void RunAStarPlusVector()
     {
         Vector3 start = MyGrid.singleton.GetPosInGrid(_enemy.transform.position);
-        List<Vector3> path = AStar.Run(start, GetConnections, IsSatiesfies, GetCost, Heuristic, 5000);
+        List<Vector3> path = AStar.Run(start, GetConnections, IsSatiesfies, GetCost, Heuristic, 10000);
         path = AStar.CleanPath(path, InView);
+        Debug.Log(path.Count);
         _enemy.GetRaidStateWaypoints.SetWayPoints(path);
     }
     float Heuristic(Vector3 current)
@@ -57,6 +58,6 @@ public class AgentController : MonoBehaviour
     }
     bool IsSatiesfies(Vector3 current)
     {
-        return Vector3.Distance(current, temple.transform.position) < 2 && InView(current, temple.transform.position);
+        return Vector3.Distance(current, temple.transform.position) < 4 && InView(current, temple.transform.position);
     }
 }

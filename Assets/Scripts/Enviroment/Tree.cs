@@ -14,7 +14,6 @@ public class Tree : MonoBehaviour
     {
         if (other.gameObject.layer == 17)
         {
-            Debug.Log(_grid);
             _grid.KillCollider();
         }
     }

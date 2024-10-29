@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AStar
 {
-    public static List<T> Run<T>(T start, Func<T, List<T>> getConnections, Func<T, bool> isSatisfies, Func<T, T, float> getCost, Func<T, float> heuristic, int watchdog = 500)
+    public static List<T> Run<T>(T start, Func<T, List<T>> getConnections, Func<T, bool> isSatisfies, Func<T, T, float> getCost, Func<T, float> heuristic, int watchdog = 1000)
     {
         PriorityQueue<T> pending = new PriorityQueue<T>();
         HashSet<T> visited = new HashSet<T>();
