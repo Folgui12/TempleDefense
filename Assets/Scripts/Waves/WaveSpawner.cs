@@ -51,12 +51,10 @@ public class WaveSpawner : ManagedUpdateBehavior
     {
         base.Start();
         canHitButton = false;
-
     }
     override protected void CustomLightFixedUpdate()
     {
         base.CustomLightFixedUpdate();
-        NextWave();
         if (spawnTimer <=0)
         {
 

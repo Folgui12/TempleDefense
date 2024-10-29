@@ -888,7 +888,7 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 5945309254849029585, guid: 345e8cd1553a6de4fb9b323e91445195, type: 3}
     cost: 15
   MaxRando: 2
-  currWave: 4
+  currWave: 0
   waveValue: 0
   enemiesToSpawn: []
   enemy: {fileID: 0}
