@@ -1421,8 +1421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 2899803174021759696}
   enemyType: 2
-  target: {fileID: 0}
-  timePrediction: 0
+  target: {fileID: 3244645081329793552}
+  timePrediction: 2
   angle: 210
   radius: 7.1
   maskObs:
@@ -1448,7 +1448,7 @@ MonoBehaviour:
   OnHand: 0
   OnGround: 0
   _stats: {fileID: 11400000, guid: 6371e44d64973af48afdd666736c06ab, type: 2}
-  _controller: {fileID: 0}
+  _controller: {fileID: 7501471836595280448}
   enemyType: 2
   _agentController: {fileID: 4659146445170694184}
   _leaderBehaviour: {fileID: 3958534222892810424}
@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider: {fileID: 1448061867611267044}
-  _model: {fileID: 0}
+  _model: {fileID: 547143935728489370}
   _projectile: {fileID: 0}
   Attacking: 0
   anim: {fileID: 3405931494851907963}

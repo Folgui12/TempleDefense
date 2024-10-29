@@ -4,8 +4,8 @@ Shader "Skybox Gradient"
 {
 	Properties
 	{
-		_Top("Top", Color) = (1,1,1,0)
-		_Bottom("Bottom", Color) = (0,0,0,0)
+		_Top("Top", Color) = (1,0.9291989,0.7877358,0)
+		_Bottom("Bottom", Color) = (0.8679245,0.8424403,0.749199,0)
 		_mult("mult", Float) = 1
 		_pwer("pwer", Float) = 1
 		[Toggle(_SCREENSPACE_ON)] _Screenspace("Screen space", Float) = 0
@@ -138,7 +138,7 @@ Shader "Skybox Gradient"
 }
 /*ASEBEGIN
 Version=18900
-0;491.3333;1267.667;387.6667;1271.788;230.5789;1;True;False
+0;675;1387;324;1973.374;251.8984;1.995323;True;True
 Node;AmplifyShaderEditor.ScreenPosInputsNode;2;-1169.49,131.1642;Float;False;0;False;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.PosVertexDataNode;11;-1161.67,307.9635;Inherit;False;0;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RangedFloatNode;7;-792.1788,414.5748;Inherit;False;Property;_mult;mult;2;0;Create;True;0;0;0;False;0;False;1;1;0;0;0;1;FLOAT;0
@@ -147,8 +147,8 @@ Node;AmplifyShaderEditor.SimpleMultiplyOpNode;6;-614.1788,236.5748;Inherit;False
 Node;AmplifyShaderEditor.RangedFloatNode;10;-468.1788,419.5748;Inherit;False;Property;_pwer;pwer;3;0;Create;True;0;0;0;False;0;False;1;1;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SaturateNode;9;-440.1788,230.5748;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.PowerNode;8;-272.1788,210.5748;Inherit;False;False;2;0;FLOAT;0;False;1;FLOAT;1;False;1;FLOAT;0
-Node;AmplifyShaderEditor.ColorNode;4;-608.5,-26.84821;Inherit;False;Property;_Top;Top;0;0;Create;True;0;0;0;False;0;False;1,1,1,0;0.9874213,0.9864898,0.978106,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;5;-638.7576,-235.1903;Inherit;False;Property;_Bottom;Bottom;1;0;Create;True;0;0;0;False;0;False;0,0,0,0;0.9559748,0.9484845,0.6763972,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;4;-608.5,-26.84821;Inherit;False;Property;_Top;Top;0;0;Create;True;0;0;0;False;0;False;1,0.9291989,0.7877358,0;0.9874213,0.9864898,0.978106,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;5;-646.7388,-235.1903;Inherit;False;Property;_Bottom;Bottom;1;0;Create;True;0;0;0;False;0;False;0.8679245,0.8424403,0.749199,0;0.9559748,0.9484845,0.6763972,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.LerpOp;3;-177.5,-1.5;Inherit;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;217,-21;Float;False;True;-1;2;ASEMaterialInspector;100;1;Skybox Gradient;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;False;True;0;1;False;-1;0;False;-1;0;1;False;-1;0;False;-1;True;0;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;1;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;1;RenderType=Opaque=RenderType;True;2;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=ForwardBase;False;0;;0;0;Standard;1;Vertex Position,InvertActionOnDeselection;1;0;1;True;False;;False;0
 WireConnection;13;1;11;2
@@ -163,4 +163,4 @@ WireConnection;3;1;4;0
 WireConnection;3;2;8;0
 WireConnection;1;0;3;0
 ASEEND*/
-//CHKSM=BE031C52259F1D049417F3A3B1AF0AEA981E097C
+//CHKSM=2339A69BD0A701F2C8981C1AB73F1FAEF1B69E23

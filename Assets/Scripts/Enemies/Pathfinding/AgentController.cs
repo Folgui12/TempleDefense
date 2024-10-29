@@ -53,7 +53,6 @@ public class AgentController : MonoBehaviour
     {
         //a->b  b-a
         Vector3 dir = b - a;
-
         return !Physics.Raycast(a, dir.normalized, dir.magnitude, maskObs);
     }
     bool IsSatiesfies(Vector3 current)

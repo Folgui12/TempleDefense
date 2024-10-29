@@ -64,7 +64,7 @@ public class WaveSpawner : ManagedUpdateBehavior
             if (enemiesToSpawn.Count > 0)
             {
 
-                Instantiate(VFX, spawnLocation[spawnIndex].transform.position, spawnLocation[spawnIndex].transform.rotation);
+                Instantiate(VFX, spawnLocation[spawnIndex].transform.position, VFX.transform.rotation);
                 enemy = enemiesToSpawn[0];
 
                 if (enemy == enemies[0].enemyPrefab)

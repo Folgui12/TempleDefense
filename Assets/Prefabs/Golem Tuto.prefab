@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b30027c62374bc4abd7c164be9ee8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPosition: {fileID: 0}
+  enemyPosition: {fileID: 64254700762915427}
   offset: {x: 1.65, y: 3.7, z: 0}
 --- !u!1 &6467005976794208415
 GameObject:

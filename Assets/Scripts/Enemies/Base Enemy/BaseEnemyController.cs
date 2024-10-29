@@ -109,7 +109,7 @@ public class BaseEnemyController : ManagedUpdateBehavior
 
         //Question
         var qAttackRange = new QuestionNode(QuestionAttackRange, attack, toTower);
-        var qLoS = new QuestionNode(QuestionLoS, qAttackRange, raid);
+        var qLoS = new QuestionNode(QuestionLoS , qAttackRange, raid);
         var qInAir = new QuestionNode(() => !_model.OnHand && _model.OnGround, qLoS, air);
         var qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qInAir, dead);
 
@@ -131,11 +131,6 @@ public class BaseEnemyController : ManagedUpdateBehavior
         _root.Execute();
     }
     
-    /*private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(_los.Origin, radius);
-    }*/
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Arrow"))
@@ -145,7 +140,6 @@ public class BaseEnemyController : ManagedUpdateBehavior
             _model.TakeDamage(arrowHit.Damage);
         }
     }
-
     public IPoints GetRaidStateWaypoints => _stateFollowPoints;
 
 }
