@@ -31,7 +31,6 @@ public class ThunderMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("GenericEnemy"))
         {
-            Debug.Log("HITGOUND");
             Instantiate(Fresnel, transform.position, transform.rotation);
 
             var surroundedEnemies = Physics.OverlapSphere(transform.position, explosionRadius);

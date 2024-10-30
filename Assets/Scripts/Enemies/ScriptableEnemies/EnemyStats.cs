@@ -12,5 +12,4 @@ public class EnemyStats : ScriptableObject
     [field: SerializeField] public float viewRange { get; private set; }
     [field: SerializeField] public int moneyQuantity { get; private set; }
     [field: SerializeField] public int Damage { get; private set; }
-
 }

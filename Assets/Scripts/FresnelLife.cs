@@ -35,6 +35,5 @@ public class FresnelLife : MonoBehaviour
         opacity -= opacityDecrease * Time.deltaTime;
         opacity = Mathf.Max(opacity, 0);
         material.SetFloat("_Opacity", opacity);
-        Debug.Log(opacity);
     }
 }

@@ -677,6 +677,7 @@ MonoBehaviour:
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
   CurrentLife: 0
+  Tutorial: 1
   OnHand: 0
   OnGround: 0
   _stats: {fileID: 11400000, guid: a1707af457784064692380237e437916, type: 2}
@@ -685,6 +686,7 @@ MonoBehaviour:
   _agentController: {fileID: 7987452409769814164}
   _leaderBehaviour: {fileID: 1533344206941698079}
   _waveSpawner: {fileID: 0}
+  _tutorialSpawner: {fileID: 0}
   audioSource: {fileID: 5441625768571700689}
 --- !u!114 &5685967084341310072
 MonoBehaviour:

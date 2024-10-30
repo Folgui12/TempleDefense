@@ -61,7 +61,6 @@ public class WaveSpawner : ManagedUpdateBehavior
             //spawn an enemy
             if (enemiesToSpawn.Count > 0)
             {
-
                 Instantiate(VFX, spawnLocation[spawnIndex].transform.position, VFX.transform.rotation);
                 enemy = enemiesToSpawn[0];
 
@@ -126,6 +125,7 @@ public class WaveSpawner : ManagedUpdateBehavior
         {
             poolGolem.ReturnToPool(enemy);
         }
+        ActiveEnemiesManager.Instance.GetAllActiveEnemies();
     }
 
     public void GenerateWave()

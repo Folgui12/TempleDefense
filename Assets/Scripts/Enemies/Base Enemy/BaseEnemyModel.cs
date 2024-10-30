@@ -11,6 +11,8 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public float CurrentLife;
 
+    public bool Tutorial;
+
     public bool OnHand = false;
 
     public bool OnGround = true;
@@ -33,8 +35,9 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public WaveSpawner _waveSpawner;
 
-    public AudioSource audioSource;
+    public TutorialSpawner _tutorialSpawner;
 
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -43,14 +46,21 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         lineOfSight = GetComponent<LoS>();
         _view = GetComponent<BaseEnemyView>();
         _currentBuilding = _mainBuilding;
+        _tutorialSpawner = FindObjectOfType<TutorialSpawner>();
         _waveSpawner = FindObjectOfType<WaveSpawner>();
         audioSource = GetComponent<AudioSource>();
-
         CurrentLife = _stats.life;
     }
     private void Start()
     {
         _agentController.temple = _mainBuilding;
+    }
+    private void OnEnable()
+    {
+        _rb.velocity = new Vector3(0, 0, 0);
+        transform.position = _agentController.transform.position;
+        CurrentLife = _stats.life;
+        OnGround = false;
     }
     public void Move(Vector3 dir)
     {
@@ -113,7 +123,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public void Dead()
     {
-        if (this.transform.parent.gameObject.active)
+        if (transform.parent.gameObject.activeInHierarchy)
         {
             CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
             //Destroy(gameObject);
@@ -136,7 +146,8 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
                     AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
                     break;
             }
-            _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+            if(!Tutorial) _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+            else _tutorialSpawner.RemoveEnemy(this.transform.parent.gameObject);
         }
     }
 
@@ -161,11 +172,6 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
                 AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
                 break;
         }
-    }
-
-    private void OnEnable()
-    {
-        CurrentLife = _stats.life;
     }
     public void EnemyOffHand()
     {

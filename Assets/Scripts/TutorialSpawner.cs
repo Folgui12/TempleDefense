@@ -38,8 +38,9 @@ public class TutorialSpawner : MonoBehaviour
         {
             poolSatiro.GetPooled(SpawnPoint, Satiro);
             IsSatiroSpawn = true;
-
         }
+
+        ActiveEnemiesManager.Instance.GetAllActiveEnemies();
     }
 
     public void SpawnCentauro()
@@ -48,8 +49,9 @@ public class TutorialSpawner : MonoBehaviour
         {
             poolCentauro.GetPooled(SpawnPoint, Centauro);
             IsCentauroSpawn = true;
-
         }
+
+        ActiveEnemiesManager.Instance.GetAllActiveEnemies();
     }
 
     public void SpawnGolem()
@@ -59,29 +61,32 @@ public class TutorialSpawner : MonoBehaviour
             poolGolem.GetPooled(SpawnPoint, Golem);
             IsGolemSpawn = true;
         }
+
+        ActiveEnemiesManager.Instance.GetAllActiveEnemies();
     }
 
 
     public void RemoveEnemy(GameObject enemy)
     {
-        if (enemy.name == "Satiro(Clone)")
+        if (enemy.name == "Satiro Tuto(Clone)")
         {
             Debug.Log("Satiro");
             poolSatiro.ReturnToPool(enemy);
             IsSatiroSpawn = false;
         }
-        if (enemy.name == "Centauro(Clone)")
+        if (enemy.name == "Centauro Tuto(Clone)")
         {
             Debug.Log("Centauro");
             poolCentauro.ReturnToPool(enemy);
             IsCentauroSpawn = false;
         }
-        if (enemy.name == "Golem(Clone)")
+        if (enemy.name == "Golem Tuto(Clone)")
         {
             Debug.Log("Golem");
             poolGolem.ReturnToPool(enemy);
             IsGolemSpawn = false;
         }
+        ActiveEnemiesManager.Instance.GetAllActiveEnemies();
     }
 
 }
