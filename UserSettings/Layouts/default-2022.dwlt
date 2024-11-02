@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 121
+  controlID: 21
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 56
+  controlID: 22
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 57
+  controlID: 23
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 403
     height: 656
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_maxNodePos: {x: 1228.972, y: 572.8973}
   m_isDirty: 0
   m_saveIsDirty: 1
-  m_repaintIsDirty: 1
+  m_repaintIsDirty: 0
   m_liveShaderEditing: 0
   m_shaderIsModified: 0
   m_lastOpenedLocation: Assets/Materials/Lightning.shader
@@ -469,8 +469,8 @@ MonoBehaviour:
   m_minNodePos: {x: -3039.9673, y: -161.21346}
   m_maxNodePos: {x: 1063.838, y: 1106.5605}
   m_isDirty: 0
-  m_saveIsDirty: 0
-  m_repaintIsDirty: 0
+  m_saveIsDirty: 1
+  m_repaintIsDirty: 1
   m_liveShaderEditing: 0
   m_shaderIsModified: 1
   m_lastOpenedLocation: Assets/Materials/Hands/SH_HandsEffect.shader
@@ -541,10 +541,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 16}
-      m_SelectedIDs: a8e4ffff
-      m_LastClickedID: -7000
-      m_ExpandedIDs: 36ecffff4aefffff6aefffffe4efffff1ef0ffff32f0ffff08f2ffff16f4fffffcfaffff58900000cc9b0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 10120000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 8ef4fffffcfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -911,9 +911,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -116.928535, y: -4.769762, z: 61.556873}
+    m_Target: {x: -0.21992493, y: -0.32794917, z: -0.17096181}
     speed: 2
-    m_Value: {x: -116.928535, y: -4.769762, z: 61.556873}
+    m_Value: {x: -0.21992493, y: -0.32794917, z: -0.17096181}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -959,13 +959,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.16601193, y: -0.77270836, z: 0.22512677, w: 0.56980705}
+    m_Target: {x: 0.25620437, y: -0.6079156, z: 0.21641137, w: 0.71969825}
     speed: 2
-    m_Value: {x: 0.16567405, y: -0.7735621, z: 0.2253755, w: 0.56864727}
+    m_Value: {x: 0.2545739, y: -0.61329573, z: 0.21832664, w: 0.71511817}
   m_Size:
-    m_Target: 58.290943
+    m_Target: 0.67356133
     speed: 2
-    m_Value: 55.780807
+    m_Value: 0.6445563
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1458,7 +1458,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials/Hands
+    - Assets/Materials/Cosas
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1466,16 +1466,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 54
   m_LastFolders:
-  - Assets/Materials/Hands
+  - Assets/Materials/Cosas
   m_LastFoldersGridSize: 54
   m_LastProjectPath: "C:\\Users\\mateo\\OneDrive\\Escritorio\\UADE\\3 A\xD1O\\1.IA\\TempleDefense"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: deb40000
-    m_LastClickedID: 46302
-    m_ExpandedIDs: 00000000788500007a8500007c8500005e87000000ca9a3b
+    scrollPos: {x: 0, y: 126}
+    m_SelectedIDs: 1cb00000
+    m_LastClickedID: 45084
+    m_ExpandedIDs: 0000000010ae000012ae000014ae0000fcaf000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1503,7 +1503,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000788500007a8500007c850000
+    m_ExpandedIDs: 0000000010ae000012ae000014ae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e6c50000a02a010064770000fcaa0000e2d90000a0a20000b49400008e770000ce3a0000ac3a0000b0b20000a2b20000c6b200003489000080ed000084ed00007aed0000089701002ab7000096520100b8c40000cec40000a4c10000f6930000e8860000000000009c110100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
