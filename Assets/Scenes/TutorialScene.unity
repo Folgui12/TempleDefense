@@ -30904,7 +30904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91dc6f2e3b50a024d9ba03e4521e9799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimunTimeToLearn: 100
+  minimunTimeToLearn: 1
   aWayOut: {fileID: 1644377341}
   firstTutoFinish: 0
 --- !u!1 &1278586493
