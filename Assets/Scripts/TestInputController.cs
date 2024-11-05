@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TestInputController : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class TestInputController : MonoBehaviour
     public InputDevice _rightController;
     public InputDevice _leftController;
     public InputDevice _HMD;
+    public Vector3 RightControllerVelocity;
+    public Vector3 LeftControllerVelocity;
+
 
     private void Awake()
     {
@@ -22,7 +26,14 @@ public class TestInputController : MonoBehaviour
     void Update()
     {
         if (!_rightController.isValid || !_leftController.isValid || !_HMD.isValid)
+        {
             InitializeInputDevices();
+            _rightController.TryGetFeatureValue(CommonUsages.deviceVelocity, out RightControllerVelocity);
+            _leftController.TryGetFeatureValue(CommonUsages.deviceVelocity, out LeftControllerVelocity);
+            Debug.Log("Right:" + RightControllerVelocity.magnitude);
+            Debug.Log("Left: " + LeftControllerVelocity.magnitude);
+        }
+            
     }
 
     private void InitializeInputDevices()
