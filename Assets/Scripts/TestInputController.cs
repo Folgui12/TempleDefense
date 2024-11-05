@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -28,10 +29,6 @@ public class TestInputController : MonoBehaviour
         if (!_rightController.isValid || !_leftController.isValid || !_HMD.isValid)
         {
             InitializeInputDevices();
-            _rightController.TryGetFeatureValue(CommonUsages.deviceVelocity, out RightControllerVelocity);
-            _leftController.TryGetFeatureValue(CommonUsages.deviceVelocity, out LeftControllerVelocity);
-            Debug.Log("Right:" + RightControllerVelocity.magnitude);
-            Debug.Log("Left: " + LeftControllerVelocity.magnitude);
         }
             
     }
@@ -56,5 +53,19 @@ public class TestInputController : MonoBehaviour
         {
             inputDevice = devices[0];
         }
+    }
+
+    public float GetRightVelocity()
+    {
+        _rightController.TryGetFeatureValue(CommonUsages.deviceVelocity, out RightControllerVelocity);
+
+        return RightControllerVelocity.magnitude;
+    }
+
+    public float GetLeftVelocity() 
+    {
+        _leftController.TryGetFeatureValue(CommonUsages.deviceVelocity, out LeftControllerVelocity);
+
+        return LeftControllerVelocity.magnitude;
     }
 }

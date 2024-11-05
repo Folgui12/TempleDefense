@@ -18,6 +18,8 @@ TagManager:
   - GenericEnemy
   - GoToGame
   - ExitGame
+  - RightController
+  - LeftController
   layers:
   - Default
   - TransparentFX
@@ -39,7 +41,7 @@ TagManager:
   - Golem
   - TutorialCube
   - NoPeeking
-  - 
+  - Hand
   - 
   - 
   - 
