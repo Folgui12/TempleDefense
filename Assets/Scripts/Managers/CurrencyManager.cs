@@ -45,7 +45,7 @@ public class CurrencyManager: MonoBehaviour
 
     public void RemoveMoney(int value)
     {
-        if(moneyCount > value)
+        if(moneyCount >= value)
             moneyCount -= value;
 
         RefreshValues();

@@ -6,14 +6,15 @@ using UnityEngine.XR;
 public class ShootThunder : MonoBehaviour
 {
     [SerializeField] private GameObject ThunderToSpawn;
-    [SerializeField] private Transform ShootPoint;
-    //[SerializeField] private Material HandChargedMaterial;
+    [SerializeField] private Transform ShootPoint;  
     [SerializeField] private GameObject HandLaser;
     [SerializeField] private Animator anim;
+    [SerializeField] private GameObject ThunderBracelet;
 
     public AudioSource audioSource;
 
     public bool canShoot = false;
+
 
     private void Start()
     {
@@ -28,22 +29,31 @@ public class ShootThunder : MonoBehaviour
         {
             if(gripButton)
             {
-                if(canShoot)
+                if (canShoot)
                 {
                     anim.SetBool("HasPower", true);
-                    AudioManager.Instance.Play("LightningInHand", audioSource);
+                    
+                    if(!audioSource.isPlaying)
+                    {
+                        AudioManager.Instance.Play("LightningInHand", audioSource);
+                    }
+                        
+                    
                     HandLaser.SetActive(true);
                     if (TestInputController.Instance._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerButton) &&
                         triggerButton)
                     {
                         canShoot = false;
                         anim.SetBool("HasPower", false);
+                        ThunderBracelet.SetActive(false);
                         Shoot();
                     }
                 }
                 else
+                {
                     anim.SetBool("HasPower", false);
-
+                    HandLaser.SetActive(false);
+                }
             }
                
             else
@@ -68,5 +78,6 @@ public class ShootThunder : MonoBehaviour
     public void CanShootSwitch()
     {
         canShoot = true;
+        ThunderBracelet.SetActive(true);
     }
 }

@@ -20,6 +20,7 @@ TagManager:
   - ExitGame
   - RightController
   - LeftController
+  - Tree
   layers:
   - Default
   - TransparentFX

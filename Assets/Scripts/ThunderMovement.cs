@@ -29,25 +29,29 @@ public class ThunderMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("GenericEnemy"))
+        if(other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("GenericEnemy") || other.gameObject.CompareTag("Tree"))
         {
             Instantiate(Fresnel, transform.position, transform.rotation);
 
-            var surroundedEnemies = Physics.OverlapSphere(transform.position, explosionRadius);
+            var surroundedEnemiesTrees = Physics.OverlapSphere(transform.position, explosionRadius);
 
-            foreach(var enemy in surroundedEnemies)
+            foreach(var collicion in surroundedEnemiesTrees)
             {
-                var getRB = enemy.GetComponent<Rigidbody>();
-                var getEnemyModel = enemy.GetComponent<BaseEnemyModel>();
+                var getRB = collicion.GetComponent<Rigidbody>();
+                var getEnemyModel = collicion.GetComponent<BaseEnemyModel>();
+                var getTree = collicion.GetComponent<Tree>();
+
+                if (getTree != null)
+                    Destroy(getTree.gameObject);
 
                 if (getRB == null) continue;
+                
                 getRB.AddExplosionForce(explosionForce, transform.position - new Vector3(0, 1.5f, 0), explosionRadius);
 
                 if (getEnemyModel != null)
                 {
                     getEnemyModel.TakeDamage(explosionDamage);
                 }
-                
             }
 
             Destroy(gameObject);

@@ -1121,7 +1121,7 @@ CapsuleCollider:
   m_Radius: 0.25
   m_Height: 3.5112765
   m_Direction: 1
-  m_Center: {x: -0.0000037550983, y: 1.5366708, z: 0.0000000040752406}
+  m_Center: {x: 0.3, y: 1.4, z: -0.3}
 --- !u!114 &6976376030640675236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1445,6 +1445,7 @@ MonoBehaviour:
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
   CurrentLife: 0
+  Tutorial: 0
   OnHand: 0
   OnGround: 0
   _stats: {fileID: 11400000, guid: 6371e44d64973af48afdd666736c06ab, type: 2}
@@ -1453,6 +1454,7 @@ MonoBehaviour:
   _agentController: {fileID: 4659146445170694184}
   _leaderBehaviour: {fileID: 3958534222892810424}
   _waveSpawner: {fileID: 0}
+  _tutorialSpawner: {fileID: 0}
   audioSource: {fileID: 2899803174021759696}
 --- !u!114 &439678799053709008
 MonoBehaviour:
