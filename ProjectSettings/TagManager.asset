@@ -21,6 +21,7 @@ TagManager:
   - RightController
   - LeftController
   - Tree
+  - Hammer
   layers:
   - Default
   - TransparentFX

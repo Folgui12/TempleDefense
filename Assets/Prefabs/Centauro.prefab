@@ -1288,6 +1288,7 @@ GameObject:
   - component: {fileID: 1671245450528738333}
   - component: {fileID: 4542197791148586153}
   - component: {fileID: 4706913792767495594}
+  - component: {fileID: 5506168208296016381}
   - component: {fileID: 8157922555254745127}
   m_Layer: 3
   m_Name: CentauroModel
@@ -1421,13 +1422,16 @@ MonoBehaviour:
   _mainBuilding: {fileID: 0}
   _currentBuilding: {fileID: 0}
   CurrentLife: 0
+  Tutorial: 0
   OnHand: 0
   OnGround: 0
   _stats: {fileID: 11400000, guid: 16d86e9a6ebfda6458a8b94eab5d63f4, type: 2}
   _controller: {fileID: 0}
+  enemyType: 0
   _agentController: {fileID: 4733299224834507182}
   _leaderBehaviour: {fileID: 4706913792767495594}
   _waveSpawner: {fileID: 0}
+  _tutorialSpawner: {fileID: 0}
   audioSource: {fileID: 8157922555254745127}
 --- !u!114 &7928936517223088336
 MonoBehaviour:
@@ -1684,6 +1688,19 @@ MonoBehaviour:
   multiplier: 1
   target: {fileID: 0}
   isActive: 1
+--- !u!114 &5506168208296016381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787701435022290209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5d07e59914d304d8e4bc0eabadf01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canEat: 1
 --- !u!82 &8157922555254745127
 AudioSource:
   m_ObjectHideFlags: 0

@@ -8,7 +8,6 @@ public class KillBoxController : MonoBehaviour
         if(SceneManager.GetActiveScene().name != "TutorialScene")
             WaveSpawner.Instance.RemoveEnemy(other.gameObject);
 
-        other.gameObject.GetComponent<BaseEnemyModel>().TakeDamage(9999);
-        //Destroy(other.gameObject);
+        other.gameObject.GetComponent<BaseEnemyModel>().TakeDamage(99999);
     }
 }
