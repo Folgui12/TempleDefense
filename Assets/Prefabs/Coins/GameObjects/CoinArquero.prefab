@@ -99,7 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2a47acd8225024e9d052d668e1b9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefenseID: {fileID: 3026054146025631727, guid: 6152d7947813b8b469462f68160db054, type: 3}
   defenseType: {fileID: 11400000, guid: 55d0ab3f45cd1ef45801513fe8df98c3, type: 2}
+  offTower: {fileID: 600168286015867912, guid: 5ccf79c972256a543b7e0b2721ece6eb, type: 3}
+  _offTower: {fileID: 0}
+  _offTowerSR: {fileID: 0}
+  skyBlue: {fileID: 2100000, guid: b5d8e38786a131941926a9fe12f3399b, type: 2}
+  Red: {fileID: 2100000, guid: d976f994944ac1942bfa81e4542d4ac5, type: 2}
+  _col: {fileID: 0}
+  _rigidbody: {fileID: 0}
   OnHand: 0
 --- !u!54 &2713372609943957014
 Rigidbody:
@@ -262,7 +270,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1

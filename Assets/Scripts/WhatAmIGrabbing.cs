@@ -25,7 +25,7 @@ public class WhatAmIGrabbing : MonoBehaviour
         {
             foreach(var obj in Interactor_RH.interactablesHovered) 
             {
-                Debug.Log(obj);
+                //Debug.Log(obj);
             }
         }
 
@@ -33,7 +33,7 @@ public class WhatAmIGrabbing : MonoBehaviour
         {
             foreach (var obj in Interactor_LH.interactablesHovered)
             {
-                Debug.Log(obj);
+                //Debug.Log(obj);
             }
         }
     }

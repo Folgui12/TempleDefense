@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HammerController : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         other.gameObject.GetComponent<TowerModel>().TakeDamage(99999);
     }

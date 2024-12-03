@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2a47acd8225024e9d052d668e1b9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefenseID: {fileID: 1709829872821117285, guid: 3134ecaa5b6e5254d8d05fa62fc61f4c, type: 3}
   defenseType: {fileID: 11400000, guid: a8373c1200cb5214b8a07c6442730417, type: 2}
+  _col: {fileID: 0}
   OnHand: 0
 --- !u!54 &-83561740864912428
 Rigidbody:

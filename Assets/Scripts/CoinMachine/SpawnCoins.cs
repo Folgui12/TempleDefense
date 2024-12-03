@@ -78,7 +78,7 @@ public class SpawnCoins : ManagedUpdateBehavior
     }
     private float GetMaxHeight()
     {
-        float randoHeight = Random.Range(5, 15);
+        float randoHeight = Random.Range(8, 15);
         return randoHeight;
     }
 }
