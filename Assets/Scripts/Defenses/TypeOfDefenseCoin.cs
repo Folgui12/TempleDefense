@@ -25,7 +25,7 @@ public class TypeOfDefenseCoin : MonoBehaviour
     private void Start()
     {
         _offTower = Instantiate(offTower, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
-        _col = _offTower.GetComponent<Collider>();
+        _col = GetComponent<Collider>();
         _offTower.SetActive(false);
     }
     private void Update()
@@ -41,7 +41,6 @@ public class TypeOfDefenseCoin : MonoBehaviour
     {
         OnHand = false;
     }
-
     private void ActivateGhostTower()
     {
         _offTower.SetActive(true);
@@ -50,26 +49,32 @@ public class TypeOfDefenseCoin : MonoBehaviour
     {
         _offTower.SetActive(false);
     }
+    private void UpdateGhostTower(bool canPlace)
+    {
+        ActivateGhostTower();
+        Debug.Log(canPlace);
+        _offTowerSR.material = canPlace ? skyBlue : Red;
+    }
+    private void PlaceTower()
+    {
+        var defense = Instantiate(DefenseID, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+        defense.transform.position = gameObject.transform.position;
+        DeactivateGhostTower();
+        Destroy(gameObject);
+    }
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.layer == 8)
         {
             _offTowerSR = _offTower.GetComponent<MeshRenderer>();
-            if (!OnHand && MyGrid.singleton.TryPlaceTower(_col))
+            if (!OnHand && MyGrid.singleton.TryPlaceTower(_col, false))
             {
-                var defense = Instantiate(DefenseID, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
-                defense.transform.position = gameObject.transform.position;
-                Destroy(gameObject);
+                PlaceTower();
             }
-            else if (OnHand && MyGrid.singleton.TryPlaceTower(_col))
+            else if (OnHand)
             {
-                ActivateGhostTower();
-                _offTowerSR.material = skyBlue;
-            }
-            else if (OnHand && !MyGrid.singleton.TryPlaceTower(_col))
-            {
-                ActivateGhostTower();
-                _offTowerSR.material = Red;
+                bool canPlace = MyGrid.singleton.TryPlaceTower(_col, true);
+                UpdateGhostTower(canPlace);
             }
         }
     }

@@ -77,6 +77,7 @@ public class MyGrid : MonoBehaviour
                     Vector3 point = new Vector3(x, y, z);
                     if (bounds.Contains(point))
                     {
+
                         points.Add(point);
                     }
                 }
@@ -84,31 +85,36 @@ public class MyGrid : MonoBehaviour
         }
         return points;
     }
-    public bool TryPlaceTower(Collider towerCollider)
+    public bool TryPlaceTower(Collider towerCollider, bool checkOnly = false)
     {
         var points = GetPointsInCollider(towerCollider, skipY);
+
         foreach (var point in points)
         {
             if (_dic.ContainsKey(point) && _dic[point] > 0)
             {
-                Debug.Log($"La posición {point} está ocupada. No se puede colocar la torre.");
                 return false;
             }
         }
+
         foreach (var point in points)
         {
-            if (_dic.ContainsKey(point))
+            if (!checkOnly)
             {
-                _dic[point] += 1;
-            }
-            else
-            {
-                _dic[point] = 1;
+                if (_dic.ContainsKey(point))
+                {
+                    _dic[point] += 1;
+                }
+                else
+                {
+                    _dic[point] = 1;
+                }
             }
             return true;
         }
         return false;
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
