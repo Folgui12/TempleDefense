@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8117113089940048713}
   - component: {fileID: 2591716950517692663}
   - component: {fileID: 1240945567917936590}
+  - component: {fileID: 2585384036961506532}
   m_Layer: 0
   m_Name: EmptyTower
   m_TagString: Untagged
@@ -105,3 +106,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7697479, y: 0.73181003, z: 5.006018}
   m_Center: {x: 0.009405552, y: 0.01888292, z: 2.4954815}
+--- !u!114 &2585384036961506532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600168286015867912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264a8fa101e160048a93d0fde08d230a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

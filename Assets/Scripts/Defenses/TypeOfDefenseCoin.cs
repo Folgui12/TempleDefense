@@ -58,7 +58,7 @@ public class TypeOfDefenseCoin : MonoBehaviour
     private void PlaceTower()
     {
         var defense = Instantiate(DefenseID, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
-        defense.transform.position = gameObject.transform.position;
+        defense.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         DeactivateGhostTower();
         Destroy(gameObject);
     }
