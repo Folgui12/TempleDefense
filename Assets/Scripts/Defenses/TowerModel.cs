@@ -17,6 +17,10 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     public LayerMask _layerMask;
 
+    [SerializeField] private LineRenderer circle;
+    [SerializeField] private float TimeBeforeCircleAppears;
+    private bool Draw;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,30 +56,46 @@ public class TowerModel : MonoBehaviour, IDamageable
         if (nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
         {
             _currentEnemy = nearestEnemy;
-        }
-
-
-        
+        }     
 
         return _currentEnemy;
-
-        //GameObject nearestEnemy = null;
-
-        /*if (nearestEnemy != null && _los.CheckRange(nearestEnemy.transform, _stats.AttackRange))
-        {
-            _currentEnemy = nearestEnemy;
-        }*/
-
-        //List<GameObject> currentEnemies = WaveSpawner.Instance.spawnedEnemies;
-
-        
-
     }
     public void Dead()
     {
         _grid.KillCollider();
     }
 
+    public void UpdateCircle()
+    {
+        DrawCircle(100, _stats.AttackRange);
+    }
+
+    void DrawCircle(int steps, float radius)
+    {
+        circle.enabled = true;
+        circle.positionCount = steps;
+
+        for (int currentStep = 0; currentStep < steps; currentStep++)
+        {
+            float circumferenceProgress = (float)currentStep / steps;
+
+            float currentRadian = circumferenceProgress * 2 * Mathf.PI;
+
+            float xScaled = Mathf.Cos(currentRadian);
+            float yScaled = Mathf.Sin(currentRadian);
+
+            float x = xScaled * radius;
+            float y = yScaled * radius;
+
+            Vector3 currentPosition = new Vector3(transform.position.x + x, 0, transform.position.z + y);
+
+            circle.SetPosition(currentStep, currentPosition);
+        }
+    }
+    public void StopDrawingCircles()
+    {
+        circle.enabled = false;
+    }
     private void OnDestroy()
     {
         if(name != "Muro")
