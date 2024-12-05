@@ -38,6 +38,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public TutorialSpawner _tutorialSpawner;
 
     public AudioSource audioSource;
+    public bool Stuned;
 
     private void Awake()
     {
@@ -50,6 +51,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         _waveSpawner = FindObjectOfType<WaveSpawner>();
         audioSource = GetComponent<AudioSource>();
         CurrentLife = _stats.life;
+        Stuned = false;
     }
     private void Start()
     {

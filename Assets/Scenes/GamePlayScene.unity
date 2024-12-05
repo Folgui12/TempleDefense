@@ -16451,6 +16451,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1183664472}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 75.149}
+--- !u!1 &635809857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1127166057574232079, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
+  m_PrefabInstance: {fileID: 2026865695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &635809862
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635809857}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: -0.08, y: -0.06, z: 0.05}
 --- !u!4 &642691364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96b0aea8ce27fbd4fa25842608e74ccc, type: 3}
@@ -22240,6 +22266,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Interactor_RH: {fileID: 1810671273}
   Interactor_LH: {fileID: 0}
+--- !u!135 &844327977
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842088165}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: 0.08, y: -0.06, z: 0.05}
 --- !u!1 &844512071
 GameObject:
   m_ObjectHideFlags: 0
@@ -55963,6 +56010,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1127166057574232079, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
+      propertyPath: m_TagString
+      value: LeftController
+      objectReference: {fileID: 0}
     - target: {fileID: 1365083843090076327, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_Radius
       value: 0.05
@@ -56002,6 +56053,10 @@ PrefabInstance:
     - target: {fileID: 1922571704830245277, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956219021655382380, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
+      propertyPath: m_TagString
+      value: RightController
       objectReference: {fileID: 0}
     - target: {fileID: 2124753748546748649, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -56066,6 +56121,10 @@ PrefabInstance:
     - target: {fileID: 3170992922354747495, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 121.49861
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285554262603940321, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
+      propertyPath: m_PhysicsLayerMask.m_Bits
+      value: 777
       objectReference: {fileID: 0}
     - target: {fileID: 3285554262603940321, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
@@ -56511,6 +56570,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bff76195c92a7ba42b636cec38238132, type: 2}
+    - target: {fileID: 8605775431279241609, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
+      propertyPath: m_PhysicsLayerMask.m_Bits
+      value: 777
+      objectReference: {fileID: 0}
     - target: {fileID: 8700426863763610087, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       propertyPath: m_Radius
       value: 0.05
@@ -56542,6 +56605,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1956219021655382380, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 844327972}
+    - targetCorrespondingSourceObject: {fileID: 1956219021655382380, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 844327977}
     - targetCorrespondingSourceObject: {fileID: 4202347077455742379, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1888576978}
@@ -56560,6 +56626,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5940348660213227171, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1295674583}
+    - targetCorrespondingSourceObject: {fileID: 1127166057574232079, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 635809862}
   m_SourcePrefab: {fileID: 100100000, guid: 05471308ef06b0c48aad3fcdf3df7cc4, type: 3}
 --- !u!4 &2027512439 stripped
 Transform:
@@ -69116,14 +69185,14 @@ GameObject:
   - component: {fileID: 5983216614527624746}
   - component: {fileID: 912020154115577929}
   - component: {fileID: 556107312}
-  - component: {fileID: 5983216614527624748}
   - component: {fileID: 5983216614527624747}
+  - component: {fileID: 5983216614527624748}
   m_Layer: 8
   m_Name: TableMap
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!33 &1976034782589402142
 MeshFilter:
@@ -72624,6 +72693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb64c08e05ad314eba9f649f1efffab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upperForce: 30
 --- !u!114 &5983216614527624748
 MonoBehaviour:
   m_ObjectHideFlags: 0
