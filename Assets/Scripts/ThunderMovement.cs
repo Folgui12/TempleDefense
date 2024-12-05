@@ -12,7 +12,8 @@ public class ThunderMovement : MonoBehaviour
     [SerializeField] private float explosionForce;
     [SerializeField] private int explosionDamage;
     [SerializeField] private GameObject Fresnel;
-     
+    [SerializeField] private GameObject floorVFX;     
+    
     private float lifeCounter = 0;
 
     // Update is called once per frame
@@ -32,6 +33,11 @@ public class ThunderMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("GenericEnemy") || other.gameObject.CompareTag("Tree"))
         {
             Instantiate(Fresnel, transform.position, transform.rotation);
+
+            if (other.gameObject.CompareTag("Floor"))
+            {
+                Instantiate(floorVFX, new Vector3(transform.position.x, 0, transform.position.z), floorVFX.transform.rotation);
+            }
 
             var surroundedEnemiesTrees = Physics.OverlapSphere(transform.position, explosionRadius);
 
@@ -53,9 +59,9 @@ public class ThunderMovement : MonoBehaviour
                     getEnemyModel.TakeDamage(explosionDamage);
                 }
             }
-
             Destroy(gameObject);
         }
+
             
     }
 }

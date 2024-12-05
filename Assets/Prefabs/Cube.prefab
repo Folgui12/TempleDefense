@@ -152,3 +152,4 @@ MonoBehaviour:
   explosionForce: 15000
   explosionDamage: 10
   Fresnel: {fileID: 604605606781493764, guid: 4ba80fe9abe115949821d02de7e2d7b9, type: 3}
+  floorVFX: {fileID: 4941963113948584682, guid: 8c72c1de4e9a29c4596f2ded6b447e36, type: 3}

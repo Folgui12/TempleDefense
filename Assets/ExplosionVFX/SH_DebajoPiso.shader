@@ -31,7 +31,7 @@ Shader "SH_DebajoPiso"
 
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
-			float4 color1 = IsGammaSpace() ? float4(1,0.7807935,0,0) : float4(1,0.5717837,0,0);
+			float4 color1 = IsGammaSpace() ? float4(1,0.7807935,0,0) : float4(1,0.5717836,0,0);
 			float4 color32 = IsGammaSpace() ? float4(0,0,0,0) : float4(0,0,0,0);
 			float4 lerpResult30 = lerp( ( color1 * ( 1.0 - i.uv_texcoord.y ) * 1.0 ) , color32 , sin( _Time.y ));
 			o.Emission = lerpResult30.rgb;
@@ -45,7 +45,7 @@ Shader "SH_DebajoPiso"
 }
 /*ASEBEGIN
 Version=18900
-0;490;1487;509;1482.056;23.43434;1.612835;True;False
+0;568;1264.333;311;1102.012;-104.0698;1;True;False
 Node;AmplifyShaderEditor.TextureCoordinatesNode;3;-693.6571,-143.5662;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RangedFloatNode;21;-864.6458,311.4975;Inherit;False;Constant;_Speed;Speed;0;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;5;-349.1595,50.13393;Inherit;False;Constant;_Intensity;Intensity;0;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
@@ -69,4 +69,4 @@ WireConnection;30;1;32;0
 WireConnection;30;2;24;0
 WireConnection;0;2;30;0
 ASEEND*/
-//CHKSM=2DEF8651F41618AA274AA474B76922DD970F9638
+//CHKSM=C0FC991908081B21B0BD7FCB990C4113CD11CEC8

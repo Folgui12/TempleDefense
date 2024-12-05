@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 877.3334
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Project
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 273.33337
     height: 550.6667
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 103
+  controlID: 134
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1616,10 +1616,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 18970000
-      m_LastClickedID: 38680
-      m_ExpandedIDs: c83effffd2f7fffffcfaffff9e7e00003a840000089200005a950000
+      scrollPos: {x: 0, y: 419.3333}
+      m_SelectedIDs: 5cf9ffff
+      m_LastClickedID: -1700
+      m_ExpandedIDs: 7ab7ffff86f6fffffcfaffff6e840000f6940000d4980000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1986,9 +1986,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -233.85408, y: 61.843372, z: -28.411766}
+    m_Target: {x: -236.03157, y: -107.10176, z: 66.961914}
     speed: 2
-    m_Value: {x: -233.85408, y: 61.843372, z: -28.411766}
+    m_Value: {x: -236.03157, y: -107.10176, z: 66.961914}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2034,13 +2034,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.26739332, y: 0.66816103, z: -0.28228682, w: 0.636308}
+    m_Target: {x: -0.22118296, y: 0.5471552, z: -0.15284842, w: -0.79439384}
     speed: 2
-    m_Value: {x: 0.26677606, y: 0.66795856, z: -0.28219986, w: 0.6348427}
+    m_Value: {x: -0.22103475, y: 0.5456177, z: -0.15241966, w: -0.7938598}
   m_Size:
-    m_Target: 10
+    m_Target: 115.37337
     speed: 2
-    m_Value: 10.000411
+    m_Value: 115.37337
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2533,7 +2533,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/Enemies/States
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2541,16 +2541,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 54
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/Enemies/States
   m_LastFoldersGridSize: 54
   m_LastProjectPath: C:\Users\Oculus2\Desktop\MythologyDefenseVR\TempleDefense
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: e2b40000
-    m_LastClickedID: 46306
-    m_ExpandedIDs: 00000000e0b40000e2b40000e4b40000e6b40000e8b40000eab40000ecb40000eeb40000f0b40000f2b40000f4b40000f6b40000f8b40000ecd000007ad1000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 190.33133}
+    m_SelectedIDs: deb50000
+    m_LastClickedID: 46558
+    m_ExpandedIDs: 000000001eb5000020b5000022b5000024b5000026b5000028b500002ab500002cb500002eb5000030b5000032b5000034b5000036b5000038b5000090b5000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2578,7 +2578,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e0b40000e2b40000e4b40000e6b40000e8b40000eab40000ecb40000eeb40000f0b40000f2b40000f4b40000f6b40000f8b40000
+    m_ExpandedIDs: 000000001eb5000020b5000022b5000024b5000026b5000028b500002ab500002cb500002eb5000030b5000032b5000034b5000036b5000038b50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2605,7 +2605,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000e6c50000a02a010064770000fcaa0000e2d90000a0a20000b49400008e770000ce3a0000ac3a0000b0b20000a2b20000c6b200003489000080ed000084ed00007aed0000089701002ab7000096520100b8c40000cec40000a4c10000f6930000e88600009c11010042b10000ecb10000eeb100008ee701001ae8010016e80100da02010000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2656,7 +2656,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 623.3334
-    width: 1127
+    width: 1264.3334
     height: 255.66663
   m_SerializedDataModeController:
     m_DataMode: 0
