@@ -14,8 +14,7 @@ public class QuestionNode : ITreeNode
     {
         _question = question;
         _tNode = tNode;
-        _fNode = fNode;
-        
+        _fNode = fNode;       
     }
 
     public void Execute()

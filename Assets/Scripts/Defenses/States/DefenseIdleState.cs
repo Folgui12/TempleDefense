@@ -11,7 +11,11 @@ public class DefenseIdleState<T> : State<T>
     {
         _model = model;
     }
-
+    public override void Enter()
+    {
+        base.Enter();
+        _model.ChangeMaterial();
+    }
     public override void Execute()
     {
         base.Execute();

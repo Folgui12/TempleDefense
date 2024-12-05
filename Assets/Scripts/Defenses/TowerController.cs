@@ -28,6 +28,11 @@ public class TowerController : MonoBehaviour
         var idle = new DefenseIdleState<StatesEnum>(_model);
         var dead = new DefenseDeadState<StatesEnum>(_model);
         var attack = new DefenseAttackState<StatesEnum>(_model);
+        var starting = new DefenseStartingState<StatesEnum>(_model);
+
+        starting.AddTransition(StatesEnum.Idle, idle);
+        starting.AddTransition(StatesEnum.Attack, attack);
+        starting.AddTransition(StatesEnum.Dead, dead);
 
         idle.AddTransition(StatesEnum.Dead, dead);
         idle.AddTransition(StatesEnum.Attack, attack);
@@ -35,7 +40,7 @@ public class TowerController : MonoBehaviour
         attack.AddTransition(StatesEnum.Idle, idle);
         attack.AddTransition(StatesEnum.Dead, dead);
 
-        _fsm = new FSM<StatesEnum>(idle);
+        _fsm = new FSM<StatesEnum>(starting);
     }
     
     void InitializedTree()
@@ -44,23 +49,27 @@ public class TowerController : MonoBehaviour
         var idle = new ActionNode(() => _fsm.Transition(StatesEnum.Idle));
         var dead = new ActionNode(() => _fsm.Transition(StatesEnum.Dead));
         var attack = new ActionNode(() => _fsm.Transition(StatesEnum.Attack));
+        var starting = new ActionNode(() => _fsm.Transition(StatesEnum.Starting));
 
         QuestionNode qEnemyInRange;
         QuestionNode qHasLife;
+        QuestionNode qHasStarted;
 
         //Question
         if (gameObject.name != "Muro")
         {
             qEnemyInRange = new QuestionNode(() => _model.CheckClosestEnemy() != null, attack, idle);
             qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qEnemyInRange, dead);
+            qHasStarted = new QuestionNode(() => _model.finishDelay, qHasLife, starting);
         }
         else
         {
-            qHasLife = new QuestionNode(() => _model.CurrentLife > 0, idle, dead);  
+            qHasLife = new QuestionNode(() => _model.CurrentLife > 0, idle, dead);
+            qHasStarted = new QuestionNode(() => _model.finishDelay, qHasLife, starting);
         }
         
 
-        _root = qHasLife;
+        _root = qHasStarted;
     }
 
     private void Update() 

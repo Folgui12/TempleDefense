@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4862463586025344567, guid: 886395b51f3b42f4f97127978ec74246, type: 3}
+  - {fileID: 2100000, guid: 6aee23b57988a5f47b28175185441167, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,6 +108,13 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 0
+  circle: {fileID: 0}
+  TimeBeforeCircleAppears: 0
+  _material: {fileID: 4862463586025344567, guid: c32d69bed20f7fd468203e0f50214502, type: 3}
+  _dissolve: {fileID: 2100000, guid: 6aee23b57988a5f47b28175185441167, type: 2}
+  finishDelay: 0
+  delayTime: 0
+  delay: 10
 --- !u!114 &8332164129151949480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +248,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.17126822, y: 0.013485684, z: 0.0073372503}
-  m_Center: {x: -0.00000013411045, y: -0.000000011175871, z: 0.0036777027}
+  m_Size: {x: 0.17126822, y: 0.013485692, z: 0.013692822}
+  m_Center: {x: -0.00000013907751, y: -0.00000001092752, z: 0.0068554888}
 --- !u!114 &4814381857276367778
 MonoBehaviour:
   m_ObjectHideFlags: 0

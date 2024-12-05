@@ -19,15 +19,22 @@ public class TowerModel : MonoBehaviour, IDamageable
 
     [SerializeField] private LineRenderer circle;
     [SerializeField] private float TimeBeforeCircleAppears;
-    private bool Draw;
 
+    public Material _material;
+    public Material _dissolve;
+    public bool finishDelay;
+    public float delayTime = 0;
+    [SerializeField] private float delay;
+    [SerializeField] private MeshRenderer _mesh;
 
     // Start is called before the first frame update
     void Start()
     {
-        CurrentLife = _stats.Life;
+        _mesh = GetComponent<MeshRenderer>();
         audioSource = GetComponent<AudioSource>();
         _los = GetComponent<LoS>();
+
+        CurrentLife = _stats.Life;
     }
     
     public GameObject CheckClosestEnemy()
@@ -60,6 +67,17 @@ public class TowerModel : MonoBehaviour, IDamageable
 
         return _currentEnemy;
     }
+
+    public void DelayAnim()
+    {
+        delayTime += Time.deltaTime / delay;
+        _dissolve.SetFloat("_Speed", delayTime);
+    }
+    public void ChangeMaterial()
+    {
+        _mesh.material = _material;
+    }
+
     public void Dead()
     {
         _grid.KillCollider();

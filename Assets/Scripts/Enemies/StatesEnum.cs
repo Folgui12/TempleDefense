@@ -10,5 +10,6 @@ public enum StatesEnum
     ToTower,
     Grabbed,
     InAir,
-    Dead
+    Dead,
+    Starting
 }

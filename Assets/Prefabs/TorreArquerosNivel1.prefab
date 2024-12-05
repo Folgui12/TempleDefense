@@ -71,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7975534001656084579, guid: d2a01f54820676044b0b8f595df6394b, type: 3}
+  - {fileID: 2100000, guid: 6aee23b57988a5f47b28175185441167, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,6 +148,11 @@ MonoBehaviour:
     m_Bits: 0
   circle: {fileID: 5312132284010395972}
   TimeBeforeCircleAppears: 0.5
+  _material: {fileID: -7975534001656084579, guid: 81bfd9fec9e0e0842812b8f6506d696d, type: 3}
+  _dissolve: {fileID: 2100000, guid: 6aee23b57988a5f47b28175185441167, type: 2}
+  finishDelay: 0
+  delayTime: 0
+  delay: 10
 --- !u!114 &8022288749061783267
 MonoBehaviour:
   m_ObjectHideFlags: 0

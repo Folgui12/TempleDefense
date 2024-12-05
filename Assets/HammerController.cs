@@ -7,6 +7,9 @@ public class HammerController : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<TowerModel>().TakeDamage(99999);
+        if(other.gameObject.layer == 9)
+        {
+            other.gameObject.GetComponent<TowerModel>().TakeDamage(99999);
+        }
     }
 }
