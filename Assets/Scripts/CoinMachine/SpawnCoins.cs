@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class SpawnCoins : ManagedUpdateBehavior
 {
     [SerializeField] private GameObject TypeOfCoin;
-    [SerializeField] private Transform SpawnPoint;
     [SerializeField] private float TimeBetweenPurchase;
     [SerializeField] private Transform platform;
 
@@ -46,7 +46,7 @@ public class SpawnCoins : ManagedUpdateBehavior
             if (CurrencyManager.Instance.MoneyCount >= coinToSpawn.price)
             {
                 CurrencyManager.Instance.RemoveMoney(coinToSpawn.price);
-                GameObject coin = Instantiate(TypeOfCoin, SpawnPoint.position, SpawnPoint.rotation);
+                GameObject coin = Instantiate(TypeOfCoin, transform.position, transform.rotation);
                 LanzarHaciaObjetivo(coin);
                 CanBuyCoin = false;
                 CanStartTimer = true;
@@ -62,9 +62,12 @@ public class SpawnCoins : ManagedUpdateBehavior
     public void LanzarHaciaObjetivo(GameObject coin)
     {
         Rigidbody coinRB = coin.GetComponent<Rigidbody>();
-        Vector3 direction = coin.transform.position - platform.transform.position;
 
-        float distance = direction.magnitude;
+        Vector3 direction = (platform.transform.position + new Vector3(0, 30, 0)) - coin.transform.position;
+
+        coinRB.AddForce(direction.normalized * impulse, ForceMode.Impulse);
+
+        /*float distance = direction.magnitude;
 
         float maxHeight = GetMaxHeight();
 
@@ -74,7 +77,7 @@ public class SpawnCoins : ManagedUpdateBehavior
         float horizontalSpeed = (speed * normalizeDirection.x * -1);
         float verticalSpeed = (speed * normalizeDirection.y) * maxHeight;
 
-        coinRB.velocity = new Vector3(horizontalSpeed, verticalSpeed, direction.z) * impulse;
+        coinRB.velocity = new Vector3(horizontalSpeed, verticalSpeed, direction.z) * impulse;*/
     }
     private float GetMaxHeight()
     {

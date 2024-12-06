@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4814381857276367778}
   - component: {fileID: 7582019304730508081}
   m_Layer: 9
-  m_Name: Muro
+  m_Name: GhostWall
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6aee23b57988a5f47b28175185441167, type: 2}
+  - {fileID: 2100000, guid: b5d8e38786a131941926a9fe12f3399b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   _dissolve: {fileID: 2100000, guid: 6aee23b57988a5f47b28175185441167, type: 2}
   finishDelay: 0
   delayTime: 0
-  delay: 6
+  delay: 10
   _mesh: {fileID: 0}
 --- !u!114 &8332164129151949480
 MonoBehaviour:

@@ -46,13 +46,13 @@ public class WaveSpawner : ManagedUpdateBehavior
         poolSatiro.Pool(enemies[0].enemyPrefab, 1);
         poolCentauro.Pool(enemies[1].enemyPrefab, 1);
         poolGolem.Pool(enemies[2].enemyPrefab, 1);
-        poolBoss.Pool(enemies[3].enemyPrefab, 1);
+        //poolBoss.Pool(enemies[3].enemyPrefab, 1);
 
     }
     override protected void Start()
     {
         base.Start();
-        NextWave();
+        //NextWave();
         canHitButton = false;
     }
     override protected void CustomLightFixedUpdate()
