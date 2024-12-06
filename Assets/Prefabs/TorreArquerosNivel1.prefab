@@ -152,7 +152,8 @@ MonoBehaviour:
   _dissolve: {fileID: 2100000, guid: 6aee23b57988a5f47b28175185441167, type: 2}
   finishDelay: 0
   delayTime: 0
-  delay: 10
+  delay: 6
+  _mesh: {fileID: 0}
 --- !u!114 &8022288749061783267
 MonoBehaviour:
   m_ObjectHideFlags: 0
