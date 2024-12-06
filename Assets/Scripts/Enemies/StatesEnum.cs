@@ -11,5 +11,6 @@ public enum StatesEnum
     Grabbed,
     InAir,
     Dead,
-    Starting
+    Starting,
+    Stuned
 }

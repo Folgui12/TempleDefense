@@ -57,37 +57,48 @@ public class BaseEnemyController : ManagedUpdateBehavior
         _stateFollowPoints = new EnemyRaidState<StatesEnum>(_model, audioSource, enemyType);
         var air = new EnemyAirState<StatesEnum>(_model);
         _toTowerState = new EnemyToTowerState<StatesEnum>(_model, _model._currentBuilding, _steering, _obstacleAvoidance);
+        var enemyStuned = new EnemyStunedState<StatesEnum>(_model, 4);
 
+        enemyStuned.AddTransition(StatesEnum.Dead, dead);
+        enemyStuned.AddTransition(StatesEnum.Attack, attack);
+        enemyStuned.AddTransition(StatesEnum.Raid, _stateFollowPoints);
+        enemyStuned.AddTransition(StatesEnum.InAir, air);
+        enemyStuned.AddTransition(StatesEnum.ToTower, _toTowerState);
 
         idle.AddTransition(StatesEnum.Dead, dead);
         idle.AddTransition(StatesEnum.Attack, attack);
         idle.AddTransition(StatesEnum.Raid, _stateFollowPoints);
         idle.AddTransition(StatesEnum.InAir, air);
         idle.AddTransition(StatesEnum.ToTower, _toTowerState);
+        idle.AddTransition(StatesEnum.Stuned, enemyStuned);
 
         attack.AddTransition(StatesEnum.Idle, idle);
         attack.AddTransition(StatesEnum.Dead, dead);
         attack.AddTransition(StatesEnum.Raid, _stateFollowPoints);
         attack.AddTransition(StatesEnum.InAir, air);
         attack.AddTransition(StatesEnum.ToTower, _toTowerState);
+        attack.AddTransition(StatesEnum.Stuned, enemyStuned);
 
         _stateFollowPoints.AddTransition(StatesEnum.Idle, idle);
         _stateFollowPoints.AddTransition(StatesEnum.Dead, dead);
         _stateFollowPoints.AddTransition(StatesEnum.Attack, attack);
         _stateFollowPoints.AddTransition(StatesEnum.InAir, air);
         _stateFollowPoints.AddTransition(StatesEnum.ToTower, _toTowerState);
+        _stateFollowPoints.AddTransition(StatesEnum.Stuned, enemyStuned);
 
         air.AddTransition(StatesEnum.Idle, idle);
         air.AddTransition(StatesEnum.Dead, dead);
         air.AddTransition(StatesEnum.Attack, attack);
         air.AddTransition(StatesEnum.Raid, _stateFollowPoints);
         air.AddTransition(StatesEnum.ToTower, _toTowerState);
+        air.AddTransition(StatesEnum.Stuned, enemyStuned);
 
         _toTowerState.AddTransition(StatesEnum.Idle, idle);
         _toTowerState.AddTransition(StatesEnum.Dead, dead);
         _toTowerState.AddTransition(StatesEnum.Attack, attack);
         _toTowerState.AddTransition(StatesEnum.Raid, _stateFollowPoints);
         _toTowerState.AddTransition(StatesEnum.InAir, air);
+        _toTowerState.AddTransition(StatesEnum.Stuned, enemyStuned);
 
 
         _fsm = new FSM<StatesEnum>(idle);
@@ -106,11 +117,13 @@ public class BaseEnemyController : ManagedUpdateBehavior
         var raid = new ActionNode(() => _fsm.Transition(StatesEnum.Raid));
         var air = new ActionNode(() => _fsm.Transition(StatesEnum.InAir));
         var toTower = new ActionNode(() => _fsm.Transition(StatesEnum.ToTower));
+        var stuned = new ActionNode(() => _fsm.Transition(StatesEnum.Stuned));
 
         //Question
         var qAttackRange = new QuestionNode(QuestionAttackRange, attack, toTower);
         var qLoS = new QuestionNode(QuestionLoS , qAttackRange, raid);
-        var qInAir = new QuestionNode(() => !_model.OnHand && _model.OnGround, qLoS, air);
+        var qStuned = new QuestionNode(() => _model.Stuned, stuned, qLoS);
+        var qInAir = new QuestionNode(() => !_model.OnHand && _model.OnGround, qStuned, air);
         var qHasLife = new QuestionNode(() => _model.CurrentLife > 0, qInAir, dead);
 
         _root = qHasLife;

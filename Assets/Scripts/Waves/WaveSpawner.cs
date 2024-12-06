@@ -30,6 +30,7 @@ public class WaveSpawner : ManagedUpdateBehavior
     public ObjectPoolSatiro poolSatiro;
     public ObjectPoolCentauro poolCentauro;
     public ObjectPoolGolem poolGolem;
+    public ObjectPoolBoss poolBoss;
 
     public bool canHitButton;
     public ButtonBehaviour NextRoundButton;
@@ -45,11 +46,13 @@ public class WaveSpawner : ManagedUpdateBehavior
         poolSatiro.Pool(enemies[0].enemyPrefab, 1);
         poolCentauro.Pool(enemies[1].enemyPrefab, 1);
         poolGolem.Pool(enemies[2].enemyPrefab, 1);
+        poolBoss.Pool(enemies[3].enemyPrefab, 1);
 
     }
     override protected void Start()
     {
         base.Start();
+        NextWave();
         canHitButton = false;
     }
     override protected void CustomLightFixedUpdate()
@@ -75,6 +78,10 @@ public class WaveSpawner : ManagedUpdateBehavior
                 if (enemy == enemies[2].enemyPrefab)
                 {
                     poolGolem.GetPooled(spawnLocation[spawnIndex], enemy);
+                }
+                if (enemy == enemies[3].enemyPrefab)
+                {
+                    poolBoss.GetPooled(spawnLocation[spawnIndex], enemy);
                 }
 
                 canHitButton = false;
@@ -139,22 +146,16 @@ public class WaveSpawner : ManagedUpdateBehavior
  
     public void GenerateEnemies()
     {
-        // Create a temporary list of enemies to generate
-        // 
-        // in a loop grab a random enemy 
-        // see if we can afford it
-        // if we can, add it to our list, and deduct the cost.
-
-        // repeat... 
-
-        //  -> if we have no points left, leave the loop
-
         if (currWave >= 5 && MaxRando < enemies.Count)
         {
             MaxRando += 1;
         }
         List<GameObject> generatedEnemies = new List<GameObject>();
-        while(waveValue>0 || generatedEnemies.Count < 50)
+        if (currWave % 10 == 0)
+        {
+            generatedEnemies.Add(enemies[3].enemyPrefab);
+        }
+        while (waveValue>0 || generatedEnemies.Count < 50)
         {
             int randEnemyId = Random.Range(0, MaxRando);
             int randEnemyCost = enemies[randEnemyId].cost;
