@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissolve
-  m_Shader: {fileID: 4800000, guid: 35e7e36c50e09bc48b19ae9b729d0f8b, type: 3}
+  m_Name: Agua 1
+  m_Shader: {fileID: 4800000, guid: f10a7da952bd0f64095c58d62c6b145f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -16,7 +16,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -25,14 +25,6 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Default:
-        m_Texture: {fileID: 2800000, guid: 85a62a9548132b8418b7d8ec49271590, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Default1:
-        m_Texture: {fileID: 2800000, guid: 85a62a9548132b8418b7d8ec49271590, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -67,6 +59,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 5541ab4ddba952347aaca503d6bbcaa1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -74,9 +70,17 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
+    - _ColorChangeFoam: 1
     - _Cutoff: 0.5
+    - _Depth: 0.42
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Espumita: 7.39
+    - _Float1: 0.08240313
+    - _Float2: 5
+    - _Float3: 10
+    - _Float5: 0.59
+    - _FoamOffset: -7.3
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -86,14 +90,12 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.8006224
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - __dirty: 1
+    - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color0: {r: 2, g: 1.199465, b: 0, a: 0}
-    - _Color1: {r: 0.32747206, g: 0.15109462, b: 0.0756893, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Vector1: {r: 0, g: 0.004, b: 0.004, a: 0}
   m_BuildTextureStacks: []
