@@ -1456,6 +1456,9 @@ MonoBehaviour:
   _waveSpawner: {fileID: 0}
   _tutorialSpawner: {fileID: 0}
   audioSource: {fileID: 2899803174021759696}
+  Stuned: 0
+  BloodVFX: {fileID: 8333740073906426236, guid: 44901297e3110d54596c2430d725d6cd, type: 3}
+  BloodStainVFX: {fileID: 2370172838796840839, guid: b1b9f27a747ec314980b920d2a22f3a8, type: 3}
 --- !u!114 &439678799053709008
 MonoBehaviour:
   m_ObjectHideFlags: 0

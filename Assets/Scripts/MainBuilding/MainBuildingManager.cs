@@ -8,7 +8,7 @@ public class MainBuildingManager : ManagedUpdateBehavior
     [SerializeField] private GameObject LoseMessage;
     [SerializeField] private GameObject LifeBarCanvas;
     [SerializeField] private Transform Player;
-    
+    [SerializeField] private GameObject DirectionalLight;
     private LifeBarManager lifeBar;
     override protected void Start()
     {
@@ -24,10 +24,22 @@ public class MainBuildingManager : ManagedUpdateBehavior
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Arrow"))
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyArrow"))
         {
             life -= 10;
+            Light light = DirectionalLight.GetComponent<Light>();
+            
 
+            Color currentColor = light.color;
+            currentColor.r -= 0.0f;      // No modificas el rojo
+            currentColor.g -= 25 / 255f; // Resta 25 al verde
+            currentColor.b -= 25 / 255f; // Resta 25 al azul
+
+            currentColor.r = Mathf.Clamp01(currentColor.r);
+            currentColor.g = Mathf.Clamp01(currentColor.g);
+            currentColor.b = Mathf.Clamp01(currentColor.b);
+
+            light.color = currentColor;
             lifeBar.UpdateLifeBar(life);
 
             StillAlive();

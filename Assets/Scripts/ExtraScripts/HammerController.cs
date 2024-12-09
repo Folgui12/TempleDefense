@@ -11,5 +11,9 @@ public class HammerController : MonoBehaviour
         {
             other.gameObject.GetComponent<TowerModel>().TakeDamage(99999);
         }
+        if(other.gameObject.layer == 3 || other.gameObject.layer == 17)
+        {
+            other.gameObject.GetComponent<BaseEnemyModel>().TakeDamage(10);
+        }
     }
 }

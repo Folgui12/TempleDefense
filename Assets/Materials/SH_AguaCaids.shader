@@ -146,13 +146,13 @@ Shader "SH_AguaCaids"
 }
 /*ASEBEGIN
 Version=18900
-0;615;1506;384;1596.861;118.3387;1;True;False
+0;570.6667;1265;308.3333;2844.842;-239.5187;1.759876;True;False
 Node;AmplifyShaderEditor.TextureCoordinatesNode;7;-1980.292,320.8222;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.Vector2Node;6;-1922.992,496.8536;Inherit;False;Property;_Vector0;Vector 0;1;0;Create;True;0;0;0;False;0;False;0.05,0.5;0.47,0;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
+Node;AmplifyShaderEditor.Vector2Node;6;-1922.992,496.8536;Inherit;False;Property;_Vector0;Vector 0;1;0;Create;True;0;0;0;False;0;False;0.05,0.5;0.2,0;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
 Node;AmplifyShaderEditor.RangedFloatNode;8;-1666.944,477.6667;Inherit;False;Constant;_Scale;Scale;0;0;Create;True;0;0;0;False;0;False;10;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.PannerNode;10;-1661.418,319.6056;Inherit;False;3;0;FLOAT2;0,0;False;2;FLOAT2;0,0;False;1;FLOAT;1;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.RangedFloatNode;9;-1104.625,655.45;Inherit;False;Constant;_Float0;Float 0;0;0;Create;True;0;0;0;False;0;False;0.2;0;0;0;0;1;FLOAT;0
-Node;AmplifyShaderEditor.Vector3Node;11;-1283.553,560.9222;Inherit;False;Property;_Vector1;Vector 1;2;0;Create;True;0;0;0;False;0;False;0,1,0;0,6.72,15.56;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
+Node;AmplifyShaderEditor.Vector3Node;11;-1283.553,560.9222;Inherit;False;Property;_Vector1;Vector 1;2;0;Create;True;0;0;0;False;0;False;0,1,0;0,7.02,18.47;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.PosVertexDataNode;1;-1057.164,11.53564;Inherit;False;0;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RangedFloatNode;2;-847.6955,152.6859;Inherit;False;Property;_ColorChangeFoam;ColorChangeFoam;0;0;Create;True;0;0;0;False;0;False;0;-0.04;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.NoiseGeneratorNode;13;-1452.944,314.667;Inherit;True;Simplex2D;True;False;2;0;FLOAT2;0,0;False;1;FLOAT;1;False;1;FLOAT;0
@@ -177,4 +177,4 @@ WireConnection;15;1;4;0
 WireConnection;0;0;15;0
 WireConnection;0;11;14;0
 ASEEND*/
-//CHKSM=094E08A520FDFAE6E1E95722E110B0D35F56CF82
+//CHKSM=3422EAE86018F2B106B3747B70A21DA0FD6EA616

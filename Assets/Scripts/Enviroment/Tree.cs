@@ -14,7 +14,11 @@ public class Tree : MonoBehaviour
     {
         if (other.gameObject.layer == 17)
         {
-            _grid.KillCollider();
+            killCollider();
         }
+    }
+    public void killCollider()
+    {
+        _grid.KillCollider();
     }
 }

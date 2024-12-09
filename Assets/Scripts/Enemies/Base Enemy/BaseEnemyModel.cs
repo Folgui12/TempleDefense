@@ -23,8 +23,6 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     private LoS lineOfSight;
 
-    private BaseEnemyView _view;
-
     public BaseEnemyController _controller;
 
     public int enemyType;
@@ -40,12 +38,15 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
     public AudioSource audioSource;
     public bool Stuned;
 
+    [SerializeField] private GameObject BloodVFX;
+    [SerializeField] private GameObject BloodStainVFX;
+    private bool once;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _mainBuilding = GameObject.Find("Templo");
         lineOfSight = GetComponent<LoS>();
-        _view = GetComponent<BaseEnemyView>();
         _currentBuilding = _mainBuilding;
         _tutorialSpawner = FindObjectOfType<TutorialSpawner>();
         _waveSpawner = FindObjectOfType<WaveSpawner>();
@@ -63,6 +64,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
         transform.position = _agentController.transform.position;
         CurrentLife = _stats.life;
         OnGround = false;
+        once = true;
     }
     public void Move(Vector3 dir)
     {
@@ -115,21 +117,15 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
             case 2:
                 AudioManager.Instance.Play("GolemHit", audioSource);        // Golem
                 break;
-
-            case 3:
-                AudioManager.Instance.Play("ArrowHit", audioSource);        // Harpy
-                break;
         }
         CurrentLife -= damage;
     }
 
     public void Dead()
     {
-        if (transform.parent.gameObject.activeInHierarchy)
+        if (transform.parent.gameObject.activeInHierarchy && once)
         {
             CurrencyManager.Instance.AddMoney(_stats.moneyQuantity);
-            //Destroy(gameObject);
-            //Destroy(_agentController);
             switch (enemyType)
             {
                 case 0:
@@ -143,13 +139,17 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
                 case 2:
                     AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
                     break;
-
-                case 3:
-                    AudioManager.Instance.Play("HighPop", audioSource);         // Harpy
-                    break;
             }
-            if(!Tutorial) _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
+            Instantiate(BloodVFX, new Vector3(transform.position.x, 2, 
+                transform.position.z), transform.rotation);
+            if (OnGround)
+            {
+                Instantiate(BloodStainVFX, new Vector3(transform.position.x, 0, transform.position.z),
+                    transform.rotation);
+            }
+            if (!Tutorial) _waveSpawner.RemoveEnemy(this.transform.parent.gameObject);
             else _tutorialSpawner.RemoveEnemy(this.transform.parent.gameObject);
+            once = false;
         }
     }
 
@@ -168,10 +168,6 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
             case 2:
             //    AudioManager.Instance.Play("GolemHit", audioSource);          // Golem
-                break;
-
-            case 3:
-                AudioManager.Instance.Play("HarpyGrabbed", audioSource);        // Harpy
                 break;
         }
     }

@@ -1254,11 +1254,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6258248285206893814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b30027c62374bc4abd7c164be9ee8b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 40611e584830dfd4591c8402c4fd64e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPosition: {fileID: 64254700762915427}
-  offset: {x: 1.65, y: 3.7, z: 0}
+  enemy: {fileID: 5945309254849029585}
+  offset: 5
 --- !u!1 &6467005976794208415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,6 +1650,9 @@ MonoBehaviour:
   _waveSpawner: {fileID: 0}
   _tutorialSpawner: {fileID: 0}
   audioSource: {fileID: 2899803174021759696}
+  Stuned: 0
+  BloodVFX: {fileID: 8333740073906426236, guid: 44901297e3110d54596c2430d725d6cd, type: 3}
+  BloodStainVFX: {fileID: 2370172838796840839, guid: b1b9f27a747ec314980b920d2a22f3a8, type: 3}
 --- !u!114 &439678799053709008
 MonoBehaviour:
   m_ObjectHideFlags: 0

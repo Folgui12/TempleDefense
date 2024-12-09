@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   archerStats: {fileID: 11400000, guid: b71112b176b614b44ac97cc0311031b7, type: 2}
-  objectRange: {fileID: 0}
   circle: {fileID: 1593683636941717578}
 --- !u!120 &1593683636941717578
 LineRenderer:
@@ -143,7 +142,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5d8e38786a131941926a9fe12f3399b, type: 2}
+  - {fileID: 2100000, guid: 48cc68c2c8b7e2f45b6adf7f7f6bba21, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

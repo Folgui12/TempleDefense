@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 1689548186703805716}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59, y: 15.7, z: -41}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1433,6 +1433,9 @@ MonoBehaviour:
   _waveSpawner: {fileID: 0}
   _tutorialSpawner: {fileID: 0}
   audioSource: {fileID: 8157922555254745127}
+  Stuned: 0
+  BloodVFX: {fileID: 8333740073906426236, guid: 44901297e3110d54596c2430d725d6cd, type: 3}
+  BloodStainVFX: {fileID: 2370172838796840839, guid: b1b9f27a747ec314980b920d2a22f3a8, type: 3}
 --- !u!114 &7928936517223088336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1722,7 +1725,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 25
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

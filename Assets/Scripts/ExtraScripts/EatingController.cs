@@ -14,6 +14,7 @@ public class EatingController : MonoBehaviour
                 //SFX de cosas comibles con el codigo de Consumable
                 Debug.Log("COMIDA");
                 other.gameObject.GetComponent<BaseEnemyModel>().TakeDamage(99999);
+                other.gameObject.SetActive(false);
             }
             else if (!consumable.canEat)
             {

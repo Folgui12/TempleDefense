@@ -31,7 +31,7 @@ Shader "SH_SplashMat"
 		{
 			float2 uv_TextureSample0 = i.uv_texcoord * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
 			float4 tex2DNode2 = tex2D( _TextureSample0, uv_TextureSample0 );
-			float4 color4 = IsGammaSpace() ? float4(0.6320754,0.128204,0.5004469,0) : float4(0.3572768,0.01497055,0.214455,0);
+			float4 color4 = IsGammaSpace() ? float4(1,0.128204,0,0) : float4(1,0.01497055,0,0);
 			o.Albedo = ( tex2DNode2 * color4 ).rgb;
 			o.Alpha = ( tex2DNode2.a * _Float0 );
 		}
@@ -115,9 +115,9 @@ Shader "SH_SplashMat"
 }
 /*ASEBEGIN
 Version=18900
-0;646;1423;353;1761.293;21.31535;1.883186;True;False
+0;562;1265;317;2280.716;333.9588;2.67972;True;False
 Node;AmplifyShaderEditor.SamplerNode;2;-669.7928,29.1833;Inherit;True;Property;_TextureSample0;Texture Sample 0;0;0;Create;True;0;0;0;False;0;False;-1;c86ca25dcedde204e9c8e9d5f7eea375;c86ca25dcedde204e9c8e9d5f7eea375;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;4;-680.6729,-200.4731;Inherit;False;Constant;_Color0;Color 0;1;0;Create;True;0;0;0;False;0;False;0.6320754,0.128204,0.5004469,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;4;-680.6729,-200.4731;Inherit;False;Constant;_Color0;Color 0;1;0;Create;True;0;0;0;False;0;False;1,0.128204,0,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RangedFloatNode;7;-524.04,355.3219;Inherit;False;Property;_Float0;Float 0;1;0;Create;True;0;0;0;False;0;False;0;1;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;5;-187.8738,30.72701;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;6;-115.389,217.8495;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
@@ -129,4 +129,4 @@ WireConnection;6;1;7;0
 WireConnection;0;0;5;0
 WireConnection;0;9;6;0
 ASEEND*/
-//CHKSM=206EE40B7AF2DBD9A2BD6E6E09C1874852716810
+//CHKSM=0A8D87D873E42C2CF0AD22760E95292E04941B5F

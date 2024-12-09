@@ -48,7 +48,11 @@ public class ThunderMovement : MonoBehaviour
                 var getTree = collicion.GetComponent<Tree>();
 
                 if (getTree != null)
+                {
                     Destroy(getTree.gameObject);
+                    getTree.killCollider();
+                }
+
 
                 if (getRB == null) continue;
                 

@@ -363,6 +363,9 @@ MonoBehaviour:
   _waveSpawner: {fileID: 0}
   _tutorialSpawner: {fileID: 0}
   audioSource: {fileID: 5441625768571700689}
+  Stuned: 0
+  BloodVFX: {fileID: 8333740073906426236, guid: 44901297e3110d54596c2430d725d6cd, type: 3}
+  BloodStainVFX: {fileID: 2370172838796840839, guid: b1b9f27a747ec314980b920d2a22f3a8, type: 3}
 --- !u!114 &5685967084341310072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +517,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -687,9 +690,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 85.60719
+  MaxDistance: 40
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
