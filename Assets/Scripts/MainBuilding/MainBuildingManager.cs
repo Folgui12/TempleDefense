@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MainBuildingManager : ManagedUpdateBehavior
 {
@@ -26,7 +28,12 @@ public class MainBuildingManager : ManagedUpdateBehavior
     {
         if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyArrow"))
         {
-            life -= 10;
+            if(other.gameObject.CompareTag("Enemy"))
+                TakeDamage(other.gameObject.GetComponent<BaseEnemyModel>()._stats.Damage);
+
+            if (other.gameObject.CompareTag("EnemyArrow"))
+                TakeDamage(other.gameObject.GetComponent<BulletMovement>().Damage);
+
             Light light = DirectionalLight.GetComponent<Light>();
             
 
@@ -44,6 +51,11 @@ public class MainBuildingManager : ManagedUpdateBehavior
 
             StillAlive();
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        life -= damage;
     }
 
     private void StillAlive()

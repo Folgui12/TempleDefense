@@ -8,18 +8,6 @@ public class RockBehaviour : MonoBehaviour
     [SerializeField] private float explosionForce;
     [SerializeField] private int explosionDamage;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("GenericEnemy"))
@@ -32,15 +20,16 @@ public class RockBehaviour : MonoBehaviour
             {
                 var getRB = enemy.GetComponent<Rigidbody>();
                 var getEnemyModel = enemy.GetComponent<BaseEnemyModel>();
+                var getTrees = enemy.GetComponent<Tree>();
 
                 if (getRB == null) continue;
-                getRB.AddExplosionForce(explosionForce, transform.position - new Vector3(0, 1.5f, 0), explosionRadius);
+                    getRB.AddExplosionForce(explosionForce, transform.position - new Vector3(0, 1.5f, 0), explosionRadius);
 
                 if (getEnemyModel != null)
-                {
                     getEnemyModel.TakeDamage(explosionDamage);
-                }
 
+                if(getTrees != null)
+                    Destroy(getTrees.gameObject);
             }
 
             gameObject.SetActive(false);

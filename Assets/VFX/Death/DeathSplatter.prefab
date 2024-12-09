@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5874329432774452148}
   - component: {fileID: 6492381145233674611}
   - component: {fileID: 1988634666426115445}
+  - component: {fileID: 5041427950966544140}
   m_Layer: 0
   m_Name: DeathSplatter
   m_TagString: Untagged
@@ -4888,3 +4889,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5041427950966544140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2370172838796840839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210883af668c0fc4aab890d9ad3cfd6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Lifetime: 5

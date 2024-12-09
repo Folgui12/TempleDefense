@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class HammerController : MonoBehaviour
 {
+    public bool OnHand;
+
+    public void HammerOnHand()
+    {
+        OnHand = true;
+    }
+
+    public void HammerOffHand() 
+    { 
+        OnHand = false; 
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == 9)

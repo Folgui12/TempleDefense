@@ -61,4 +61,33 @@ public class BaseEnemyView : MonoBehaviour
         if (collider != null)
             collider.enabled = false;
     }
+
+    public void DoBossDamage()
+    {
+        int explotionRad = 10;
+
+        Debug.Log(transform.position);
+
+        var surroundedEnemiesTrees = Physics.OverlapSphere(transform.position - new Vector3(0, 5, 0), explotionRad);
+
+        foreach(var collision in surroundedEnemiesTrees)
+        {
+            Tree detectTree = collision.GetComponent<Tree>();
+            TowerModel detectDefense = collision.GetComponent<TowerModel>();
+            MainBuildingManager mainBuilding = collision.GetComponent<MainBuildingManager>();
+
+            if(detectTree != null)
+            {
+                Destroy(detectTree.gameObject);
+            }
+            else if(detectDefense != null)  
+            {
+                detectDefense.TakeDamage(_model._stats.Damage);
+            }
+            else if(mainBuilding != null)
+            {
+                mainBuilding.TakeDamage(_model._stats.Damage);
+            }
+        }
+    }
 }

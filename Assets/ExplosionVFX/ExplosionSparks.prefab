@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6943698782766449749}
   - component: {fileID: 2693777179842843812}
   - component: {fileID: 2524108778669518422}
+  - component: {fileID: 1504460399931974110}
   m_Layer: 0
   m_Name: ExplosionSparks
   m_TagString: Untagged
@@ -4888,3 +4889,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1504460399931974110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641880970359694663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210883af668c0fc4aab890d9ad3cfd6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Lifetime: 5
