@@ -20,6 +20,8 @@ public class ButtonFollowVisual : MonoBehaviour
 
     private bool freeze = false;
 
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,9 @@ public class ButtonFollowVisual : MonoBehaviour
         interactable = GetComponent<XRBaseInteractable>();
         interactable.hoverEntered.AddListener(Follow);
         interactable.hoverExited.AddListener(Reset);
-        interactable.selectEntered.AddListener(Freeze); 
+        interactable.selectEntered.AddListener(Freeze);
+
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -87,5 +91,10 @@ public class ButtonFollowVisual : MonoBehaviour
         {
             visualTarget.localPosition = Vector3.Lerp(visualTarget.localPosition, initialLocalPos, Time.deltaTime * resetSpeed);
         }
+    }
+
+    public void MakeSound()
+    {
+        AudioManager.Instance.Play("StoneButton", audioSource);
     }
 }

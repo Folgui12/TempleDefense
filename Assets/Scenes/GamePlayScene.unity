@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.9211606, g: 0.99328715, b: 0.54507446, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6898,7 +6898,6 @@ MonoBehaviour:
   LifeBarCanvas: {fileID: 73982728}
   Player: {fileID: 0}
   DirectionalLight: {fileID: 1443094229}
-  Skybox: {fileID: 2100000, guid: 5d8d426817d63c34aaee29ed14e5ed1a, type: 2}
 --- !u!65 &249812182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10100,6 +10099,7 @@ GameObject:
   - component: {fileID: 403443770}
   - component: {fileID: 403443769}
   - component: {fileID: 403443768}
+  - component: {fileID: 403443772}
   m_Layer: 0
   m_Name: SpawnArcherCoin
   m_TagString: Untagged
@@ -10188,6 +10188,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450651780181725}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!82 &403443772
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403443767}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &410813417
 GameObject:
   m_ObjectHideFlags: 0
@@ -39345,6 +39441,24 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: StoneButton
+    clip: {fileID: 8300000, guid: bc9898a1d8e6c8c42b2af870a686bb29, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: CoinToss
+    clip: {fileID: 8300000, guid: 66faac806a6d0264f91a40db6e3581e2, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Construction
+    clip: {fileID: 8300000, guid: def5c7767e649c74b87786b09802cf48, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &1431415041
 Transform:
   m_ObjectHideFlags: 0
@@ -51815,10 +51929,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
@@ -51826,7 +51944,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2072832359}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1869766680}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
@@ -51834,11 +51960,23 @@ PrefabInstance:
       value: Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: MakeSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SpawnCoins, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ButtonFollowVisual, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7690507451140647361, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
@@ -51855,6 +51993,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6998920052070963699, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
   m_PrefabInstance: {fileID: 1869766678}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1869766680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5812885189563285623, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+  m_PrefabInstance: {fileID: 1869766678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30a73b2a4973764d9e9441a349cff19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1874210216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51905,10 +52054,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
@@ -51916,7 +52069,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 403443768}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1874210218}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
@@ -51924,11 +52085,23 @@ PrefabInstance:
       value: Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: MakeSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SpawnCoins, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ButtonFollowVisual, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536120683922734447, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7690507451140647361, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
@@ -51945,6 +52118,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6998920052070963699, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
   m_PrefabInstance: {fileID: 1874210216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874210218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5812885189563285623, guid: e42cc886c5853fe45ade9ffb9e122e88, type: 3}
+  m_PrefabInstance: {fileID: 1874210216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30a73b2a4973764d9e9441a349cff19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1874678933
 GameObject:
   m_ObjectHideFlags: 0

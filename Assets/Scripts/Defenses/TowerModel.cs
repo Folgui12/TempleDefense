@@ -34,6 +34,8 @@ public class TowerModel : MonoBehaviour, IDamageable
         audioSource = GetComponent<AudioSource>();
         _los = GetComponent<LoS>();
 
+        AudioManager.Instance.Play("Construction", audioSource);
+
         CurrentLife = _stats.Life;
     }
     

@@ -14,12 +14,14 @@ public class SpawnCoins : ManagedUpdateBehavior
     private float timer;
     private bool CanStartTimer = false;
     private bool CanBuyCoin = true;
+    private AudioSource audioSource;
 
     [SerializeField] private float impulse;
 
     override protected void Start()
     {
         base.Start();
+        audioSource = GetComponent<AudioSource>();
         coinToSpawn = TypeOfCoin.GetComponent<TypeOfDefenseCoin>().defenseType;
     }
 
@@ -66,6 +68,9 @@ public class SpawnCoins : ManagedUpdateBehavior
         Vector3 direction = (platform.transform.position + new Vector3(0, 30, 0)) - coin.transform.position;
 
         coinRB.AddForce(direction.normalized * impulse, ForceMode.Impulse);
+
+
+        AudioManager.Instance.Play("CoinToss", audioSource);
 
         /*float distance = direction.magnitude;
 
