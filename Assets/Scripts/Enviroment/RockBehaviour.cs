@@ -10,7 +10,7 @@ public class RockBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("GenericEnemy"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("GenericEnemy") || collision.gameObject.CompareTag("Enemy"))
         {
             //Instantiate(Fresnel, transform.position, transform.rotation); --- AGREGAR ANIMACIÓN DE IMPACTO
 
