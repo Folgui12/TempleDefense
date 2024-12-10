@@ -19,6 +19,7 @@ public class BaseEnemyView : MonoBehaviour
         _model = GetComponent<BaseEnemyModel>();
 
         UnshowPunchCollider();
+
     }
 
     public void StartAttackAnimation()
@@ -64,21 +65,20 @@ public class BaseEnemyView : MonoBehaviour
 
     public void DoBossDamage()
     {
-        int explotionRad = 10;
-
-        Debug.Log(transform.position);
-
+        int explotionRad = 15;
         var surroundedEnemiesTrees = Physics.OverlapSphere(transform.position - new Vector3(0, 5, 0), explotionRad);
 
-        foreach(var collision in surroundedEnemiesTrees)
+        foreach (var collision in surroundedEnemiesTrees)
         {
             Tree detectTree = collision.GetComponent<Tree>();
             TowerModel detectDefense = collision.GetComponent<TowerModel>();
             MainBuildingManager mainBuilding = collision.GetComponent<MainBuildingManager>();
 
+            Debug.Log(surroundedEnemiesTrees.Length);
+
             if(detectTree != null)
             {
-                Destroy(detectTree.gameObject);
+                detectTree.killCollider();
             }
             else if(detectDefense != null)  
             {

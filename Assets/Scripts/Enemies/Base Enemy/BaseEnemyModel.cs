@@ -11,7 +11,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public float CurrentLife;
 
-    public bool Tutorial;
+    private bool Tutorial;
 
     public bool OnHand = false;
 
@@ -31,15 +31,17 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
 
     public LeaderBehaviour _leaderBehaviour;
 
-    public WaveSpawner _waveSpawner;
+    private WaveSpawner _waveSpawner;
 
-    public TutorialSpawner _tutorialSpawner;
+    private TutorialSpawner _tutorialSpawner;
 
     public AudioSource audioSource;
+
     public bool Stuned;
 
     [SerializeField] private GameObject BloodVFX;
     [SerializeField] private GameObject BloodStainVFX;
+
     private bool once;
 
     private void Awake()

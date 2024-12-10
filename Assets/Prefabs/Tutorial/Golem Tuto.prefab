@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40611e584830dfd4591c8402c4fd64e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 5945309254849029585}
+  enemy: {fileID: 7571120520702235231}
   offset: 5
 --- !u!1 &6467005976794208415
 GameObject:

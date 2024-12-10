@@ -30,17 +30,20 @@ public class ObjectPoolTowerArrow : MonoBehaviour
     }
     public GameObject GetPooled(Transform transform, GameObject _objects, Quaternion rotation)
     {
-        if (pooledObjects.Count <= 0)
+        if (pooledObjects.Count <= 1)
         {
             AddToPool(_objects);
         }
         if (pooledObjects.Count > 0)
         {
-            _objects = pooledObjects.Dequeue();
-            _objects.transform.position = transform.position;
-            _objects.transform.rotation = rotation;
-            _objects.SetActive(true);
-            return _objects;
+            if (!_objects.activeInHierarchy)
+            {
+                _objects = pooledObjects.Dequeue();
+                _objects.transform.position = transform.position;
+                _objects.transform.rotation = rotation;
+                _objects.SetActive(true);
+                return _objects;
+            }
         }
         return null;
     }
