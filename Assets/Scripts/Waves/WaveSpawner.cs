@@ -34,6 +34,7 @@ public class WaveSpawner : ManagedUpdateBehavior
 
     public bool canHitButton;
     public ButtonBehaviour NextRoundButton;
+    private int lastGeneratedWave = -1;
 
     [SerializeField] private GameObject VFX;
 
@@ -148,10 +149,10 @@ public class WaveSpawner : ManagedUpdateBehavior
     {
         if (currWave >= 5 && MaxRando < enemies.Count)
         {
-            MaxRando += 1;
+            MaxRando = 2;
         }
         List<GameObject> generatedEnemies = new List<GameObject>();
-        if (currWave % 10 == 0)
+        if (currWave % 10 == 0 && lastGeneratedWave != currWave)
         {
             generatedEnemies.Add(enemies[3].enemyPrefab);
         }

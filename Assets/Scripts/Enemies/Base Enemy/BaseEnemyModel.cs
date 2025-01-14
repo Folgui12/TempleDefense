@@ -142,7 +142,7 @@ public class BaseEnemyModel : MonoBehaviour, IDamageable, IBoid
                     AudioManager.Instance.Play("GolemDeath", audioSource);      // Golem
                     break;
             }
-            Instantiate(BloodVFX, new Vector3(transform.position.x, 2, 
+            Instantiate(BloodVFX, new Vector3(transform.position.x, transform.position.y, 
                 transform.position.z), transform.rotation);
             if (OnGround)
             {
