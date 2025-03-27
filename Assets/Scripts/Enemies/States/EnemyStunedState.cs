@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class EnemyStunedState<T> : State<T>
@@ -23,7 +22,7 @@ public class EnemyStunedState<T> : State<T>
 
         timer = 0;
 
-        //Comenzar animación de stun y efectos quizá, así como tambien algún sonido?
+        //Comenzar animaciï¿½n de stun y efectos quizï¿½, asï¿½ como tambien algï¿½n sonido?
     }
 
 
